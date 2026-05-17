@@ -129,8 +129,7 @@
   <div class="logo">E5<span>vs</span>E10</div>
   <nav>
     <button class="nav-btn active" onclick="showView('rechner')">Rechner</button>
-    <button class="nav-btn" onclick="showView('datenbank')">Datenbank</button>
-    <button class="nav-btn" onclick="showView('hinzufuegen')">+ Fahrzeug</button>
+    <button class="nav-btn" onclick="showView('hinzufuegen')">Fahrzeug melden</button>
   </nav>
 </header>
 
@@ -186,20 +185,21 @@
         <span class="slider-val" id="verbrauch-out">7,5 L</span>
       </div>
       <div class="slider-row">
-        <span class="slider-label">Jahreskilometer</span>
-        <input type="range" min="3000" max="60000" step="1000" value="15000" id="km" oninput="updateSliders();update()">
-        <span class="slider-val" id="km-out">15.000 km</span>
+        <span class="slider-label">Tankgröße (Liter)</span>
+        <input type="range" min="30" max="90" step="1" value="50" id="tank" oninput="updateSliders();update()">
+        <span class="slider-val" id="tank-out">50 L</span>
       </div>
     </div>
 
     <div class="metrics">
-      <div class="metric"><div class="metric-label">Jahresverbrauch</div><span class="metric-value" id="m-liter">—</span> <span class="metric-unit">L</span></div>
-      <div class="metric"><div class="metric-label">Mehrverbrauch E10</div><span class="metric-value" id="m-mehr">—</span> <span class="metric-unit">L</span></div>
-      <div class="metric"><div class="metric-label">Preisvorteil E10</div><span class="metric-value" id="m-pvorteil">—</span> <span class="metric-unit">€/Jahr</span></div>
-      <div class="metric"><div class="metric-label">Kosten Mehrverbr.</div><span class="metric-value" id="m-kkosten">—</span> <span class="metric-unit">€/Jahr</span></div>
-      <div class="metric"><div class="metric-label">Nettoersparnis</div><span class="metric-value" id="m-netto">—</span> <span class="metric-unit">€/Jahr</span></div>
-      <div class="metric"><div class="metric-label">Pro Tankfüllung 50 L</div><span class="metric-value" id="m-tank">—</span> <span class="metric-unit">€</span></div>
+      <div class="metric"><div class="metric-label">Kosten E5 — dieser Tank</div><span class="metric-value" id="m-kosten-e5">—</span> <span class="metric-unit">€</span></div>
+      <div class="metric"><div class="metric-label">Kosten E10 — dieser Tank</div><span class="metric-value" id="m-kosten-e10">—</span> <span class="metric-unit">€</span></div>
+      <div class="metric"><div class="metric-label">Ersparnis jetzt</div><span class="metric-value" id="m-ersparnis">—</span> <span class="metric-unit">€</span></div>
+      <div class="metric"><div class="metric-label">Mehrverbrauch E10</div><span class="metric-value" id="m-mehr">—</span> <span class="metric-unit">L / Tank</span></div>
+      <div class="metric"><div class="metric-label">Kosten Mehrverbr.</div><span class="metric-value" id="m-kkosten">—</span> <span class="metric-unit">€ / Tank</span></div>
+      <div class="metric"><div class="metric-label">Netto diese Tankfüllung</div><span class="metric-value" id="m-netto">—</span> <span class="metric-unit">€</span></div>
     </div>
+    <div style="font-size:12px;font-family:'DM Mono',monospace;color:var(--text3);margin-bottom:.5rem;text-align:right;" id="m-jahres"></div>
 
     <div class="verdict" id="verdict">
       <div class="verdict-icon" id="v-icon">·</div>
@@ -218,25 +218,6 @@
         Keine Haftung für Richtigkeit der Angaben.
       </p>
     </div>
-
-  <!-- DATENBANK -->
-  <div class="view" id="view-datenbank">
-    <p class="page-title">Fahrzeuge</p>
-    <h1>Datenbank</h1>
-    <div class="db-wrap">
-      <div class="db-search">
-        <input type="text" id="db-search" placeholder="Suchen — z.B. Golf, Renault, E10 Nein …" oninput="renderDB()">
-      </div>
-      <table class="db-table">
-        <thead><tr>
-          <th>Marke</th><th>Modell</th><th>Motor / Baujahr</th><th>Verbr.</th><th>Mehrverbr.</th><th></th>
-        </tr></thead>
-        <tbody id="db-tbody"><tr><td colspan="7"><div class="loading">Daten werden geladen …</div></td></tr></tbody>
-      </table>
-      <div class="db-count" id="db-count"></div>
-    </div>
-    <div class="notice">Eigene Fahrzeuge (blau markiert) werden lokal in deinem Browser gespeichert.</div>
-  </div>
 
   <!-- HINZUFÜGEN -->
   <div class="view" id="view-hinzufuegen">
@@ -267,7 +248,7 @@
 
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <button class="btn" onclick="addFahrzeug()">Speichern</button>
+        <button class="btn" onclick="meldenPerMail()">Fahrzeug melden</button>
         <button class="btn secondary" onclick="clearForm()">Leeren</button>
       </div>
       <div class="msg success" id="msg-ok">✓ Fahrzeug gespeichert und in der Datenbank verfügbar.</div>
@@ -349,38 +330,40 @@ function onMotor() {
 }
 
 function updateSliders() {
-  ['verbrauch','km'].forEach(id => {
+  ['verbrauch','tank'].forEach(id => {
     const el = document.getElementById(id);
     const pct = ((parseFloat(el.value)-parseFloat(el.min))/(parseFloat(el.max)-parseFloat(el.min))*100).toFixed(1)+'%';
     el.style.setProperty('--pct', pct);
   });
   const v = parseFloat(document.getElementById('verbrauch').value);
-  const km = parseInt(document.getElementById('km').value);
   document.getElementById('verbrauch-out').textContent = v.toFixed(1).replace('.',',') + ' L';
-  document.getElementById('km-out').textContent = km.toLocaleString('de-DE') + ' km';
+  document.getElementById('tank-out').textContent = parseInt(document.getElementById('tank').value) + ' L';
 }
 
 function update() {
   const v = parseFloat(document.getElementById('verbrauch').value);
-  const km = parseInt(document.getElementById('km').value);
+  const tank = parseInt(document.getElementById('tank').value);
   const pe5 = parseFloat(document.getElementById('preis-e5').value)||1.85;
   const pe10 = parseFloat(document.getElementById('preis-e10').value)||1.79;
   const mehr = selected ? selected.mehr : 1.5;
 
-  const litreE5 = v * km / 100;
-  const litreE10 = litreE5 * (1 + mehr/100);
-  const literMehr = litreE10 - litreE5;
-  const pvorteil = litreE5 * (pe5 - pe10);
-  const kkosten = literMehr * pe10;
-  const netto = pvorteil - kkosten;
-  const proTank = 50 * (pe5 - pe10*(1+mehr/100));
+  const kostenE5 = tank * pe5;
+  const kostenE10direkt = tank * pe10;
+  const ersparnisDirekt = kostenE5 - kostenE10direkt;
+  const reichweite = tank / v * 100;
+  const mehrLiter = reichweite * (mehr / 100) * v / 100;
+  const kostenMehrverbr = mehrLiter * pe10;
+  const netto = ersparnisDirekt - kostenMehrverbr;
+  const jahresLiter = v * 15000 / 100;
+  const jahresNetto = jahresLiter * (pe5 - pe10) - (jahresLiter * mehr / 100 * pe10);
 
-  document.getElementById('m-liter').textContent = Math.round(litreE5);
-  document.getElementById('m-mehr').textContent = Math.round(literMehr);
-  document.getElementById('m-pvorteil').textContent = Math.round(pvorteil);
-  document.getElementById('m-kkosten').textContent = Math.round(kkosten);
-  document.getElementById('m-netto').textContent = Math.round(netto);
-  document.getElementById('m-tank').textContent = proTank.toFixed(2).replace('.',',');
+  document.getElementById('m-kosten-e5').textContent = kostenE5.toFixed(2).replace('.',',');
+  document.getElementById('m-kosten-e10').textContent = kostenE10direkt.toFixed(2).replace('.',',');
+  document.getElementById('m-ersparnis').textContent = ersparnisDirekt.toFixed(2).replace('.',',');
+  document.getElementById('m-mehr').textContent = mehrLiter.toFixed(1).replace('.',',');
+  document.getElementById('m-kkosten').textContent = kostenMehrverbr.toFixed(2).replace('.',',');
+  document.getElementById('m-netto').textContent = netto.toFixed(2).replace('.',',');
+  document.getElementById('m-jahres').textContent = selected ? 'Hochgerechnet auf 15.000 km/Jahr: ca. ' + Math.round(jahresNetto) + ' € Nettoersparnis mit E10' : '';
 
   const vd=document.getElementById('verdict');
   const vi=document.getElementById('v-icon');
@@ -392,21 +375,20 @@ function update() {
     vi.textContent='→';
     vt.textContent='Fahrzeug wählen für eine Empfehlung';
     vs.textContent='Marke, Modell und Motor oben auswählen';
-  } else if(netto>2) {
+  } else if(netto>0.50) {
     vi.textContent='✓'; vd.classList.add('green');
-    vt.textContent='Heute E10 tanken — '+Math.round(netto)+' € Ersparnis pro Jahr';
-    vs.textContent='Pro 50-Liter-Tankfüllung: '+proTank.toFixed(2).replace('.',',')+'€ günstiger als E5';
-  } else if(netto<0) {
+    vt.textContent='Jetzt E10 tanken — du sparst ' + netto.toFixed(2).replace('.',',') + ' € bei dieser Tankfüllung';
+    vs.textContent='E10 kostet ' + kostenE10direkt.toFixed(2).replace('.',',') + ' € statt ' + kostenE5.toFixed(2).replace('.',',') + ' € — Mehrverbrauch bereits abgezogen';
+  } else if(netto < -0.20) {
     vi.textContent='↓'; vd.classList.add('amber');
-    vt.textContent='Heute E5 tanken — E10 lohnt sich nicht';
-    vs.textContent='Preisdifferenz deckt den Mehrverbrauch nicht. Preise prüfen.';
+    vt.textContent='Jetzt E5 tanken — E10 lohnt sich nicht';
+    vs.textContent='Der Mehrverbrauch übersteigt den Preisvorteil bei diesen Preisen';
   } else {
     vi.textContent='≈';
-    vt.textContent='Kaum Unterschied ('+Math.round(netto)+' € Netto / Jahr)';
-    vs.textContent='Beide Kraftstoffe nahezu gleichwertig bei diesen Preisen';
+    vt.textContent='Kaum Unterschied (' + netto.toFixed(2).replace('.',',') + ' € Netto)';
+    vs.textContent='Beide Kraftstoffe sind bei diesen Preisen nahezu gleichwertig';
   }
 }
-
 function renderDB() {
   const q = (document.getElementById('db-search').value||'').toLowerCase();
   const custom = customDB();
@@ -461,34 +443,39 @@ function setToggle(val) {
   document.getElementById('toggle-nein').classList.toggle('active',!val);
 }
 
-function addFahrzeug() {
-  const marke=document.getElementById('f-marke').value.trim();
-  const modell=document.getElementById('f-modell').value.trim();
-  const motor=document.getElementById('f-motor').value.trim();
-  const verbrauch=parseFloat(document.getElementById('f-verbrauch').value);
-  const mehr=parseFloat(document.getElementById('f-mehr').value)||1.5;
-  const ok=document.getElementById('msg-ok');
-  const err=document.getElementById('msg-err');
-  ok.style.display='none'; err.style.display='none';
-  if(!marke||!modell||!motor||isNaN(verbrauch)) { err.style.display='block'; return; }
-  const c=customDB();
-  c.push({marke,modell,motor,verbrauch,mehr});
-  saveCustom(c); initSelects(); clearForm();
-  ok.style.display='block';
-  setTimeout(()=>ok.style.display='none',3000);
+function meldenPerMail() {
+  const marke = document.getElementById('f-marke').value.trim();
+  const modell = document.getElementById('f-modell').value.trim();
+  const motor = document.getElementById('f-motor').value.trim();
+  const verbrauch = document.getElementById('f-verbrauch').value.trim();
+  const email = document.getElementById('f-email').value.trim();
+  const err = document.getElementById('msg-err');
+  err.style.display = 'none';
+  if(!marke || !modell || !motor) { err.style.display='block'; return; }
+  const betreff = encodeURIComponent('E5vsE10 — Fahrzeug melden: ' + marke + ' ' + modell);
+  const body = encodeURIComponent(
+    'Fahrzeug-Meldung\n' +
+    '===============\n\n' +
+    'Marke:      ' + marke + '\n' +
+    'Modell:     ' + modell + '\n' +
+    'Motor/BJ:   ' + motor + '\n' +
+    'Verbrauch:  ' + (verbrauch || 'nicht angegeben') + ' L/100km\n' +
+    'E-Mail:     ' + (email || 'nicht angegeben') + '\n\n' +
+    'Gesendet über e5vse10.neotiger13.github.io'
+  );
+  window.location.href = 'mailto:DEINE@EMAIL.DE?subject=' + betreff + '&body=' + body;
 }
 
 function clearForm() {
-  ['f-marke','f-modell','f-motor','f-verbrauch','f-mehr'].forEach(id=>document.getElementById(id).value='');
-  setToggle(true);
+  ['f-marke','f-modell','f-motor','f-verbrauch','f-email'].forEach(id=>document.getElementById(id).value='');
 }
 
 function showView(name) {
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('view-'+name).classList.add('active');
-  const idx=['rechner','datenbank','hinzufuegen'].indexOf(name);
-  document.querySelectorAll('.nav-btn')[idx].classList.add('active');
+  const navMap={'rechner':0,'hinzufuegen':1};
+  if(navMap[name]!==undefined) document.querySelectorAll('.nav-btn')[navMap[name]].classList.add('active');
   if(name==='datenbank') renderDB();
 }
 

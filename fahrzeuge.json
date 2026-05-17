@@ -4,1889 +4,2159 @@
     "modell": "A1 8X",
     "motor": "1.2 TFSI 86 PS (2010–2015)",
     "verbrauch": 5.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 45
   },
   {
     "marke": "Audi",
     "modell": "A1 8X",
     "motor": "1.4 TFSI 122 PS (2010–2015)",
     "verbrauch": 5.8,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 45
   },
   {
     "marke": "Audi",
     "modell": "A1 8X",
     "motor": "1.6 MPI 102 PS (2011–2015)",
     "verbrauch": 6.4,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Audi",
     "modell": "A3 8L",
     "motor": "1.6 MPI 102 PS (1996–2003)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Audi",
     "modell": "A3 8L",
     "motor": "1.8 20V 125 PS (1996–2003)",
     "verbrauch": 8.2,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 55
   },
   {
     "marke": "Audi",
     "modell": "A3 8P",
     "motor": "1.6 MPI 102 PS (2003–2012)",
     "verbrauch": 7.4,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Audi",
     "modell": "A3 8P",
     "motor": "1.8 TFSI 160 PS (2006–2012)",
     "verbrauch": 7.0,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Audi",
     "modell": "A3 8P",
     "motor": "2.0 TFSI 200 PS (2004–2012)",
     "verbrauch": 8.2,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Audi",
     "modell": "A3 8V",
     "motor": "1.2 TFSI 105 PS (2012–2020)",
     "verbrauch": 5.4,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 50
   },
   {
     "marke": "Audi",
     "modell": "A3 8V",
     "motor": "1.4 TFSI 125 PS (2012–2020)",
     "verbrauch": 5.6,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 50
   },
   {
     "marke": "Audi",
     "modell": "A3 8V",
     "motor": "1.8 TFSI 180 PS (2012–2020)",
     "verbrauch": 6.6,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 50
   },
   {
     "marke": "Audi",
     "modell": "A4 B6",
     "motor": "1.8T 163 PS (2000–2004)",
     "verbrauch": 8.9,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 65
   },
   {
     "marke": "Audi",
     "modell": "A4 B7",
     "motor": "1.8T 163 PS (2004–2008)",
     "verbrauch": 8.8,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 65
   },
   {
     "marke": "Audi",
     "modell": "A4 B7",
     "motor": "2.0 TFSI 200 PS (2004–2008)",
     "verbrauch": 8.6,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 65
   },
   {
     "marke": "Audi",
     "modell": "A4 B8",
     "motor": "1.8 TFSI 160 PS (2007–2015)",
     "verbrauch": 7.2,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 65
   },
   {
     "marke": "Audi",
     "modell": "A4 B8",
     "motor": "2.0 TFSI 211 PS (2007–2015)",
     "verbrauch": 8.0,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 65
   },
   {
     "marke": "Audi",
     "modell": "A6 C6",
     "motor": "2.4 V6 177 PS (2004–2011)",
     "verbrauch": 10.5,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 70
   },
   {
     "marke": "Audi",
     "modell": "A6 C6",
     "motor": "2.8 FSI 190 PS (2006–2011)",
     "verbrauch": 9.8,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 70
   },
   {
     "marke": "Audi",
     "modell": "TT 8J",
     "motor": "1.8 TFSI 160 PS (2006–2014)",
     "verbrauch": 7.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Audi",
     "modell": "TT 8J",
     "motor": "2.0 TFSI 200 PS (2006–2014)",
     "verbrauch": 8.2,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "BMW",
     "modell": "1er E87",
     "motor": "116i 115 PS (2004–2011)",
     "verbrauch": 7.8,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 55
   },
   {
     "marke": "BMW",
     "modell": "1er E87",
     "motor": "118i 129 PS (2004–2011)",
     "verbrauch": 8.1,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 55
   },
   {
     "marke": "BMW",
     "modell": "1er E87",
     "motor": "120i 150 PS (2004–2011)",
     "verbrauch": 8.4,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 55
   },
   {
     "marke": "BMW",
     "modell": "1er F20",
     "motor": "114i 102 PS (2011–2019)",
     "verbrauch": 6.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 52
   },
   {
     "marke": "BMW",
     "modell": "1er F20",
     "motor": "116i 136 PS (2011–2019)",
     "verbrauch": 6.8,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 52
   },
   {
     "marke": "BMW",
     "modell": "1er F20",
     "motor": "118i 170 PS (2011–2019)",
     "verbrauch": 6.9,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 52
   },
   {
     "marke": "BMW",
     "modell": "3er E46",
     "motor": "316i 105 PS (1998–2005)",
     "verbrauch": 8.5,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "3er E46",
     "motor": "318i 143 PS (2001–2005)",
     "verbrauch": 8.5,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "3er E46",
     "motor": "320i 150 PS (1998–2005)",
     "verbrauch": 9.2,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "3er E46",
     "motor": "323i 170 PS (1998–2000)",
     "verbrauch": 10.2,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "3er E90",
     "motor": "316i 115 PS (2005–2012)",
     "verbrauch": 7.8,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "3er E90",
     "motor": "318i 129 PS (2005–2012)",
     "verbrauch": 7.9,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "3er E90",
     "motor": "320i 150 PS (2005–2012)",
     "verbrauch": 8.4,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "3er E90",
     "motor": "325i 218 PS (2005–2012)",
     "verbrauch": 10.2,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "3er F30",
     "motor": "316i 136 PS (2011–2019)",
     "verbrauch": 6.7,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "3er F30",
     "motor": "318i 136 PS (2011–2019)",
     "verbrauch": 6.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "3er F30",
     "motor": "320i 184 PS (2011–2019)",
     "verbrauch": 7.2,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 60
   },
   {
     "marke": "BMW",
     "modell": "5er E60",
     "motor": "520i 170 PS (2003–2010)",
     "verbrauch": 9.5,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 70
   },
   {
     "marke": "BMW",
     "modell": "5er E60",
     "motor": "523i 177 PS (2005–2010)",
     "verbrauch": 10.0,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 70
   },
   {
     "marke": "BMW",
     "modell": "5er F10",
     "motor": "520i 184 PS (2010–2017)",
     "verbrauch": 7.6,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 70
   },
   {
     "marke": "BMW",
     "modell": "5er F10",
     "motor": "528i 245 PS (2010–2017)",
     "verbrauch": 8.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 70
   },
   {
     "marke": "Citroën",
     "modell": "C1 I",
     "motor": "1.0i 68 PS (2005–2014)",
     "verbrauch": 5.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 35
   },
   {
     "marke": "Citroën",
     "modell": "C2",
     "motor": "1.1i 60 PS (2003–2009)",
     "verbrauch": 6.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 42
   },
   {
     "marke": "Citroën",
     "modell": "C2",
     "motor": "1.4i 75 PS (2003–2009)",
     "verbrauch": 6.6,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 42
   },
   {
     "marke": "Citroën",
     "modell": "C3 I",
     "motor": "1.4i 75 PS (2002–2009)",
     "verbrauch": 6.6,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Citroën",
     "modell": "C3 I",
     "motor": "1.6i 110 PS (2002–2009)",
     "verbrauch": 7.4,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Citroën",
     "modell": "C3 II",
     "motor": "1.4 VTi 95 PS (2009–2016)",
     "verbrauch": 6.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Citroën",
     "modell": "C3 II",
     "motor": "1.6 VTi 120 PS (2009–2016)",
     "verbrauch": 7.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Citroën",
     "modell": "C4 I",
     "motor": "1.6 16V 110 PS (2004–2010)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Citroën",
     "modell": "C4 I",
     "motor": "2.0 16V 143 PS (2004–2010)",
     "verbrauch": 9.2,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 55
   },
   {
     "marke": "Citroën",
     "modell": "C4 II",
     "motor": "1.6 VTi 120 PS (2010–2018)",
     "verbrauch": 7.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Citroën",
     "modell": "C5 II",
     "motor": "1.8 16V 127 PS (2004–2008)",
     "verbrauch": 8.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 65
   },
   {
     "marke": "Dacia",
     "modell": "Duster I",
     "motor": "1.6 SCe 115 PS (2010–2017)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Dacia",
     "modell": "Logan I",
     "motor": "1.4 MPI 75 PS (2004–2012)",
     "verbrauch": 7.4,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Dacia",
     "modell": "Logan I",
     "motor": "1.6 MPI 90 PS (2004–2012)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Dacia",
     "modell": "Sandero I",
     "motor": "1.4 MPI 75 PS (2008–2012)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Dacia",
     "modell": "Sandero I",
     "motor": "1.6 MPI 90 PS (2008–2012)",
     "verbrauch": 8.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Dacia",
     "modell": "Sandero II",
     "motor": "1.0 SCe 75 PS (2012–2020)",
     "verbrauch": 6.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Fiat",
     "modell": "500",
     "motor": "1.2 8V 69 PS (2007–2015)",
     "verbrauch": 6.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 35
   },
   {
     "marke": "Fiat",
     "modell": "500",
     "motor": "1.4 16V 100 PS (2007–2015)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 35
   },
   {
     "marke": "Fiat",
     "modell": "Bravo II",
     "motor": "1.4 T-Jet 150 PS (2007–2014)",
     "verbrauch": 7.5,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 60
   },
   {
     "marke": "Fiat",
     "modell": "Grande Punto",
     "motor": "1.2 8V 65 PS (2005–2012)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Fiat",
     "modell": "Grande Punto",
     "motor": "1.4 8V 77 PS (2005–2012)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Fiat",
     "modell": "Grande Punto",
     "motor": "1.4 T-Jet 120 PS (2005–2012)",
     "verbrauch": 7.2,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 45
   },
   {
     "marke": "Fiat",
     "modell": "Panda II",
     "motor": "1.1 Fire 54 PS (2003–2012)",
     "verbrauch": 5.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 37
   },
   {
     "marke": "Fiat",
     "modell": "Panda II",
     "motor": "1.2 8V 69 PS (2003–2012)",
     "verbrauch": 6.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 37
   },
   {
     "marke": "Fiat",
     "modell": "Stilo",
     "motor": "1.6 16V 103 PS (2001–2007)",
     "verbrauch": 8.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 60
   },
   {
     "marke": "Ford",
     "modell": "Fiesta V",
     "motor": "1.25 16V 75 PS (2002–2008)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 42
   },
   {
     "marke": "Ford",
     "modell": "Fiesta V",
     "motor": "1.4 16V 80 PS (2002–2008)",
     "verbrauch": 7.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 42
   },
   {
     "marke": "Ford",
     "modell": "Fiesta VI",
     "motor": "1.25 16V 82 PS (2008–2017)",
     "verbrauch": 6.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 42
   },
   {
     "marke": "Ford",
     "modell": "Fiesta VI",
     "motor": "1.4 16V 96 PS (2008–2017)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 42
   },
   {
     "marke": "Ford",
     "modell": "Fiesta VI",
     "motor": "1.6 Ti-VCT 120 PS (2008–2017)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 42
   },
   {
     "marke": "Ford",
     "modell": "Focus I",
     "motor": "1.6 16V 100 PS (1998–2004)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Ford",
     "modell": "Focus I",
     "motor": "1.8 16V 116 PS (1998–2004)",
     "verbrauch": 8.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Ford",
     "modell": "Focus II",
     "motor": "1.4 16V 80 PS (2004–2011)",
     "verbrauch": 7.1,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Ford",
     "modell": "Focus II",
     "motor": "1.6 16V 101 PS (2004–2011)",
     "verbrauch": 7.6,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Ford",
     "modell": "Focus II",
     "motor": "1.8 16V 125 PS (2004–2011)",
     "verbrauch": 8.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Ford",
     "modell": "Focus II",
     "motor": "2.0 16V 145 PS (2004–2011)",
     "verbrauch": 9.2,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 55
   },
   {
     "marke": "Ford",
     "modell": "Focus III",
     "motor": "1.0 EcoBoost 100 PS (2011–2018)",
     "verbrauch": 5.8,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 52
   },
   {
     "marke": "Ford",
     "modell": "Focus III",
     "motor": "1.6 Ti-VCT 105 PS (2011–2018)",
     "verbrauch": 7.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 52
   },
   {
     "marke": "Ford",
     "modell": "Galaxy I",
     "motor": "2.0 16V 116 PS (1995–2006)",
     "verbrauch": 10.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 70
   },
   {
     "marke": "Ford",
     "modell": "Mondeo III",
     "motor": "2.0 16V 145 PS (2000–2007)",
     "verbrauch": 9.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 70
   },
   {
     "marke": "Ford",
     "modell": "Mondeo IV",
     "motor": "1.6 Ti-VCT 120 PS (2007–2014)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 70
   },
   {
     "marke": "Ford",
     "modell": "Mondeo IV",
     "motor": "2.0 Ti-VCT 145 PS (2007–2014)",
     "verbrauch": 9.0,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 70
   },
   {
     "marke": "Ford",
     "modell": "S-Max I",
     "motor": "2.0 Ti-VCT 145 PS (2006–2015)",
     "verbrauch": 9.5,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 70
   },
   {
     "marke": "Honda",
     "modell": "Civic VII",
     "motor": "1.4 iDSI 83 PS (2001–2005)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Honda",
     "modell": "Civic VII",
     "motor": "1.6 VTEC 110 PS (2001–2005)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Honda",
     "modell": "Civic VIII",
     "motor": "1.4 i-VTEC 83 PS (2006–2011)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Honda",
     "modell": "Civic VIII",
     "motor": "1.8 i-VTEC 140 PS (2006–2011)",
     "verbrauch": 7.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 50
   },
   {
     "marke": "Honda",
     "modell": "Jazz II",
     "motor": "1.2 i-VTEC 78 PS (2002–2008)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 40
   },
   {
     "marke": "Honda",
     "modell": "Jazz III",
     "motor": "1.2 i-VTEC 90 PS (2008–2015)",
     "verbrauch": 6.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 40
   },
   {
     "marke": "Hyundai",
     "modell": "i10 I",
     "motor": "1.1 MPI 65 PS (2008–2013)",
     "verbrauch": 5.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 35
   },
   {
     "marke": "Hyundai",
     "modell": "i10 I",
     "motor": "1.2 MPI 78 PS (2008–2013)",
     "verbrauch": 6.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 35
   },
   {
     "marke": "Hyundai",
     "modell": "i20 I",
     "motor": "1.2 MPI 78 PS (2008–2014)",
     "verbrauch": 6.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 43
   },
   {
     "marke": "Hyundai",
     "modell": "i20 I",
     "motor": "1.4 MPI 100 PS (2008–2014)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 43
   },
   {
     "marke": "Hyundai",
     "modell": "i30 I",
     "motor": "1.4 MPI 109 PS (2007–2012)",
     "verbrauch": 7.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 53
   },
   {
     "marke": "Hyundai",
     "modell": "i30 I",
     "motor": "1.6 MPI 122 PS (2007–2012)",
     "verbrauch": 7.6,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 53
   },
   {
     "marke": "Hyundai",
     "modell": "i40",
     "motor": "1.6 GDI 135 PS (2011–2019)",
     "verbrauch": 7.5,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 58
   },
   {
     "marke": "Kia",
     "modell": "Ceed I",
     "motor": "1.4 MPI 90 PS (2006–2012)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 53
   },
   {
     "marke": "Kia",
     "modell": "Ceed I",
     "motor": "1.6 MPI 122 PS (2006–2012)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 53
   },
   {
     "marke": "Kia",
     "modell": "Picanto I",
     "motor": "1.0 MPI 61 PS (2004–2011)",
     "verbrauch": 5.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 35
   },
   {
     "marke": "Kia",
     "modell": "Picanto I",
     "motor": "1.1 MPI 65 PS (2004–2011)",
     "verbrauch": 6.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 35
   },
   {
     "marke": "Kia",
     "modell": "Rio II",
     "motor": "1.4 MPI 97 PS (2005–2011)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 43
   },
   {
     "marke": "Kia",
     "modell": "Sportage II",
     "motor": "2.0 MPI 140 PS (2004–2010)",
     "verbrauch": 10.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 58
   },
   {
     "marke": "Mazda",
     "modell": "2 DY",
     "motor": "1.25 16V 75 PS (2003–2007)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 42
   },
   {
     "marke": "Mazda",
     "modell": "3 BK",
     "motor": "1.6 MZR 105 PS (2003–2009)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Mazda",
     "modell": "3 BK",
     "motor": "2.0 MZR 150 PS (2003–2009)",
     "verbrauch": 9.2,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 55
   },
   {
     "marke": "Mazda",
     "modell": "6 GG",
     "motor": "1.8 MZR 120 PS (2002–2007)",
     "verbrauch": 8.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 60
   },
   {
     "marke": "Mazda",
     "modell": "6 GG",
     "motor": "2.0 MZR 147 PS (2002–2007)",
     "verbrauch": 9.5,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 60
   },
   {
     "marke": "Mercedes",
     "modell": "A-Klasse W168",
     "motor": "A140 82 PS (1997–2004)",
     "verbrauch": 8.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 54
   },
   {
     "marke": "Mercedes",
     "modell": "A-Klasse W168",
     "motor": "A160 102 PS (1997–2004)",
     "verbrauch": 8.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 54
   },
   {
     "marke": "Mercedes",
     "modell": "A-Klasse W169",
     "motor": "A150 95 PS (2004–2012)",
     "verbrauch": 7.5,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 54
   },
   {
     "marke": "Mercedes",
     "modell": "A-Klasse W169",
     "motor": "A170 116 PS (2004–2012)",
     "verbrauch": 7.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 54
   },
   {
     "marke": "Mercedes",
     "modell": "A-Klasse W176",
     "motor": "A180 122 PS (2012–2018)",
     "verbrauch": 6.8,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 50
   },
   {
     "marke": "Mercedes",
     "modell": "B-Klasse W245",
     "motor": "B150 95 PS (2005–2011)",
     "verbrauch": 7.5,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 54
   },
   {
     "marke": "Mercedes",
     "modell": "B-Klasse W245",
     "motor": "B170 116 PS (2005–2011)",
     "verbrauch": 7.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 54
   },
   {
     "marke": "Mercedes",
     "modell": "B-Klasse W246",
     "motor": "B180 122 PS (2011–2019)",
     "verbrauch": 6.8,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 50
   },
   {
     "marke": "Mercedes",
     "modell": "C-Klasse W202",
     "motor": "C180 122 PS (1993–2000)",
     "verbrauch": 9.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 62
   },
   {
     "marke": "Mercedes",
     "modell": "C-Klasse W202",
     "motor": "C200 136 PS (1993–2000)",
     "verbrauch": 10.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 62
   },
   {
     "marke": "Mercedes",
     "modell": "C-Klasse W203",
     "motor": "C180 Kompressor 143 PS (2000–2007)",
     "verbrauch": 8.6,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 62
   },
   {
     "marke": "Mercedes",
     "modell": "C-Klasse W203",
     "motor": "C200 Kompressor 163 PS (2000–2007)",
     "verbrauch": 9.0,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 62
   },
   {
     "marke": "Mercedes",
     "modell": "C-Klasse W204",
     "motor": "C180 156 PS (2007–2014)",
     "verbrauch": 7.9,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 66
   },
   {
     "marke": "Mercedes",
     "modell": "C-Klasse W204",
     "motor": "C200 184 PS (2007–2014)",
     "verbrauch": 8.2,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 66
   },
   {
     "marke": "Mercedes",
     "modell": "E-Klasse W211",
     "motor": "E200 Kompressor 163 PS (2002–2009)",
     "verbrauch": 9.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 70
   },
   {
     "marke": "Mercedes",
     "modell": "E-Klasse W211",
     "motor": "E240 177 PS (2002–2009)",
     "verbrauch": 11.5,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 70
   },
   {
     "marke": "Mini",
     "modell": "R50",
     "motor": "One 90 PS (2001–2006)",
     "verbrauch": 7.5,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 50
   },
   {
     "marke": "Mini",
     "modell": "R50",
     "motor": "Cooper 116 PS (2001–2006)",
     "verbrauch": 7.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 50
   },
   {
     "marke": "Mini",
     "modell": "R56",
     "motor": "One 98 PS (2006–2013)",
     "verbrauch": 7.2,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 50
   },
   {
     "marke": "Mini",
     "modell": "R56",
     "motor": "Cooper 120 PS (2006–2013)",
     "verbrauch": 7.5,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 50
   },
   {
     "marke": "Mitsubishi",
     "modell": "Colt VI",
     "motor": "1.1 MPI 75 PS (2004–2012)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 43
   },
   {
     "marke": "Mitsubishi",
     "modell": "Colt VI",
     "motor": "1.3 MPI 95 PS (2004–2012)",
     "verbrauch": 7.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 43
   },
   {
     "marke": "Nissan",
     "modell": "Micra K12",
     "motor": "1.0 16V 65 PS (2002–2010)",
     "verbrauch": 6.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 41
   },
   {
     "marke": "Nissan",
     "modell": "Micra K12",
     "motor": "1.2 16V 80 PS (2002–2010)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 41
   },
   {
     "marke": "Nissan",
     "modell": "Note E11",
     "motor": "1.4 16V 88 PS (2006–2013)",
     "verbrauch": 7.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 41
   },
   {
     "marke": "Nissan",
     "modell": "Qashqai J10",
     "motor": "1.6 16V 115 PS (2006–2013)",
     "verbrauch": 8.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 60
   },
   {
     "marke": "Nissan",
     "modell": "Qashqai J10",
     "motor": "2.0 16V 141 PS (2006–2013)",
     "verbrauch": 10.2,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 60
   },
   {
     "marke": "Opel",
     "modell": "Adam",
     "motor": "1.2 70 PS (2012–2019)",
     "verbrauch": 6.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 40
   },
   {
     "marke": "Opel",
     "modell": "Adam",
     "motor": "1.4 87 PS (2012–2019)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 40
   },
   {
     "marke": "Opel",
     "modell": "Astra G",
     "motor": "1.4 16V 90 PS (1998–2004)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 52
   },
   {
     "marke": "Opel",
     "modell": "Astra G",
     "motor": "1.6 16V 103 PS (1998–2004)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 52
   },
   {
     "marke": "Opel",
     "modell": "Astra G",
     "motor": "1.8 16V 116 PS (1998–2004)",
     "verbrauch": 9.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 52
   },
   {
     "marke": "Opel",
     "modell": "Astra H",
     "motor": "1.4 Twinport 90 PS (2004–2010)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 52
   },
   {
     "marke": "Opel",
     "modell": "Astra H",
     "motor": "1.6 16V 115 PS (2004–2010)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 52
   },
   {
     "marke": "Opel",
     "modell": "Astra H",
     "motor": "1.8 16V 140 PS (2004–2010)",
     "verbrauch": 8.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 52
   },
   {
     "marke": "Opel",
     "modell": "Astra J",
     "motor": "1.4 Turbo 140 PS (2009–2015)",
     "verbrauch": 6.8,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 56
   },
   {
     "marke": "Opel",
     "modell": "Astra J",
     "motor": "1.6 16V 115 PS (2009–2015)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 56
   },
   {
     "marke": "Opel",
     "modell": "Corsa B",
     "motor": "1.2i 45 PS (1993–2000)",
     "verbrauch": 7.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Opel",
     "modell": "Corsa C",
     "motor": "1.0 12V 58 PS (2000–2006)",
     "verbrauch": 6.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Opel",
     "modell": "Corsa C",
     "motor": "1.2 16V 75 PS (2000–2006)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Opel",
     "modell": "Corsa C",
     "motor": "1.4 16V 90 PS (2000–2006)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Opel",
     "modell": "Corsa D",
     "motor": "1.0 12V 65 PS (2006–2014)",
     "verbrauch": 6.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Opel",
     "modell": "Corsa D",
     "motor": "1.2 16V 80 PS (2006–2014)",
     "verbrauch": 6.3,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Opel",
     "modell": "Corsa D",
     "motor": "1.4 16V 90 PS (2006–2014)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Opel",
     "modell": "Insignia A",
     "motor": "1.6 Turbo 180 PS (2008–2017)",
     "verbrauch": 8.2,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 70
   },
   {
     "marke": "Opel",
     "modell": "Insignia A",
     "motor": "1.8 16V 140 PS (2008–2017)",
     "verbrauch": 8.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 70
   },
   {
     "marke": "Opel",
     "modell": "Meriva A",
     "motor": "1.4 16V 90 PS (2003–2010)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Opel",
     "modell": "Meriva A",
     "motor": "1.6 16V 105 PS (2003–2010)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Opel",
     "modell": "Meriva B",
     "motor": "1.4 Turbo 120 PS (2010–2017)",
     "verbrauch": 7.0,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 45
   },
   {
     "marke": "Opel",
     "modell": "Vectra C",
     "motor": "1.8 16V 122 PS (2002–2008)",
     "verbrauch": 9.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 60
   },
   {
     "marke": "Opel",
     "modell": "Zafira B",
     "motor": "1.6 16V 105 PS (2005–2015)",
     "verbrauch": 8.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 58
   },
   {
     "marke": "Opel",
     "modell": "Zafira B",
     "motor": "1.8 16V 140 PS (2005–2015)",
     "verbrauch": 9.2,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 58
   },
   {
     "marke": "Peugeot",
     "modell": "107",
     "motor": "1.0 12V 68 PS (2005–2014)",
     "verbrauch": 5.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 35
   },
   {
     "marke": "Peugeot",
     "modell": "206",
     "motor": "1.1i 60 PS (1998–2009)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "206",
     "motor": "1.4i 75 PS (1998–2009)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "206",
     "motor": "1.6i 110 PS (1998–2009)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "207",
     "motor": "1.4 VTi 95 PS (2006–2012)",
     "verbrauch": 6.6,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "207",
     "motor": "1.6 VTi 120 PS (2006–2012)",
     "verbrauch": 7.4,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "207",
     "motor": "1.6 THP 150 PS (2006–2012)",
     "verbrauch": 7.8,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "208 I",
     "motor": "1.0 VTi 68 PS (2012–2019)",
     "verbrauch": 5.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "208 I",
     "motor": "1.2 VTi 82 PS (2012–2019)",
     "verbrauch": 5.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "208 I",
     "motor": "1.6 VTi 120 PS (2012–2019)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "301",
     "motor": "1.2 VTi 72 PS (2012–2017)",
     "verbrauch": 6.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "308 I",
     "motor": "1.6 VTi 120 PS (2007–2013)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 60
   },
   {
     "marke": "Peugeot",
     "modell": "308 I",
     "motor": "1.6 THP 150 PS (2007–2013)",
     "verbrauch": 8.0,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 60
   },
   {
     "marke": "Peugeot",
     "modell": "407",
     "motor": "1.8 16V 116 PS (2004–2010)",
     "verbrauch": 8.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 65
   },
   {
     "marke": "Peugeot",
     "modell": "407",
     "motor": "2.0 16V 143 PS (2004–2010)",
     "verbrauch": 9.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 65
   },
   {
     "marke": "Renault",
     "modell": "Clio II",
     "motor": "1.2 16V 75 PS (1998–2005)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Renault",
     "modell": "Clio II",
     "motor": "1.4 16V 98 PS (1998–2005)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Renault",
     "modell": "Clio II",
     "motor": "1.6 16V 107 PS (1998–2005)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Renault",
     "modell": "Clio III",
     "motor": "1.2 16V 75 PS (2005–2012)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Renault",
     "modell": "Clio III",
     "motor": "1.4 16V 98 PS (2005–2012)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Renault",
     "modell": "Clio III",
     "motor": "1.6 16V 111 PS (2005–2012)",
     "verbrauch": 8.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Renault",
     "modell": "Kangoo I",
     "motor": "1.4i 75 PS (1997–2007)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Renault",
     "modell": "Kangoo II",
     "motor": "1.6 16V 105 PS (2008–2021)",
     "verbrauch": 8.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Renault",
     "modell": "Laguna II",
     "motor": "1.6 16V 112 PS (2001–2007)",
     "verbrauch": 8.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 60
   },
   {
     "marke": "Renault",
     "modell": "Laguna II",
     "motor": "2.0 16V 135 PS (2001–2007)",
     "verbrauch": 9.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 60
   },
   {
     "marke": "Renault",
     "modell": "Mégane II",
     "motor": "1.4 16V 98 PS (2002–2008)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Renault",
     "modell": "Mégane II",
     "motor": "1.6 16V 112 PS (2002–2008)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Renault",
     "modell": "Mégane II",
     "motor": "2.0 16V 135 PS (2002–2008)",
     "verbrauch": 9.5,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 55
   },
   {
     "marke": "Renault",
     "modell": "Mégane III",
     "motor": "1.2 TCe 115 PS (2008–2016)",
     "verbrauch": 6.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Renault",
     "modell": "Mégane III",
     "motor": "1.6 16V 110 PS (2008–2016)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Renault",
     "modell": "Modus",
     "motor": "1.2 16V 75 PS (2004–2008)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Renault",
     "modell": "Modus",
     "motor": "1.4 16V 98 PS (2004–2012)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Renault",
     "modell": "Modus",
     "motor": "1.6 16V 112 PS (2004–2013)",
     "verbrauch": 8.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Renault",
     "modell": "Scénic II",
     "motor": "1.6 16V 112 PS (2003–2009)",
     "verbrauch": 8.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 60
   },
   {
     "marke": "Renault",
     "modell": "Scénic II",
     "motor": "2.0 16V 135 PS (2003–2009)",
     "verbrauch": 10.0,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 60
   },
   {
     "marke": "Renault",
     "modell": "Twingo II",
     "motor": "1.2 16V 75 PS (2007–2014)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 40
   },
   {
     "marke": "Renault",
     "modell": "Twingo II",
     "motor": "1.2 TCe 100 PS (2007–2014)",
     "verbrauch": 6.8,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 40
   },
   {
     "marke": "Seat",
     "modell": "Altea",
     "motor": "1.4 16V 85 PS (2004–2015)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Seat",
     "modell": "Altea",
     "motor": "1.6 MPI 102 PS (2004–2015)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Seat",
     "modell": "Ibiza III",
     "motor": "1.4 16V 85 PS (2002–2008)",
     "verbrauch": 6.9,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Seat",
     "modell": "Ibiza III",
     "motor": "1.6 16V 105 PS (2002–2008)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Seat",
     "modell": "Ibiza IV",
     "motor": "1.2 12V 70 PS (2008–2017)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Seat",
     "modell": "Ibiza IV",
     "motor": "1.4 16V 85 PS (2008–2017)",
     "verbrauch": 7.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Seat",
     "modell": "Ibiza IV",
     "motor": "1.6 MPI 105 PS (2008–2017)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Seat",
     "modell": "León I",
     "motor": "1.4 16V 75 PS (1999–2006)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Seat",
     "modell": "León I",
     "motor": "1.6 16V 105 PS (1999–2006)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Seat",
     "modell": "León II",
     "motor": "1.4 TSI 125 PS (2005–2012)",
     "verbrauch": 7.0,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Seat",
     "modell": "León II",
     "motor": "1.6 MPI 102 PS (2005–2012)",
     "verbrauch": 7.6,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Seat",
     "modell": "Toledo III",
     "motor": "1.6 MPI 102 PS (2004–2009)",
     "verbrauch": 8.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Skoda",
     "modell": "Fabia I",
     "motor": "1.0 MPI 50 PS (1999–2007)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Skoda",
     "modell": "Fabia I",
     "motor": "1.4 MPI 68 PS (1999–2007)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Skoda",
     "modell": "Fabia II",
     "motor": "1.2 12V 60 PS (2007–2014)",
     "verbrauch": 6.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Skoda",
     "modell": "Fabia II",
     "motor": "1.2 TSI 86 PS (2010–2014)",
     "verbrauch": 5.8,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 45
   },
   {
     "marke": "Skoda",
     "modell": "Fabia II",
     "motor": "1.4 16V 86 PS (2007–2014)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Skoda",
     "modell": "Octavia I",
     "motor": "1.4 MPI 60 PS (1996–2010)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Skoda",
     "modell": "Octavia I",
     "motor": "1.6 MPI 75 PS (1996–2010)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Skoda",
     "modell": "Octavia II",
     "motor": "1.4 TSI 122 PS (2004–2013)",
     "verbrauch": 6.8,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Skoda",
     "modell": "Octavia II",
     "motor": "1.6 MPI 102 PS (2004–2013)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Skoda",
     "modell": "Octavia II",
     "motor": "1.8 TSI 160 PS (2007–2013)",
     "verbrauch": 7.8,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Skoda",
     "modell": "Roomster",
     "motor": "1.2 12V 70 PS (2006–2015)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Skoda",
     "modell": "Roomster",
     "motor": "1.4 16V 86 PS (2006–2015)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Skoda",
     "modell": "Superb I",
     "motor": "1.8T 150 PS (2001–2008)",
     "verbrauch": 9.2,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 62
   },
   {
     "marke": "Skoda",
     "modell": "Superb II",
     "motor": "1.8 TSI 160 PS (2008–2015)",
     "verbrauch": 8.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 62
   },
   {
     "marke": "Toyota",
     "modell": "Auris I",
     "motor": "1.4 VVT-i 97 PS (2006–2012)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Toyota",
     "modell": "Auris I",
     "motor": "1.6 VVT-i 124 PS (2006–2012)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Toyota",
     "modell": "Avensis II",
     "motor": "1.8 VVT-i 129 PS (2003–2008)",
     "verbrauch": 8.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 60
   },
   {
     "marke": "Toyota",
     "modell": "Avensis III",
     "motor": "1.6 Valvematic 132 PS (2009–2018)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 60
   },
   {
     "marke": "Toyota",
     "modell": "Corolla E12",
     "motor": "1.4 VVT-i 97 PS (2001–2007)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Toyota",
     "modell": "Corolla E12",
     "motor": "1.6 VVT-i 110 PS (2001–2007)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Toyota",
     "modell": "Yaris I",
     "motor": "1.0 VVT-i 65 PS (1999–2005)",
     "verbrauch": 6.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 40
   },
   {
     "marke": "Toyota",
     "modell": "Yaris II",
     "motor": "1.0 VVT-i 69 PS (2005–2011)",
     "verbrauch": 5.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 40
   },
   {
     "marke": "Toyota",
     "modell": "Yaris II",
     "motor": "1.3 VVT-i 86 PS (2005–2011)",
     "verbrauch": 6.3,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 40
   },
   {
     "marke": "Volkswagen",
     "modell": "Fox",
     "motor": "1.2 55 PS (2005–2011)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf IV",
     "motor": "1.4 16V 75 PS (1997–2004)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf IV",
     "motor": "1.6 16V 105 PS (1997–2004)",
     "verbrauch": 8.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf IV",
     "motor": "1.8 20V 125 PS (1997–2004)",
     "verbrauch": 9.5,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf IV",
     "motor": "2.0 GTI 115 PS (1997–2004)",
     "verbrauch": 9.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf V",
     "motor": "1.4 16V 80 PS (2003–2008)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf V",
     "motor": "1.4 TSI 122 PS (2006–2008)",
     "verbrauch": 6.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf V",
     "motor": "1.6 MPI 102 PS (2003–2008)",
     "verbrauch": 7.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf V",
     "motor": "1.8 TFSI 160 PS (2006–2008)",
     "verbrauch": 8.0,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf V",
     "motor": "2.0 GTI TFSI 200 PS (2004–2008)",
     "verbrauch": 9.0,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf VI",
     "motor": "1.2 TSI 105 PS (2008–2012)",
     "verbrauch": 6.2,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf VI",
     "motor": "1.4 TSI 122 PS (2008–2012)",
     "verbrauch": 6.4,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf VI",
     "motor": "1.6 MPI 102 PS (2008–2012)",
     "verbrauch": 7.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf VI",
     "motor": "2.0 GTI TSI 210 PS (2009–2012)",
     "verbrauch": 9.2,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 55
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf VII",
     "motor": "1.2 TSI 85 PS (2012–2020)",
     "verbrauch": 5.8,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 50
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf VII",
     "motor": "1.4 TSI 125 PS (2012–2020)",
     "verbrauch": 6.2,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 50
   },
   {
     "marke": "Volkswagen",
     "modell": "Golf VII",
     "motor": "1.6 MPI 110 PS (2012–2020)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Volkswagen",
     "modell": "Passat B5",
     "motor": "1.8 20V 125 PS (1996–2005)",
     "verbrauch": 9.5,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 62
   },
   {
     "marke": "Volkswagen",
     "modell": "Passat B5",
     "motor": "2.0 115 PS (1996–2005)",
     "verbrauch": 10.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 62
   },
   {
     "marke": "Volkswagen",
     "modell": "Passat B6",
     "motor": "1.8 TFSI 160 PS (2005–2010)",
     "verbrauch": 8.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 70
   },
   {
     "marke": "Volkswagen",
     "modell": "Passat B7",
     "motor": "1.4 TSI 122 PS (2010–2015)",
     "verbrauch": 7.0,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 70
   },
   {
     "marke": "Volkswagen",
     "modell": "Passat B7",
     "motor": "1.8 TSI 160 PS (2010–2015)",
     "verbrauch": 8.0,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 70
   },
   {
     "marke": "Volkswagen",
     "modell": "Polo IV",
     "motor": "1.2 12V 54 PS (2001–2009)",
     "verbrauch": 6.2,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Volkswagen",
     "modell": "Polo IV",
     "motor": "1.4 16V 75 PS (2001–2009)",
     "verbrauch": 6.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Volkswagen",
     "modell": "Polo IV",
     "motor": "1.6 16V 105 PS (2001–2009)",
     "verbrauch": 7.8,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Volkswagen",
     "modell": "Polo V",
     "motor": "1.2 12V 60 PS (2009–2017)",
     "verbrauch": 6.5,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Volkswagen",
     "modell": "Polo V",
     "motor": "1.2 TSI 90 PS (2009–2017)",
     "verbrauch": 5.9,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 45
   },
   {
     "marke": "Volkswagen",
     "modell": "Polo V",
     "motor": "1.4 16V 85 PS (2009–2017)",
     "verbrauch": 7.0,
-    "mehr": 1.5
+    "mehr": 1.5,
+    "tank": 45
   },
   {
     "marke": "Volkswagen",
     "modell": "Tiguan I",
     "motor": "1.4 TSI 150 PS (2007–2016)",
     "verbrauch": 8.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 65
   },
   {
     "marke": "Volkswagen",
     "modell": "Tiguan I",
     "motor": "2.0 TSI 200 PS (2007–2016)",
     "verbrauch": 10.2,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 65
   },
   {
     "marke": "Volkswagen",
     "modell": "Touran I",
     "motor": "1.4 TSI 140 PS (2006–2010)",
     "verbrauch": 8.0,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 65
   },
   {
     "marke": "Volkswagen",
     "modell": "Touran II",
     "motor": "1.2 TSI 105 PS (2010–2015)",
     "verbrauch": 7.5,
-    "mehr": 1.2
+    "mehr": 1.2,
+    "tank": 65
   },
   {
     "marke": "Volvo",
     "modell": "S40 II",
     "motor": "1.8i 125 PS (2004–2012)",
     "verbrauch": 8.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 62
   },
   {
     "marke": "Volvo",
     "modell": "S40 II",
     "motor": "2.0i 145 PS (2004–2012)",
     "verbrauch": 9.5,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 62
   },
   {
     "marke": "Volvo",
     "modell": "V50",
     "motor": "1.8i 125 PS (2004–2012)",
     "verbrauch": 8.8,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 62
   },
   {
     "marke": "Volvo",
     "modell": "V70 II",
     "motor": "2.0T 180 PS (2000–2007)",
     "verbrauch": 11.0,
-    "mehr": 1.4
+    "mehr": 1.4,
+    "tank": 70
   },
   {
     "marke": "Volvo",
     "modell": "V70 III",
     "motor": "2.0T 203 PS (2007–2016)",
     "verbrauch": 9.8,
-    "mehr": 1.3
+    "mehr": 1.3,
+    "tank": 70
   }
 ]

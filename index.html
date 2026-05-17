@@ -279,6 +279,10 @@
             <input type="number" id="f-verbrauch" min="3" max="20" step="0.1" placeholder="5.5">
           </div>
           <div class="form-group">
+            <label>Tankgröße (Liter)</label>
+            <input type="number" id="f-tank" min="25" max="100" step="1" placeholder="50">
+          </div>
+          <div class="form-group">
             <label>E10-Mehrverbrauch (%)</label>
             <input type="number" id="f-mehr" min="0.5" max="3" step="0.1" placeholder="1.2">
           </div>
@@ -377,6 +381,7 @@ function onMotor() {
   if(idx==='') { selected=null; document.getElementById('fahrzeug-chips').style.display='none'; update(); return; }
   selected = getMotoren(marke,modell)[parseInt(idx)];
   document.getElementById('verbrauch').value = selected.verbrauch;
+  if(selected.tank) document.getElementById('tank').value = selected.tank;
   document.getElementById('chip-v').textContent = 'Verbrauch: '+selected.verbrauch.toFixed(1)+' L/100km';
   document.getElementById('chip-m').textContent = 'Mehrverbr.: ~'+selected.mehr+' %';
   document.getElementById('fahrzeug-chips').style.display = 'flex';
@@ -536,13 +541,15 @@ function updatePreview() {
   const motor = document.getElementById('f-motor').value.trim();
   const verbrauch = parseFloat(document.getElementById('f-verbrauch').value);
   const mehr = parseFloat(document.getElementById('f-mehr').value)||1.5;
-  const json = {marke, modell, motor, verbrauch, mehr};
+  const tank = parseInt(document.getElementById('f-tank').value)||50;
+  const json = {marke, modell, motor, verbrauch, mehr, tank};
   const lines = [
     '<span style="color:var(--text3)">{</span>',
     '  <span style="color:var(--blue)">"marke"</span>: <span style="color:var(--green)">"' + marke + '"</span>,',
     '  <span style="color:var(--blue)">"modell"</span>: <span style="color:var(--green)">"' + modell + '"</span>,',
     '  <span style="color:var(--blue)">"motor"</span>: <span style="color:var(--green)">"' + motor + '"</span>,',
     '  <span style="color:var(--blue)">"verbrauch"</span>: <span style="color:var(--amber)">' + verbrauch.toFixed(1) + '</span>,',
+    '  <span style="color:var(--blue)">"tank"</span>: <span style="color:var(--amber)">' + tank + '</span>,',
     '  <span style="color:var(--blue)">"mehr"</span>: <span style="color:var(--amber)">' + mehr.toFixed(1) + '</span>',
     '<span style="color:var(--text3)">}</span>',
   ];
@@ -565,7 +572,7 @@ function meldenPerMail() {
 }
 
 function clearForm() {
-  ['f-marke','f-modell','f-motor','f-verbrauch','f-mehr','f-email'].forEach(id=>{
+  ['f-marke','f-modell','f-motor','f-verbrauch','f-tank','f-mehr','f-email'].forEach(id=>{
     const el = document.getElementById(id);
     if(el) el.value='';
   });

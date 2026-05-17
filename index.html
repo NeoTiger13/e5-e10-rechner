@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>E5 vs E10 — Tankentscheidung</title>
+<title>E5vsE10 — Tankentscheidung</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -24,485 +24,109 @@
     --amber-bg: #fdf3e0;
     --blue: #1a3f6b;
     --blue-bg: #e8f0fb;
-    --accent: #1a1a18;
     --radius: 10px;
     --radius-lg: 16px;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; font-size: 15px; line-height: 1.6; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  header {
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 60px;
-  }
-
-  .logo {
-    font-family: 'DM Mono', monospace;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: .04em;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .logo-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--text);
-  }
-
-  nav {
-    display: flex;
-    gap: 4px;
-  }
-
-  .nav-btn {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    padding: 6px 16px;
-    border-radius: 8px;
-    border: 1px solid transparent;
-    background: transparent;
-    color: var(--text2);
-    cursor: pointer;
-    transition: all .15s;
-    font-weight: 400;
-  }
-
+  header { border-bottom: 1px solid var(--border); background: var(--surface); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { font-family: 'DM Mono', monospace; font-size: 15px; font-weight: 500; letter-spacing: .02em; display: flex; align-items: center; gap: 10px; }
+  .logo span { color: var(--text3); }
+  nav { display: flex; gap: 4px; }
+  .nav-btn { font-family: 'DM Sans', sans-serif; font-size: 13px; padding: 6px 16px; border-radius: 8px; border: 1px solid transparent; background: transparent; color: var(--text2); cursor: pointer; transition: all .15s; }
   .nav-btn:hover { background: var(--surface2); color: var(--text); }
-  .nav-btn.active { background: var(--text); color: #fff; border-color: var(--text); }
+  .nav-btn.active { background: var(--text); color: #fff; }
 
-  main {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 2.5rem 1.5rem;
-  }
-
+  main { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem; }
   .view { display: none; }
   .view.active { display: block; }
 
-  .page-title {
-    font-size: 13px;
-    font-family: 'DM Mono', monospace;
-    color: var(--text3);
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    margin-bottom: .5rem;
-  }
-
-  h1 {
-    font-size: 28px;
-    font-weight: 300;
-    letter-spacing: -.02em;
-    margin-bottom: 2rem;
-    color: var(--text);
-  }
-
-  h2 {
-    font-size: 11px;
-    font-family: 'DM Mono', monospace;
-    font-weight: 500;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--text3);
-    margin-bottom: 12px;
-    margin-top: 2rem;
-  }
-
+  .page-title { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--text3); letter-spacing: .07em; text-transform: uppercase; margin-bottom: .4rem; }
+  h1 { font-size: 28px; font-weight: 300; letter-spacing: -.02em; margin-bottom: 2rem; }
+  h2 { font-size: 11px; font-family: 'DM Mono', monospace; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--text3); margin-bottom: 12px; margin-top: 1.75rem; }
   h2:first-of-type { margin-top: 0; }
 
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 1.25rem 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  select, input[type="number"], input[type="text"] {
-    width: 100%;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    padding: 9px 12px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--bg);
-    color: var(--text);
-    outline: none;
-    transition: border-color .15s;
-    appearance: none;
-  }
-
-  select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239e9e96' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    padding-right: 36px;
-    cursor: pointer;
-  }
-
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 1rem; }
+  select, input[type="number"], input[type="text"] { width: 100%; font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 9px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg); color: var(--text); outline: none; transition: border-color .15s; appearance: none; }
+  select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239e9e96' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; cursor: pointer; }
   select:focus, input:focus { border-color: var(--text); }
+  select:disabled { opacity: .4; cursor: not-allowed; }
 
-  .sel-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 1rem;
-  }
+  .sel-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 1rem; }
+  @media (max-width: 580px) { .sel-row { grid-template-columns: 1fr; } nav .nav-btn span { display: none; } }
+  .sel-label { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--text3); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 6px; }
 
-  @media (max-width: 600px) { .sel-row { grid-template-columns: 1fr; } }
+  .price-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: .5rem; }
+  .slider-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .slider-label { font-size: 13px; color: var(--text2); min-width: 180px; }
+  input[type="range"] { -webkit-appearance: none; flex: 1; height: 3px; border-radius: 2px; outline: none; border: none; padding: 0; background: linear-gradient(to right, var(--text) 0%, var(--text) var(--pct,30%), var(--border-strong) var(--pct,30%), var(--border-strong) 100%); }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--surface); border: 2px solid var(--text); cursor: pointer; }
+  .slider-val { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; min-width: 68px; text-align: right; }
 
-  .sel-label {
-    font-size: 11px;
-    font-family: 'DM Mono', monospace;
-    color: var(--text3);
-    letter-spacing: .05em;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-
-  .price-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 1rem;
-  }
-
-  .slider-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 10px;
-  }
-
-  .slider-label {
-    font-size: 13px;
-    color: var(--text2);
-    min-width: 180px;
-  }
-
-  input[type="range"] {
-    -webkit-appearance: none;
-    flex: 1;
-    height: 3px;
-    background: var(--border-strong);
-    border-radius: 2px;
-    outline: none;
-    border: none;
-    padding: 0;
-    background: linear-gradient(to right, var(--text) 0%, var(--text) var(--pct, 50%), var(--border) var(--pct, 50%), var(--border) 100%);
-  }
-
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 16px; height: 16px;
-    border-radius: 50%;
-    background: var(--surface);
-    border: 2px solid var(--text);
-    cursor: pointer;
-  }
-
-  .slider-val {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px;
-    font-weight: 500;
-    min-width: 64px;
-    text-align: right;
-    color: var(--text);
-  }
-
-  .info-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid var(--border);
-  }
-
-  .chip {
-    font-size: 12px;
-    font-family: 'DM Mono', monospace;
-    padding: 4px 10px;
-    border-radius: 6px;
-    background: var(--surface2);
-    color: var(--text2);
-  }
-
+  .info-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .chip { font-size: 12px; font-family: 'DM Mono', monospace; padding: 4px 10px; border-radius: 6px; background: var(--surface2); color: var(--text2); }
   .chip.green { background: var(--green-bg); color: var(--green); }
   .chip.red { background: var(--red-bg); color: var(--red); }
 
-  .metrics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
-    margin: 1rem 0;
-  }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 10px; margin: 1rem 0; }
+  .metric { background: var(--surface2); border-radius: var(--radius); padding: .85rem 1rem; }
+  .metric-label { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--text3); letter-spacing: .03em; margin-bottom: 4px; }
+  .metric-value { font-size: 22px; font-weight: 300; letter-spacing: -.02em; }
+  .metric-unit { font-size: 11px; color: var(--text3); }
 
-  .metric {
-    background: var(--surface2);
-    border-radius: var(--radius);
-    padding: .85rem 1rem;
-  }
-
-  .metric-label {
-    font-size: 11px;
-    font-family: 'DM Mono', monospace;
-    color: var(--text3);
-    letter-spacing: .04em;
-    margin-bottom: 4px;
-  }
-
-  .metric-value {
-    font-size: 22px;
-    font-weight: 300;
-    color: var(--text);
-    letter-spacing: -.02em;
-  }
-
-  .metric-unit {
-    font-size: 11px;
-    color: var(--text3);
-  }
-
-  .verdict {
-    border-radius: var(--radius-lg);
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    margin-top: 1rem;
-    transition: border-color .2s, background .2s;
-  }
-
+  .verdict { border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; display: flex; align-items: flex-start; gap: 14px; border: 1px solid var(--border); background: var(--surface); margin-top: 1rem; transition: border-color .2s, background .2s; }
   .verdict.green { border-color: #a8d5b8; background: var(--green-bg); }
   .verdict.red { border-color: #e8aaaa; background: var(--red-bg); }
   .verdict.amber { border-color: #e8d08a; background: var(--amber-bg); }
-
-  .verdict-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
-
-  .verdict-title {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 3px;
-    color: var(--text);
-  }
-
-  .verdict-sub {
-    font-size: 13px;
-    color: var(--text2);
-  }
+  .verdict-icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; font-family: 'DM Mono', monospace; }
+  .verdict-title { font-size: 16px; font-weight: 500; margin-bottom: 3px; }
+  .verdict-sub { font-size: 13px; color: var(--text2); }
 
   .divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0; }
 
-  /* DB table */
-  .db-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-
-  .db-table th {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: .05em;
-    text-transform: uppercase;
-    color: var(--text3);
-    padding: 8px 12px;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface2);
-  }
-
-  .db-table th:first-child { border-radius: var(--radius) 0 0 0; }
-  .db-table th:last-child { border-radius: 0 var(--radius) 0 0; }
-
-  .db-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-    color: var(--text);
-    vertical-align: middle;
-  }
-
+  .db-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1rem; }
+  .db-search { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); }
+  .db-search input { background: var(--bg); }
+  .db-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .db-table th { font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; color: var(--text3); padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); background: var(--surface2); }
+  .db-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
   .db-table tr:last-child td { border-bottom: none; }
   .db-table tr:hover td { background: var(--surface2); }
-
   .db-table .custom-row td { background: #fdfcf5; }
   .db-table .custom-row:hover td { background: #f5f4ec; }
+  .db-count { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--text3); padding: 8px 12px; border-top: 1px solid var(--border); }
 
-  .badge {
-    display: inline-block;
-    font-size: 11px;
-    font-family: 'DM Mono', monospace;
-    padding: 3px 8px;
-    border-radius: 6px;
-    font-weight: 500;
-  }
-
+  .badge { display: inline-block; font-size: 11px; font-family: 'DM Mono', monospace; padding: 3px 8px; border-radius: 6px; font-weight: 500; }
   .badge.yes { background: var(--green-bg); color: var(--green); }
   .badge.no { background: var(--red-bg); color: var(--red); }
-  .badge.custom { background: var(--blue-bg); color: var(--blue); }
+  .tag-custom { display: inline-block; font-size: 10px; font-family: 'DM Mono', monospace; padding: 2px 6px; border-radius: 4px; background: var(--blue-bg); color: var(--blue); margin-left: 6px; vertical-align: middle; }
 
-  /* Add form */
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 1rem;
-  }
-
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.25rem; }
   @media (max-width: 520px) { .form-grid { grid-template-columns: 1fr; } }
-
-  .form-group label {
-    display: block;
-    font-size: 11px;
-    font-family: 'DM Mono', monospace;
-    color: var(--text3);
-    letter-spacing: .05em;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-  }
-
-  .e10-toggle {
-    display: flex;
-    gap: 0;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-
-  .e10-toggle button {
-    flex: 1;
-    padding: 9px 0;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    border: none;
-    background: transparent;
-    color: var(--text2);
-    cursor: pointer;
-    transition: all .15s;
-  }
-
+  .form-group label { display: block; font-size: 11px; font-family: 'DM Mono', monospace; color: var(--text3); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 6px; }
+  .e10-toggle { display: flex; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .e10-toggle button { flex: 1; padding: 9px 0; font-family: 'DM Sans', sans-serif; font-size: 13px; border: none; background: transparent; color: var(--text2); cursor: pointer; transition: all .15s; }
   .e10-toggle button.active { background: var(--text); color: #fff; }
 
-  .btn {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    padding: 10px 20px;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    background: var(--text);
-    color: #fff;
-    cursor: pointer;
-    transition: opacity .15s;
-    font-weight: 400;
-  }
-
+  .btn { font-family: 'DM Sans', sans-serif; font-size: 14px; padding: 10px 20px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--text); color: #fff; cursor: pointer; transition: opacity .15s; }
   .btn:hover { opacity: .85; }
-
-  .btn.secondary {
-    background: transparent;
-    color: var(--text);
-  }
-
-  .btn.danger {
-    background: transparent;
-    color: var(--red);
-    border-color: #e8aaaa;
-    padding: 4px 10px;
-    font-size: 12px;
-  }
-
-  .btn.danger:hover { background: var(--red-bg); }
-
-  .delete-btn {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    padding: 3px 8px;
-    border-radius: 6px;
-    border: 1px solid #e8aaaa;
-    background: transparent;
-    color: var(--red);
-    cursor: pointer;
-  }
-
+  .btn.secondary { background: transparent; color: var(--text); }
+  .delete-btn { font-family: 'DM Mono', monospace; font-size: 11px; padding: 3px 8px; border-radius: 6px; border: 1px solid #e8aaaa; background: transparent; color: var(--red); cursor: pointer; }
   .delete-btn:hover { background: var(--red-bg); }
 
-  .notice {
-    font-size: 12px;
-    font-family: 'DM Mono', monospace;
-    color: var(--text3);
-    padding: 8px 12px;
-    background: var(--surface2);
-    border-radius: var(--radius);
-    margin-top: 1rem;
-  }
+  .msg { font-size: 13px; padding: 8px 14px; border-radius: var(--radius); margin-top: 12px; display: none; }
+  .msg.success { background: var(--green-bg); color: var(--green); }
+  .msg.error { background: var(--red-bg); color: var(--red); }
 
-  .empty-state {
-    text-align: center;
-    padding: 3rem 1rem;
-    color: var(--text3);
-    font-size: 13px;
-  }
-
-  .tag-custom {
-    display: inline-block;
-    font-size: 10px;
-    font-family: 'DM Mono', monospace;
-    padding: 2px 6px;
-    border-radius: 4px;
-    background: var(--blue-bg);
-    color: var(--blue);
-    margin-left: 6px;
-    vertical-align: middle;
-  }
-
-  .success-msg {
-    font-size: 13px;
-    color: var(--green);
-    background: var(--green-bg);
-    padding: 8px 14px;
-    border-radius: var(--radius);
-    margin-top: 12px;
-    display: none;
-  }
-
-  .error-msg {
-    font-size: 13px;
-    color: var(--red);
-    background: var(--red-bg);
-    padding: 8px 14px;
-    border-radius: var(--radius);
-    margin-top: 12px;
-    display: none;
-  }
+  .notice { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--text3); padding: 8px 12px; background: var(--surface2); border-radius: var(--radius); margin-top: 1rem; }
+  .loading { text-align: center; padding: 3rem; font-size: 13px; font-family: 'DM Mono', monospace; color: var(--text3); }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">
-    <div class="logo-dot"></div>
-    E5 / E10
-  </div>
+  <div class="logo">E5<span>vs</span>E10</div>
   <nav>
     <button class="nav-btn active" onclick="showView('rechner')">Rechner</button>
     <button class="nav-btn" onclick="showView('datenbank')">Datenbank</button>
@@ -518,11 +142,11 @@
     <h1>E5 oder E10 heute?</h1>
 
     <div class="card">
-      <h2>Fahrzeug</h2>
+      <h2>Fahrzeug auswählen</h2>
       <div class="sel-row">
         <div>
           <div class="sel-label">Marke</div>
-          <select id="sel-marke" onchange="onMarke()"><option value="">— wählen —</option></select>
+          <select id="sel-marke" onchange="onMarke()"><option value="">Laden…</option></select>
         </div>
         <div>
           <div class="sel-label">Modell</div>
@@ -533,10 +157,9 @@
           <select id="sel-motor" onchange="onMotor()" disabled><option value="">— wählen —</option></select>
         </div>
       </div>
-
       <div class="info-chips" id="fahrzeug-chips" style="display:none;">
         <span class="chip" id="chip-v"></span>
-        <span class="chip" id="chip-e10"></span>
+        <span class="chip green">E10: freigegeben ✓</span>
         <span class="chip" id="chip-m"></span>
       </div>
     </div>
@@ -546,11 +169,11 @@
       <div class="price-row">
         <div>
           <div class="sel-label">Super E5 (€ / Liter)</div>
-          <input type="number" id="preis-e5" min="1.2" max="2.5" step="0.001" value="1.850" oninput="updateRange();update()">
+          <input type="number" id="preis-e5" min="1.2" max="2.5" step="0.001" value="1.850" oninput="updateSliders();update()">
         </div>
         <div>
           <div class="sel-label">Super E10 (€ / Liter)</div>
-          <input type="number" id="preis-e10" min="1.2" max="2.5" step="0.001" value="1.790" oninput="updateRange();update()">
+          <input type="number" id="preis-e10" min="1.2" max="2.5" step="0.001" value="1.790" oninput="updateSliders();update()">
         </div>
       </div>
     </div>
@@ -559,64 +182,66 @@
       <h2>Fahrprofil</h2>
       <div class="slider-row">
         <span class="slider-label">Verbrauch (L / 100 km)</span>
-        <input type="range" min="4.0" max="16.0" step="0.1" value="7.5" id="verbrauch" oninput="updateRange();update()">
+        <input type="range" min="4.0" max="16.0" step="0.1" value="7.5" id="verbrauch" oninput="updateSliders();update()">
         <span class="slider-val" id="verbrauch-out">7,5 L</span>
       </div>
       <div class="slider-row">
         <span class="slider-label">Jahreskilometer</span>
-        <input type="range" min="3000" max="60000" step="1000" value="15000" id="km" oninput="updateRange();update()">
+        <input type="range" min="3000" max="60000" step="1000" value="15000" id="km" oninput="updateSliders();update()">
         <span class="slider-val" id="km-out">15.000 km</span>
       </div>
     </div>
 
     <div class="metrics">
-      <div class="metric"><div class="metric-label">Jahresverbrauch</div><div><span class="metric-value" id="m-liter">—</span> <span class="metric-unit">L</span></div></div>
-      <div class="metric"><div class="metric-label">Mehrverbrauch E10</div><div><span class="metric-value" id="m-mehr">—</span> <span class="metric-unit">L</span></div></div>
-      <div class="metric"><div class="metric-label">Preisvorteil E10</div><div><span class="metric-value" id="m-pvorteil">—</span> <span class="metric-unit">€/Jahr</span></div></div>
-      <div class="metric"><div class="metric-label">Kosten Mehrverbr.</div><div><span class="metric-value" id="m-kkosten">—</span> <span class="metric-unit">€/Jahr</span></div></div>
-      <div class="metric"><div class="metric-label">Nettoersparnis</div><div><span class="metric-value" id="m-netto">—</span> <span class="metric-unit">€/Jahr</span></div></div>
-      <div class="metric"><div class="metric-label">Pro Tankfüllung 50L</div><div><span class="metric-value" id="m-tank">—</span> <span class="metric-unit">€</span></div></div>
+      <div class="metric"><div class="metric-label">Jahresverbrauch</div><span class="metric-value" id="m-liter">—</span> <span class="metric-unit">L</span></div>
+      <div class="metric"><div class="metric-label">Mehrverbrauch E10</div><span class="metric-value" id="m-mehr">—</span> <span class="metric-unit">L</span></div>
+      <div class="metric"><div class="metric-label">Preisvorteil E10</div><span class="metric-value" id="m-pvorteil">—</span> <span class="metric-unit">€/Jahr</span></div>
+      <div class="metric"><div class="metric-label">Kosten Mehrverbr.</div><span class="metric-value" id="m-kkosten">—</span> <span class="metric-unit">€/Jahr</span></div>
+      <div class="metric"><div class="metric-label">Nettoersparnis</div><span class="metric-value" id="m-netto">—</span> <span class="metric-unit">€/Jahr</span></div>
+      <div class="metric"><div class="metric-label">Pro Tankfüllung 50 L</div><span class="metric-value" id="m-tank">—</span> <span class="metric-unit">€</span></div>
     </div>
 
     <div class="verdict" id="verdict">
-      <div class="verdict-icon" id="v-icon">⬤</div>
+      <div class="verdict-icon" id="v-icon">·</div>
       <div>
         <div class="verdict-title" id="v-title">Fahrzeug und Preise eingeben</div>
         <div class="verdict-sub" id="v-sub">Wähle oben Marke, Modell und Motor aus</div>
       </div>
     </div>
-  </div>
+  <div style="margin-top:1rem; padding:1rem 1.25rem; background:var(--surface2); border-radius:var(--radius); border-left:3px solid var(--border-strong);">
+      <p style="font-size:12px; font-family:'DM Mono',monospace; color:var(--text3); line-height:1.7;">
+        <strong style="color:var(--text2); font-weight:500;">Hinweis:</strong>
+        Diese Datenbank enthält ausschließlich E10-freigegebene Fahrzeuge. Ist dein Fahrzeug nicht aufgeführt,
+        prüfe die Verträglichkeit in der Betriebsanleitung, auf dem Tankdeckel oder unter
+        <a href="https://www.dat.de/e10" target="_blank" style="color:var(--text2);">dat.de/e10</a>.
+        Verbrauchswerte basieren auf Herstellerangaben (NEFZ) und können im Realbetrieb abweichen.
+        Keine Haftung für Richtigkeit der Angaben.
+      </p>
+    </div>
 
   <!-- DATENBANK -->
   <div class="view" id="view-datenbank">
     <p class="page-title">Fahrzeuge</p>
     <h1>Datenbank</h1>
-
-    <div class="card" style="padding: 0; overflow: hidden;">
-      <table class="db-table" id="db-table">
-        <thead>
-          <tr>
-            <th>Marke</th>
-            <th>Modell</th>
-            <th>Motor / Baujahr</th>
-            <th>Verbr.</th>
-            <th>E10</th>
-            <th>Mehrverbr.</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="db-tbody"></tbody>
+    <div class="db-wrap">
+      <div class="db-search">
+        <input type="text" id="db-search" placeholder="Suchen — z.B. Golf, Renault, E10 Nein …" oninput="renderDB()">
+      </div>
+      <table class="db-table">
+        <thead><tr>
+          <th>Marke</th><th>Modell</th><th>Motor / Baujahr</th><th>Verbr.</th><th>Mehrverbr.</th><th></th>
+        </tr></thead>
+        <tbody id="db-tbody"><tr><td colspan="7"><div class="loading">Daten werden geladen …</div></td></tr></tbody>
       </table>
+      <div class="db-count" id="db-count"></div>
     </div>
-
-    <div class="notice">Eigene Fahrzeuge werden lokal in deinem Browser gespeichert (localStorage) und bleiben auch nach dem Schließen erhalten.</div>
+    <div class="notice">Eigene Fahrzeuge (blau markiert) werden lokal in deinem Browser gespeichert.</div>
   </div>
 
   <!-- HINZUFÜGEN -->
   <div class="view" id="view-hinzufuegen">
     <p class="page-title">Eigenes Fahrzeug</p>
     <h1>Fahrzeug hinzufügen</h1>
-
     <div class="card">
       <div class="form-grid">
         <div class="form-group">
@@ -627,7 +252,7 @@
           <label>Modell</label>
           <input type="text" id="f-modell" placeholder="z.B. Modus">
         </div>
-        <div class="form-group" style="grid-column: 1 / -1;">
+        <div class="form-group" style="grid-column:1/-1;">
           <label>Motor / Baujahr</label>
           <input type="text" id="f-motor" placeholder="z.B. 1.2 16V 75 PS (2004–2008)">
         </div>
@@ -639,99 +264,51 @@
           <label>E10-Mehrverbrauch (%)</label>
           <input type="number" id="f-mehr" min="0" max="5" step="0.1" placeholder="1.5">
         </div>
-        <div class="form-group" style="grid-column: 1 / -1;">
-          <label>E10 freigegeben?</label>
-          <div class="e10-toggle">
-            <button class="active" id="toggle-ja" onclick="setToggle(true)">Ja — E10 freigegeben</button>
-            <button id="toggle-nein" onclick="setToggle(false)">Nein — nicht freigegeben</button>
-          </div>
-        </div>
-      </div>
 
-      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
-        <button class="btn" onclick="addFahrzeug()">Fahrzeug speichern</button>
-        <button class="btn secondary" onclick="clearForm()">Formular leeren</button>
       </div>
-
-      <div class="success-msg" id="success-msg">✓ Fahrzeug gespeichert und in der Datenbank verfügbar.</div>
-      <div class="error-msg" id="error-msg">Bitte alle Felder ausfüllen.</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn" onclick="addFahrzeug()">Speichern</button>
+        <button class="btn secondary" onclick="clearForm()">Leeren</button>
+      </div>
+      <div class="msg success" id="msg-ok">✓ Fahrzeug gespeichert und in der Datenbank verfügbar.</div>
+      <div class="msg error" id="msg-err">Bitte Marke, Modell, Motor und Verbrauch ausfüllen.</div>
     </div>
-
-    <div class="notice">Eigene Fahrzeuge sind mit einem blauen "Eigenes" Tag markiert und können jederzeit gelöscht werden.</div>
+    <div class="notice">Tipp: Verbrauchswerte findest du im Fahrzeugschein (Zeile 49) oder auf adac.de im Autokatalog.</div>
   </div>
 
 </main>
 
 <script>
-const BUILT_IN = [
-  {marke:"Renault",modell:"Modus",motor:"1.2 16V 75 PS (2004–2008)",verbrauch:7.2,e10:true,mehr:1.5},
-  {marke:"Renault",modell:"Modus",motor:"1.4 16V 98 PS (2004–2012)",verbrauch:7.8,e10:true,mehr:1.5},
-  {marke:"Renault",modell:"Modus",motor:"1.6 16V 112 PS (2004–2013)",verbrauch:8.8,e10:true,mehr:1.5},
-  {marke:"Renault",modell:"Clio",motor:"1.2 16V 75 PS (2005–2012)",verbrauch:6.5,e10:true,mehr:1.5},
-  {marke:"Renault",modell:"Clio",motor:"1.4 16V 98 PS (2005–2012)",verbrauch:7.2,e10:true,mehr:1.5},
-  {marke:"Renault",modell:"Mégane",motor:"1.6 16V 110 PS (2002–2008)",verbrauch:7.8,e10:true,mehr:1.5},
-  {marke:"Volkswagen",modell:"Golf V",motor:"1.4 16V 80 PS (2003–2008)",verbrauch:6.8,e10:true,mehr:1.5},
-  {marke:"Volkswagen",modell:"Golf V",motor:"1.6 MPI 102 PS (2003–2008)",verbrauch:7.5,e10:true,mehr:1.5},
-  {marke:"Volkswagen",modell:"Golf V",motor:"2.0 FSI 150 PS (2003–2008)",verbrauch:8.2,e10:false,mehr:0},
-  {marke:"Volkswagen",modell:"Golf VI",motor:"1.4 TSI 122 PS (2008–2012)",verbrauch:6.4,e10:true,mehr:1.2},
-  {marke:"Volkswagen",modell:"Golf VI",motor:"1.6 MPI 102 PS (2008–2012)",verbrauch:7.2,e10:true,mehr:1.5},
-  {marke:"Volkswagen",modell:"Polo IV",motor:"1.2 12V 54 PS (2001–2009)",verbrauch:6.2,e10:true,mehr:1.5},
-  {marke:"Volkswagen",modell:"Polo IV",motor:"1.4 16V 75 PS (2001–2009)",verbrauch:6.8,e10:true,mehr:1.5},
-  {marke:"Opel",modell:"Corsa C",motor:"1.2 16V 75 PS (2000–2006)",verbrauch:6.5,e10:true,mehr:1.5},
-  {marke:"Opel",modell:"Corsa D",motor:"1.2 16V 80 PS (2006–2014)",verbrauch:6.3,e10:true,mehr:1.5},
-  {marke:"Opel",modell:"Astra H",motor:"1.6 16V 115 PS (2004–2010)",verbrauch:7.8,e10:true,mehr:1.5},
-  {marke:"Opel",modell:"Astra H",motor:"2.2 Direct 147 PS (2004–2007)",verbrauch:9.2,e10:false,mehr:0},
-  {marke:"Ford",modell:"Focus II",motor:"1.4 16V 80 PS (2004–2011)",verbrauch:7.1,e10:true,mehr:1.5},
-  {marke:"Ford",modell:"Focus II",motor:"1.6 16V 101 PS (2004–2011)",verbrauch:7.6,e10:true,mehr:1.5},
-  {marke:"Ford",modell:"Fiesta V",motor:"1.25 16V 75 PS (2002–2008)",verbrauch:6.5,e10:true,mehr:1.5},
-  {marke:"Ford",modell:"Mondeo III",motor:"1.8 SCi 130 PS (2003–2007)",verbrauch:8.8,e10:false,mehr:0},
-  {marke:"BMW",modell:"3er E46",motor:"316i 115 PS (1998–2005)",verbrauch:8.2,e10:true,mehr:1.3},
-  {marke:"BMW",modell:"3er E46",motor:"318i 143 PS (2001–2005)",verbrauch:8.5,e10:true,mehr:1.3},
-  {marke:"BMW",modell:"3er E90",motor:"318i 129 PS (2005–2012)",verbrauch:7.9,e10:true,mehr:1.2},
-  {marke:"BMW",modell:"3er E90",motor:"320i 150 PS (2005–2012)",verbrauch:8.4,e10:true,mehr:1.2},
-  {marke:"Mercedes",modell:"C-Klasse W203",motor:"C180 Kompressor 143 PS (2000–2007)",verbrauch:8.6,e10:true,mehr:1.4},
-  {marke:"Mercedes",modell:"C-Klasse W203",motor:"C200 CGI 163 PS (2002–2007)",verbrauch:8.2,e10:false,mehr:0},
-  {marke:"Mercedes",modell:"C-Klasse W204",motor:"C180 156 PS (2007–2014)",verbrauch:7.9,e10:true,mehr:1.3},
-  {marke:"Audi",modell:"A3 8P",motor:"1.6 MPI 102 PS (2003–2012)",verbrauch:7.4,e10:true,mehr:1.5},
-  {marke:"Audi",modell:"A3 8P",motor:"2.0 FSI 150 PS (2003–2008)",verbrauch:8.5,e10:false,mehr:0},
-  {marke:"Audi",modell:"A4 B7",motor:"1.8T 163 PS (2004–2008)",verbrauch:8.8,e10:true,mehr:1.3},
-  {marke:"Toyota",modell:"Yaris II",motor:"1.0 VVT-i 69 PS (2005–2011)",verbrauch:5.8,e10:true,mehr:1.5},
-  {marke:"Toyota",modell:"Yaris II",motor:"1.3 VVT-i 86 PS (2005–2011)",verbrauch:6.3,e10:true,mehr:1.5},
-  {marke:"Skoda",modell:"Fabia II",motor:"1.2 12V 60 PS (2007–2014)",verbrauch:6.0,e10:true,mehr:1.5},
-  {marke:"Skoda",modell:"Fabia II",motor:"1.4 16V 86 PS (2007–2014)",verbrauch:6.8,e10:true,mehr:1.5},
-  {marke:"Skoda",modell:"Octavia II",motor:"1.6 MPI 102 PS (2004–2013)",verbrauch:7.5,e10:true,mehr:1.5},
-  {marke:"Peugeot",modell:"207",motor:"1.4 VTi 95 PS (2006–2012)",verbrauch:6.6,e10:true,mehr:1.5},
-  {marke:"Peugeot",modell:"207",motor:"1.6 VTi 120 PS (2006–2012)",verbrauch:7.4,e10:true,mehr:1.5},
-  {marke:"Citroën",modell:"C3 I",motor:"1.4i 75 PS (2002–2009)",verbrauch:6.6,e10:true,mehr:1.5},
-  {marke:"Citroën",modell:"C4 I",motor:"1.6 16V 110 PS (2004–2010)",verbrauch:7.5,e10:true,mehr:1.5},
-  {marke:"Seat",modell:"Ibiza III",motor:"1.4 16V 85 PS (2002–2008)",verbrauch:6.9,e10:true,mehr:1.5},
-  {marke:"Seat",modell:"León II",motor:"1.6 MPI 102 PS (2005–2012)",verbrauch:7.6,e10:true,mehr:1.5},
-];
-
+let DB = [];
 let selected = null;
 let e10toggle = true;
 
-function loadCustom() {
-  try { return JSON.parse(localStorage.getItem('e10_custom') || '[]'); } catch { return []; }
+async function loadDB() {
+  try {
+    const res = await fetch('fahrzeuge.json');
+    DB = await res.json();
+  } catch(e) {
+    DB = [];
+    console.warn('fahrzeuge.json nicht geladen:', e);
+  }
+  initSelects();
+  update();
 }
 
-function saveCustom(arr) {
-  localStorage.setItem('e10_custom', JSON.stringify(arr));
+function customDB() {
+  try { return JSON.parse(localStorage.getItem('e5e10_custom') || '[]'); } catch { return []; }
 }
-
-function allDB() { return [...BUILT_IN, ...loadCustom()]; }
+function saveCustom(arr) { localStorage.setItem('e5e10_custom', JSON.stringify(arr)); }
+function allDB() { return [...DB, ...customDB()]; }
 
 function getMarken() { return [...new Set(allDB().map(d=>d.marke))].sort(); }
-function getModelle(marke) { return [...new Set(allDB().filter(d=>d.marke===marke).map(d=>d.modell))].sort(); }
-function getMotoren(marke,modell) { return allDB().filter(d=>d.marke===marke&&d.modell===modell); }
+function getModelle(m) { return [...new Set(allDB().filter(d=>d.marke===m).map(d=>d.modell))].sort(); }
+function getMotoren(m,mo) { return allDB().filter(d=>d.marke===m&&d.modell===mo); }
 
 function initSelects() {
   const sm = document.getElementById('sel-marke');
   sm.innerHTML = '<option value="">— Marke wählen —</option>';
-  getMarken().forEach(m => {
-    const o = document.createElement('option');
-    o.value = m; o.textContent = m; sm.appendChild(o);
-  });
+  getMarken().forEach(m => { const o=document.createElement('option'); o.value=m; o.textContent=m; sm.appendChild(o); });
 }
 
 function onMarke() {
@@ -739,13 +316,11 @@ function onMarke() {
   const sm = document.getElementById('sel-modell');
   const smot = document.getElementById('sel-motor');
   sm.innerHTML = '<option value="">— Modell wählen —</option>';
-  smot.innerHTML = '<option value="">— Motor / Baujahr wählen —</option>';
+  smot.innerHTML = '<option value="">— Motor wählen —</option>';
   sm.disabled = !marke; smot.disabled = true;
   selected = null;
   document.getElementById('fahrzeug-chips').style.display = 'none';
-  if(marke) getModelle(marke).forEach(m => {
-    const o = document.createElement('option'); o.value=m; o.textContent=m; sm.appendChild(o);
-  });
+  if(marke) getModelle(marke).forEach(m => { const o=document.createElement('option'); o.value=m; o.textContent=m; sm.appendChild(o); });
   update();
 }
 
@@ -754,12 +329,9 @@ function onModell() {
   const modell = document.getElementById('sel-modell').value;
   const smot = document.getElementById('sel-motor');
   smot.innerHTML = '<option value="">— Motor / Baujahr wählen —</option>';
-  smot.disabled = !modell;
-  selected = null;
+  smot.disabled = !modell; selected = null;
   document.getElementById('fahrzeug-chips').style.display = 'none';
-  if(modell) getMotoren(marke,modell).forEach((d,i) => {
-    const o = document.createElement('option'); o.value=i; o.textContent=d.motor; smot.appendChild(o);
-  });
+  if(modell) getMotoren(marke,modell).forEach((d,i) => { const o=document.createElement('option'); o.value=i; o.textContent=d.motor; smot.appendChild(o); });
   update();
 }
 
@@ -771,42 +343,37 @@ function onMotor() {
   selected = getMotoren(marke,modell)[parseInt(idx)];
   document.getElementById('verbrauch').value = selected.verbrauch;
   document.getElementById('chip-v').textContent = 'Verbrauch: '+selected.verbrauch.toFixed(1)+' L/100km';
-  const ce = document.getElementById('chip-e10');
-  ce.textContent = selected.e10 ? 'E10: freigegeben ✓' : 'E10: NICHT freigegeben ✗';
-  ce.className = 'chip ' + (selected.e10 ? 'green' : 'red');
   document.getElementById('chip-m').textContent = 'Mehrverbr.: ~'+selected.mehr+' %';
   document.getElementById('fahrzeug-chips').style.display = 'flex';
-  updateRange(); update();
+  updateSliders(); update();
 }
 
-function updateRange() {
-  const sliders = ['verbrauch','km'];
-  sliders.forEach(id => {
+function updateSliders() {
+  ['verbrauch','km'].forEach(id => {
     const el = document.getElementById(id);
-    const min = parseFloat(el.min), max = parseFloat(el.max), val = parseFloat(el.value);
-    const pct = ((val - min) / (max - min) * 100).toFixed(1) + '%';
+    const pct = ((parseFloat(el.value)-parseFloat(el.min))/(parseFloat(el.max)-parseFloat(el.min))*100).toFixed(1)+'%';
     el.style.setProperty('--pct', pct);
   });
+  const v = parseFloat(document.getElementById('verbrauch').value);
+  const km = parseInt(document.getElementById('km').value);
+  document.getElementById('verbrauch-out').textContent = v.toFixed(1).replace('.',',') + ' L';
+  document.getElementById('km-out').textContent = km.toLocaleString('de-DE') + ' km';
 }
 
 function update() {
   const v = parseFloat(document.getElementById('verbrauch').value);
   const km = parseInt(document.getElementById('km').value);
-  const pe5 = parseFloat(document.getElementById('preis-e5').value) || 1.85;
-  const pe10 = parseFloat(document.getElementById('preis-e10').value) || 1.79;
+  const pe5 = parseFloat(document.getElementById('preis-e5').value)||1.85;
+  const pe10 = parseFloat(document.getElementById('preis-e10').value)||1.79;
   const mehr = selected ? selected.mehr : 1.5;
-  const e10ok = selected ? selected.e10 : null;
-
-  document.getElementById('verbrauch-out').textContent = v.toFixed(1).replace('.',',') + ' L';
-  document.getElementById('km-out').textContent = km.toLocaleString('de-DE') + ' km';
 
   const litreE5 = v * km / 100;
-  const litreE10 = litreE5 * (1 + mehr / 100);
+  const litreE10 = litreE5 * (1 + mehr/100);
   const literMehr = litreE10 - litreE5;
   const pvorteil = litreE5 * (pe5 - pe10);
   const kkosten = literMehr * pe10;
   const netto = pvorteil - kkosten;
-  const proTank = 50 * (pe5 - pe10 * (1 + mehr / 100));
+  const proTank = 50 * (pe5 - pe10*(1+mehr/100));
 
   document.getElementById('m-liter').textContent = Math.round(litreE5);
   document.getElementById('m-mehr').textContent = Math.round(literMehr);
@@ -815,124 +382,118 @@ function update() {
   document.getElementById('m-netto').textContent = Math.round(netto);
   document.getElementById('m-tank').textContent = proTank.toFixed(2).replace('.',',');
 
-  const vd = document.getElementById('verdict');
-  const vi = document.getElementById('v-icon');
-  const vt = document.getElementById('v-title');
-  const vs = document.getElementById('v-sub');
+  const vd=document.getElementById('verdict');
+  const vi=document.getElementById('v-icon');
+  const vt=document.getElementById('v-title');
+  const vs=document.getElementById('v-sub');
+  vd.className='verdict';
 
-  vd.className = 'verdict';
-
-  if(e10ok === false) {
-    vi.textContent = '✗'; vd.classList.add('red');
-    vt.textContent = 'Heute E5 tanken — E10 nicht freigegeben';
-    vs.textContent = 'Motorschäden möglich. Kein Kompromiss.';
-  } else if(e10ok === null) {
-    vi.textContent = '→';
-    vt.textContent = 'Fahrzeug wählen für eine Empfehlung';
-    vs.textContent = 'Marke, Modell und Motor oben auswählen';
-  } else if(netto > 2) {
-    vi.textContent = '✓'; vd.classList.add('green');
-    vt.textContent = 'Heute E10 tanken — ' + Math.round(netto) + ' € Ersparnis pro Jahr';
-    vs.textContent = 'Pro 50-Liter-Tankfüllung: ' + proTank.toFixed(2).replace('.',',') + ' € günstiger als E5';
-  } else if(netto < 0) {
-    vi.textContent = '↓'; vd.classList.add('amber');
-    vt.textContent = 'Heute E5 tanken — E10 lohnt sich hier nicht';
-    vs.textContent = 'Preisdifferenz deckt den Mehrverbrauch nicht. Preis prüfen.';
+  if(!selected) {
+    vi.textContent='→';
+    vt.textContent='Fahrzeug wählen für eine Empfehlung';
+    vs.textContent='Marke, Modell und Motor oben auswählen';
+  } else if(netto>2) {
+    vi.textContent='✓'; vd.classList.add('green');
+    vt.textContent='Heute E10 tanken — '+Math.round(netto)+' € Ersparnis pro Jahr';
+    vs.textContent='Pro 50-Liter-Tankfüllung: '+proTank.toFixed(2).replace('.',',')+'€ günstiger als E5';
+  } else if(netto<0) {
+    vi.textContent='↓'; vd.classList.add('amber');
+    vt.textContent='Heute E5 tanken — E10 lohnt sich nicht';
+    vs.textContent='Preisdifferenz deckt den Mehrverbrauch nicht. Preise prüfen.';
   } else {
-    vi.textContent = '≈';
-    vt.textContent = 'Kaum Unterschied (' + Math.round(netto) + ' € Netto / Jahr)';
-    vs.textContent = 'Beide Kraftstoffe nahezu gleichwertig bei diesen Preisen';
+    vi.textContent='≈';
+    vt.textContent='Kaum Unterschied ('+Math.round(netto)+' € Netto / Jahr)';
+    vs.textContent='Beide Kraftstoffe nahezu gleichwertig bei diesen Preisen';
   }
 }
 
 function renderDB() {
-  const custom = loadCustom();
+  const q = (document.getElementById('db-search').value||'').toLowerCase();
+  const custom = customDB();
+  const all = [
+    ...DB.map(d=>({...d,custom:false})),
+    ...custom.map(d=>({...d,custom:true}))
+  ].filter(d =>
+    !q ||
+    d.marke.toLowerCase().includes(q) ||
+    d.modell.toLowerCase().includes(q) ||
+    d.motor.toLowerCase().includes(q) ||
+    (q==='nein'&&!d.e10) ||
+    (q==='ja'&&d.e10)
+  );
+
   const tbody = document.getElementById('db-tbody');
   tbody.innerHTML = '';
 
-  const all = [
-    ...BUILT_IN.map(d => ({...d, custom: false})),
-    ...custom.map(d => ({...d, custom: true}))
-  ];
-
-  if(all.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="7"><div class="empty-state">Noch keine Fahrzeuge vorhanden.</div></td></tr>';
+  if(all.length===0) {
+    tbody.innerHTML='<tr><td colspan="7" style="text-align:center;padding:2rem;color:var(--text3);font-size:13px;">Keine Einträge gefunden.</td></tr>';
+    document.getElementById('db-count').textContent='';
     return;
   }
 
-  all.forEach((d, i) => {
-    const tr = document.createElement('tr');
-    if(d.custom) tr.className = 'custom-row';
-    tr.innerHTML = `
-      <td>${d.marke}${d.custom ? '<span class="tag-custom">Eigenes</span>' : ''}</td>
+  all.forEach((d,i) => {
+    const tr=document.createElement('tr');
+    if(d.custom) tr.className='custom-row';
+    const customIdx = d.custom ? custom.findIndex(c=>c.marke===d.marke&&c.modell===d.modell&&c.motor===d.motor) : -1;
+    tr.innerHTML=`
+      <td>${d.marke}${d.custom?'<span class="tag-custom">Eigenes</span>':''}</td>
       <td>${d.modell}</td>
-      <td style="color:var(--text2)">${d.motor}</td>
+      <td style="color:var(--text2);font-size:12px;">${d.motor}</td>
       <td style="font-family:'DM Mono',monospace;font-size:12px;">${d.verbrauch.toFixed(1)} L</td>
-      <td><span class="badge ${d.e10?'yes':'no'}">${d.e10?'Ja':'Nein'}</span></td>
-      <td style="font-family:'DM Mono',monospace;font-size:12px;">${d.e10?d.mehr+'%':'—'}</td>
-      <td>${d.custom ? `<button class="delete-btn" onclick="deleteCustom(${i - BUILT_IN.length})">löschen</button>` : ''}</td>
+      <td style="font-family:'DM Mono',monospace;font-size:12px;">${d.mehr}%</td>
+      <td>${d.custom&&customIdx>=0?`<button class="delete-btn" onclick="deleteCustom(${customIdx})">löschen</button>`:''}</td>
     `;
     tbody.appendChild(tr);
   });
+
+  document.getElementById('db-count').textContent = all.length+' Einträge'+( q ? ' (gefiltert)' : '' );
 }
 
 function deleteCustom(idx) {
   if(!confirm('Fahrzeug wirklich löschen?')) return;
-  const custom = loadCustom();
-  custom.splice(idx, 1);
-  saveCustom(custom);
-  renderDB();
-  initSelects();
+  const c=customDB(); c.splice(idx,1); saveCustom(c);
+  renderDB(); initSelects();
 }
 
 function setToggle(val) {
-  e10toggle = val;
-  document.getElementById('toggle-ja').classList.toggle('active', val);
-  document.getElementById('toggle-nein').classList.toggle('active', !val);
+  e10toggle=val;
+  document.getElementById('toggle-ja').classList.toggle('active',val);
+  document.getElementById('toggle-nein').classList.toggle('active',!val);
 }
 
 function addFahrzeug() {
-  const marke = document.getElementById('f-marke').value.trim();
-  const modell = document.getElementById('f-modell').value.trim();
-  const motor = document.getElementById('f-motor').value.trim();
-  const verbrauch = parseFloat(document.getElementById('f-verbrauch').value);
-  const mehr = parseFloat(document.getElementById('f-mehr').value);
-
-  const err = document.getElementById('error-msg');
-  const suc = document.getElementById('success-msg');
-  err.style.display = 'none'; suc.style.display = 'none';
-
-  if(!marke || !modell || !motor || isNaN(verbrauch)) {
-    err.style.display = 'block'; return;
-  }
-
-  const custom = loadCustom();
-  custom.push({ marke, modell, motor, verbrauch, e10: e10toggle, mehr: isNaN(mehr) ? 1.5 : mehr });
-  saveCustom(custom);
-  initSelects();
-  clearForm();
-  suc.style.display = 'block';
-  setTimeout(() => suc.style.display = 'none', 3000);
+  const marke=document.getElementById('f-marke').value.trim();
+  const modell=document.getElementById('f-modell').value.trim();
+  const motor=document.getElementById('f-motor').value.trim();
+  const verbrauch=parseFloat(document.getElementById('f-verbrauch').value);
+  const mehr=parseFloat(document.getElementById('f-mehr').value)||1.5;
+  const ok=document.getElementById('msg-ok');
+  const err=document.getElementById('msg-err');
+  ok.style.display='none'; err.style.display='none';
+  if(!marke||!modell||!motor||isNaN(verbrauch)) { err.style.display='block'; return; }
+  const c=customDB();
+  c.push({marke,modell,motor,verbrauch,mehr});
+  saveCustom(c); initSelects(); clearForm();
+  ok.style.display='block';
+  setTimeout(()=>ok.style.display='none',3000);
 }
 
 function clearForm() {
-  ['f-marke','f-modell','f-motor','f-verbrauch','f-mehr'].forEach(id => document.getElementById(id).value = '');
+  ['f-marke','f-modell','f-motor','f-verbrauch','f-mehr'].forEach(id=>document.getElementById(id).value='');
   setToggle(true);
 }
 
 function showView(name) {
-  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById('view-'+name).classList.add('active');
-  const btns = document.querySelectorAll('.nav-btn');
-  const idx = ['rechner','datenbank','hinzufuegen'].indexOf(name);
-  if(idx >= 0) btns[idx].classList.add('active');
-  if(name === 'datenbank') renderDB();
+  const idx=['rechner','datenbank','hinzufuegen'].indexOf(name);
+  document.querySelectorAll('.nav-btn')[idx].classList.add('active');
+  if(name==='datenbank') renderDB();
 }
 
-initSelects();
-updateRange();
-update();
+updateSliders();
+loadDB();
 </script>
 </body>
 </html>

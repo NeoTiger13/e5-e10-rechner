@@ -176,12 +176,12 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
     </div>
 
     <div class="metrics">
-      <div class="metric"><div class="metric-label">Kosten E5 — dieser Tank</div><span class="metric-value" id="m-e5">—</span> <span class="metric-unit">€</span></div>
-      <div class="metric"><div class="metric-label">Kosten E10 — dieser Tank</div><span class="metric-value" id="m-e10">—</span> <span class="metric-unit">€</span></div>
-      <div class="metric"><div class="metric-label">Ersparnis direkt</div><span class="metric-value" id="m-ers">—</span> <span class="metric-unit">€</span></div>
-      <div class="metric"><div class="metric-label">Mehrverbrauch E10</div><span class="metric-value" id="m-meh">—</span> <span class="metric-unit">L / Tank</span></div>
-      <div class="metric"><div class="metric-label">Kosten Mehrverbr.</div><span class="metric-value" id="m-kme">—</span> <span class="metric-unit">€ / Tank</span></div>
-      <div class="metric"><div class="metric-label">Netto diese Tankfüllung</div><span class="metric-value" id="m-net">—</span> <span class="metric-unit">€</span></div>
+      <div class="metric"><div class="metric-label">Kosten E5 / 100 km</div><span class="metric-value" id="m-e5">—</span> <span class="metric-unit">€</span></div>
+      <div class="metric"><div class="metric-label">Kosten E10 / 100 km</div><span class="metric-value" id="m-e10">—</span> <span class="metric-unit">€</span></div>
+      <div class="metric"><div class="metric-label">Ersparnis / 100 km</div><span class="metric-value" id="m-ers">—</span> <span class="metric-unit">€</span></div>
+      <div class="metric"><div class="metric-label">Reichweite E5</div><span class="metric-value" id="m-meh">—</span> <span class="metric-unit">km / Tank</span></div>
+      <div class="metric"><div class="metric-label">Reichweite E10</div><span class="metric-value" id="m-kme">—</span> <span class="metric-unit">km / Tank</span></div>
+      <div class="metric"><div class="metric-label">Ersparnis / Jahr (15 Tkm)</div><span class="metric-value" id="m-net">—</span> <span class="metric-unit">€</span></div>
     </div>
 
     <div class="hint" id="m-jahres"></div>
@@ -389,21 +389,28 @@ function update() {
   var pe10 = parseFloat(document.getElementById('preis-e10').value) || 1.79;
   var mehr = selected ? selected.mehr : 1.5;
 
-  var kostenE5 = tank * pe5;
-  var kostenE10 = tank * pe10;
-  var ersparnis = kostenE5 - kostenE10;
-  var mehrLiter = (tank / v * 100) * (mehr / 100) * v / 100;
-  var kostenMehr = mehrLiter * pe10;
-  var netto = ersparnis - kostenMehr;
-  var jahresNetto = (v * 15000 / 100) * (pe5 - pe10) - (v * 15000 / 100) * (mehr / 100) * pe10;
+  // Kernberechnung: Kosten pro 100 km
+  var vE10 = v * (1 + mehr / 100);          // Verbrauch E10 (L/100km)
+  var kosten100E5  = v    * pe5;             // € pro 100 km mit E5
+  var kosten100E10 = vE10 * pe10;            // € pro 100 km mit E10
+  var ersparnis100 = kosten100E5 - kosten100E10; // € Ersparnis pro 100 km
 
-  document.getElementById('m-e5').textContent = kostenE5.toFixed(2).replace('.', ',');
-  document.getElementById('m-e10').textContent = kostenE10.toFixed(2).replace('.', ',');
-  document.getElementById('m-ers').textContent = ersparnis.toFixed(2).replace('.', ',');
-  document.getElementById('m-meh').textContent = mehrLiter.toFixed(1).replace('.', ',');
-  document.getElementById('m-kme').textContent = kostenMehr.toFixed(2).replace('.', ',');
-  document.getElementById('m-net').textContent = netto.toFixed(2).replace('.', ',');
-  document.getElementById('m-jahres').textContent = selected ? 'Hochgerechnet auf 15.000 km/Jahr: ca. ' + Math.round(jahresNetto) + ' € Nettoersparnis mit E10' : '';
+  // Reichweite pro Tankfüllung
+  var reichweiteE5  = tank / v    * 100;
+  var reichweiteE10 = tank / vE10 * 100;
+
+  // Jahresersparnis bei 15.000 km
+  var jahresNetto = ersparnis100 * 150; // 150 × 100km = 15.000km
+
+  document.getElementById('m-e5').textContent  = kosten100E5.toFixed(2).replace('.', ',');
+  document.getElementById('m-e10').textContent = kosten100E10.toFixed(2).replace('.', ',');
+  document.getElementById('m-ers').textContent = ersparnis100.toFixed(2).replace('.', ',');
+  document.getElementById('m-meh').textContent = Math.round(reichweiteE5);
+  document.getElementById('m-kme').textContent = Math.round(reichweiteE10);
+  document.getElementById('m-net').textContent = Math.round(jahresNetto);
+  document.getElementById('m-jahres').textContent = selected
+    ? 'Pro Tankfüllung (' + tank + ' L): ' + (ersparnis100 * tank / 100).toFixed(2).replace('.', ',') + ' € günstiger mit E10'
+    : '';
 
   var vd = document.getElementById('verdict');
   var vi = document.getElementById('v-icon');
@@ -415,18 +422,18 @@ function update() {
     vi.textContent = '→';
     vt.textContent = 'Fahrzeug wählen für eine Empfehlung';
     vs.textContent = 'Marke, Modell und Motor oben auswählen';
-  } else if(netto > 0.50) {
+  } else if(ersparnis100 > 0.01) {
     vi.textContent = '✓'; vd.classList.add('green');
-    vt.textContent = 'Jetzt E10 tanken — du sparst ' + netto.toFixed(2).replace('.', ',') + ' € bei dieser Tankfüllung';
-    vs.textContent = 'E10 kostet ' + kostenE10.toFixed(2).replace('.', ',') + ' € statt ' + kostenE5.toFixed(2).replace('.', ',') + ' € — Mehrverbrauch bereits abgezogen';
-  } else if(netto < -0.20) {
+    vt.textContent = 'Jetzt E10 tanken — ' + ersparnis100.toFixed(2).replace('.', ',') + ' € günstiger pro 100 km';
+    vs.textContent = 'Bei 15.000 km/Jahr: ca. ' + Math.round(jahresNetto) + ' € Nettoersparnis — Mehrverbrauch bereits eingerechnet';
+  } else if(ersparnis100 < -0.01) {
     vi.textContent = '↓'; vd.classList.add('amber');
     vt.textContent = 'Jetzt E5 tanken — E10 lohnt sich nicht';
     vs.textContent = 'Der Mehrverbrauch übersteigt den Preisvorteil bei diesen Preisen';
   } else {
     vi.textContent = '≈';
-    vt.textContent = 'Kaum Unterschied (' + netto.toFixed(2).replace('.', ',') + ' € Netto)';
-    vs.textContent = 'Beide Kraftstoffe sind bei diesen Preisen nahezu gleichwertig';
+    vt.textContent = 'Kein Unterschied (' + ersparnis100.toFixed(2).replace('.', ',') + ' € / 100 km)';
+    vs.textContent = 'Beide Kraftstoffe sind bei diesen Preisen gleichwertig';
   }
 }
 

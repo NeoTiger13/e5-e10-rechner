@@ -229,90 +229,70 @@
     <p class="page-title">Fahrzeug fehlt?</p>
     <h1>Fahrzeug melden</h1>
 
-    <div style="display:flex;gap:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;width:fit-content;margin-bottom:1.5rem;">
-      <button class="melde-tab active" id="mtab-1" onclick="showMeldeTab(1)">1 — Fahrzeug</button>
-      <button class="melde-tab" id="mtab-2" onclick="showMeldeTab(2)">2 — Motor</button>
-      <button class="melde-tab" id="mtab-3" onclick="showMeldeTab(3)">3 — Verbrauch</button>
-      <button class="melde-tab" id="mtab-4" onclick="showMeldeTab(4)">4 — Absenden</button>
-    </div>
+    <div class="card" id="melde-form-wrap">
+      <p style="font-size:14px;color:var(--text2);margin-bottom:1.5rem;line-height:1.7;">
+        Dein Fahrzeug ist nicht in der Datenbank? Füll das Formular aus — wir prüfen die Angaben und nehmen es auf.
+      </p>
 
-    <div class="melde-step" id="mstep-1">
-      <div class="card">
-        <h2>Marke &amp; Modell</h2>
+      <form id="melde-form" action="https://formspree.io/f/DEINE_FORMSPREE_ID" method="POST" onsubmit="handleSubmit(event)">
+
         <div class="form-grid">
           <div class="form-group">
-            <label>Marke</label>
-            <input type="text" id="f-marke" placeholder="z.B. Audi">
+            <label for="m-marke">Marke *</label>
+            <input type="text" id="m-marke" name="marke" placeholder="z.B. Audi" required>
           </div>
           <div class="form-group">
-            <label>Modell</label>
-            <input type="text" id="f-modell" placeholder="z.B. A1 8X">
+            <label for="m-modell">Modell *</label>
+            <input type="text" id="m-modell" name="modell" placeholder="z.B. A1 8X" required>
+          </div>
+          <div class="form-group" style="grid-column:1/-1;">
+            <label for="m-motor">Motor / Baujahr *</label>
+            <input type="text" id="m-motor" name="motor" placeholder="z.B. 1.2 TFSI 86 PS (2010–2015)" required>
+            <div class="notice" style="margin-top:6px;">Format: Hubraum · Motortyp · PS · (Baujahr–Baujahr)</div>
+          </div>
+          <div class="form-group">
+            <label for="m-verbrauch">Verbrauch (L / 100 km) *</label>
+            <input type="number" id="m-verbrauch" name="verbrauch" min="3" max="20" step="0.1" placeholder="5.5" required>
+            <div class="notice" style="margin-top:6px;">Fahrzeugschein Zeile 49 oder adac.de</div>
+          </div>
+          <div class="form-group">
+            <label for="m-tank">Tankgröße (Liter) *</label>
+            <input type="number" id="m-tank" name="tank" min="25" max="100" step="1" placeholder="50" required>
+            <div class="notice" style="margin-top:6px;">Steht im Fahrzeugschein oder Betriebsanleitung</div>
+          </div>
+          <div class="form-group">
+            <label for="m-mehr">E10-Mehrverbrauch (%)</label>
+            <input type="number" id="m-mehr" name="mehr" min="0.5" max="3" step="0.1" placeholder="1.5">
+            <div class="notice" style="margin-top:6px;">1.2% Turbo · 1.5% Saugmotor · leer lassen wenn unbekannt</div>
+          </div>
+          <div class="form-group">
+            <label for="m-email">Deine E-Mail (optional)</label>
+            <input type="email" id="m-email" name="email" placeholder="für Rückmeldung">
+          </div>
+          <div class="form-group" style="grid-column:1/-1;">
+            <label for="m-quelle">Quelle / Anmerkung</label>
+            <input type="text" id="m-quelle" name="quelle" placeholder="z.B. ADAC-Autokatalog, Betriebsanleitung …">
           </div>
         </div>
-        <div class="msg error" id="err-1">Bitte Marke und Modell ausfüllen.</div>
-        <div style="margin-top:1rem;"><button class="btn" onclick="nextStep(1)">Weiter →</button></div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:0.5rem;">
+          <button type="submit" class="btn">Fahrzeug einreichen</button>
+          <button type="button" class="btn secondary" onclick="resetMeldeForm()">Leeren</button>
+        </div>
+
+        <div class="msg error" id="melde-err" style="margin-top:12px;">Bitte alle Pflichtfelder (*) ausfüllen.</div>
+      </form>
+
+      <div id="melde-success" style="display:none;text-align:center;padding:2rem 1rem;">
+        <div style="font-size:36px;margin-bottom:1rem;">✓</div>
+        <div style="font-size:18px;font-weight:500;margin-bottom:.5rem;">Vielen Dank!</div>
+        <div style="font-size:14px;color:var(--text2);margin-bottom:1.5rem;">Deine Meldung ist eingegangen. Wir prüfen die Angaben und nehmen das Fahrzeug bei Eignung auf.</div>
+        <button class="btn secondary" onclick="resetMeldeForm()">Weiteres Fahrzeug melden</button>
       </div>
     </div>
 
-    <div class="melde-step" id="mstep-2" style="display:none;">
-      <div class="card">
-        <h2>Motor &amp; Baujahr</h2>
-        <div class="form-group" style="margin-bottom:1rem;">
-          <label>Motor / Baujahr</label>
-          <input type="text" id="f-motor" placeholder="z.B. 1.2 TFSI 86 PS (2010–2015)">
-        </div>
-        <div class="notice" style="margin-bottom:1rem;">Format: Hubraum · Motortyp · PS · (Baujahr–Baujahr)</div>
-        <div class="msg error" id="err-2">Bitte Motor und Baujahr ausfüllen.</div>
-        <div style="margin-top:1rem;display:flex;gap:10px;">
-          <button class="btn secondary" onclick="prevStep(2)">← Zurück</button>
-          <button class="btn" onclick="nextStep(2)">Weiter →</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="melde-step" id="mstep-3" style="display:none;">
-      <div class="card">
-        <h2>Verbrauch &amp; Mehrverbrauch</h2>
-        <div class="form-grid">
-          <div class="form-group">
-            <label>Verbrauch (L / 100 km)</label>
-            <input type="number" id="f-verbrauch" min="3" max="20" step="0.1" placeholder="5.5">
-          </div>
-          <div class="form-group">
-            <label>Tankgröße (Liter)</label>
-            <input type="number" id="f-tank" min="25" max="100" step="1" placeholder="50">
-          </div>
-          <div class="form-group">
-            <label>E10-Mehrverbrauch (%)</label>
-            <input type="number" id="f-mehr" min="0.5" max="3" step="0.1" placeholder="1.2">
-          </div>
-        </div>
-        <div class="notice" style="margin-bottom:1rem;">Mehrverbrauch: 1.2% Turbomotoren · 1.5% ältere Saugmotoren<br>Verbrauch: Fahrzeugschein Zeile 49 oder adac.de</div>
-        <div class="msg error" id="err-3">Bitte Verbrauch ausfüllen.</div>
-        <div style="margin-top:1rem;display:flex;gap:10px;">
-          <button class="btn secondary" onclick="prevStep(3)">← Zurück</button>
-          <button class="btn" onclick="nextStep(3)">Weiter →</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="melde-step" id="mstep-4" style="display:none;">
-      <div class="card">
-        <h2>Vorschau &amp; Absenden</h2>
-        <p style="font-size:13px;color:var(--text2);margin-bottom:1rem;">So wird der Eintrag in der Datenbank aussehen:</p>
-        <div style="background:var(--bg);border-radius:var(--radius);padding:1rem 1.25rem;font-family:'DM Mono',monospace;font-size:13px;line-height:2;margin-bottom:1.25rem;border:1px solid var(--border);">
-          <div id="preview-json"></div>
-        </div>
-        <div class="form-group" style="margin-bottom:1.25rem;">
-          <label>Deine E-Mail (optional)</label>
-          <input type="email" id="f-email" placeholder="für Rückmeldung">
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <button class="btn secondary" onclick="prevStep(4)">← Zurück</button>
-          <button class="btn" onclick="meldenPerMail()">Per E-Mail senden →</button>
-        </div>
-      </div>
-      <div class="notice" style="margin-top:1rem;">Nur E10-freigegene Fahrzeuge werden aufgenommen. Wir prüfen die Angaben vor der Aufnahme.</div>
+    <div class="notice" style="margin-top:1rem;">
+      Nur E10-freigegene Fahrzeuge werden aufgenommen. Verbrauchswerte basieren auf Herstellerangaben (NEFZ).
     </div>
   </div>
 </main>
@@ -502,82 +482,46 @@ function setToggle(val) {
   document.getElementById('toggle-nein').classList.toggle('active',!val);
 }
 
-function showMeldeTab(n) {
-  for(let i=1;i<=4;i++) {
-    document.getElementById('mstep-'+i).style.display = i===n ? 'block' : 'none';
-    const tab = document.getElementById('mtab-'+i);
-    tab.classList.remove('active','done');
-    if(i===n) tab.classList.add('active');
-    else if(i<n) tab.classList.add('done');
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('melde-form');
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Wird gesendet…';
+  btn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if(res.ok) {
+      form.style.display = 'none';
+      document.getElementById('melde-success').style.display = 'block';
+    } else {
+      document.getElementById('melde-err').textContent = 'Fehler beim Senden. Bitte versuche es erneut.';
+      document.getElementById('melde-err').style.display = 'block';
+      btn.textContent = 'Fahrzeug einreichen';
+      btn.disabled = false;
+    }
+  } catch(err) {
+    document.getElementById('melde-err').textContent = 'Keine Verbindung. Bitte prüfe deine Internetverbindung.';
+    document.getElementById('melde-err').style.display = 'block';
+    btn.textContent = 'Fahrzeug einreichen';
+    btn.disabled = false;
   }
 }
 
-function nextStep(n) {
-  if(n===1) {
-    const marke = document.getElementById('f-marke').value.trim();
-    const modell = document.getElementById('f-modell').value.trim();
-    if(!marke||!modell) { document.getElementById('err-1').style.display='block'; return; }
-    document.getElementById('err-1').style.display='none';
-  }
-  if(n===2) {
-    const motor = document.getElementById('f-motor').value.trim();
-    if(!motor) { document.getElementById('err-2').style.display='block'; return; }
-    document.getElementById('err-2').style.display='none';
-  }
-  if(n===3) {
-    const v = document.getElementById('f-verbrauch').value.trim();
-    if(!v) { document.getElementById('err-3').style.display='block'; return; }
-    document.getElementById('err-3').style.display='none';
-    updatePreview();
-  }
-  showMeldeTab(n+1);
+function resetMeldeForm() {
+  const form = document.getElementById('melde-form');
+  form.reset();
+  form.style.display = 'block';
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Fahrzeug einreichen';
+  btn.disabled = false;
+  document.getElementById('melde-success').style.display = 'none';
+  document.getElementById('melde-err').style.display = 'none';
 }
 
-function prevStep(n) { showMeldeTab(n-1); }
-
-function updatePreview() {
-  const marke = document.getElementById('f-marke').value.trim();
-  const modell = document.getElementById('f-modell').value.trim();
-  const motor = document.getElementById('f-motor').value.trim();
-  const verbrauch = parseFloat(document.getElementById('f-verbrauch').value);
-  const mehr = parseFloat(document.getElementById('f-mehr').value)||1.5;
-  const tank = parseInt(document.getElementById('f-tank').value)||50;
-  const json = {marke, modell, motor, verbrauch, mehr, tank};
-  const lines = [
-    '<span style="color:var(--text3)">{</span>',
-    '  <span style="color:var(--blue)">"marke"</span>: <span style="color:var(--green)">"' + marke + '"</span>,',
-    '  <span style="color:var(--blue)">"modell"</span>: <span style="color:var(--green)">"' + modell + '"</span>,',
-    '  <span style="color:var(--blue)">"motor"</span>: <span style="color:var(--green)">"' + motor + '"</span>,',
-    '  <span style="color:var(--blue)">"verbrauch"</span>: <span style="color:var(--amber)">' + verbrauch.toFixed(1) + '</span>,',
-    '  <span style="color:var(--blue)">"tank"</span>: <span style="color:var(--amber)">' + tank + '</span>,',
-    '  <span style="color:var(--blue)">"mehr"</span>: <span style="color:var(--amber)">' + mehr.toFixed(1) + '</span>',
-    '<span style="color:var(--text3)">}</span>',
-  ];
-  document.getElementById('preview-json').innerHTML = lines.join('<br>');
-  window._pendingJson = json;
-}
-
-function meldenPerMail() {
-  const json = window._pendingJson || {};
-  const email = document.getElementById('f-email').value.trim();
-  const betreff = encodeURIComponent('E5vsE10 — Fahrzeug melden: ' + json.marke + ' ' + json.modell);
-  const jsonStr = JSON.stringify(json, null, 4);
-  const body = encodeURIComponent(
-    'Neues Fahrzeug fuer die E5vsE10-Datenbank:\n\n' +
-    jsonStr + '\n\n' +
-    (email ? 'Antwort an: ' + email + '\n' : '') +
-    'Gesendet ueber neotiger13.github.io/e5-e10-rechner'
-  );
-  window.location.href = 'mailto:armandocasas850@gmail.com?subject=' + betreff + '&body=' + body;
-}
-
-function clearForm() {
-  ['f-marke','f-modell','f-motor','f-verbrauch','f-tank','f-mehr','f-email'].forEach(id=>{
-    const el = document.getElementById(id);
-    if(el) el.value='';
-  });
-  showMeldeTab(1);
-}
 
 function showView(name) {
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));

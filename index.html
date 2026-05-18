@@ -145,6 +145,65 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
 .tk-selected-addr { font-size: 11px; color: var(--text3); margin-top: 2px; }
 .tk-change-btn { font-size: 12px; font-family: 'DM Mono', monospace; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--orange); background: transparent; color: var(--orange-text); cursor: pointer; white-space: nowrap; }
 .tk-change-btn:hover { background: var(--orange-bg); }
+
+@media (max-width: 600px) {
+  header { padding: 0 1rem; height: 56px; }
+  .logo img { height: 40px; width: 40px; }
+  .nav-btn { font-size: 12px; padding: 6px 12px; }
+
+  main { padding: 1rem; }
+  h1 { font-size: 20px; margin-bottom: 1.25rem; }
+  .card { padding: 1rem; margin-bottom: .75rem; }
+
+  .sel-row { grid-template-columns: 1fr; gap: 8px; }
+
+  .price-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .price-row input { font-size: 16px; padding: 10px 12px; }
+
+  .slider-row { flex-wrap: wrap; gap: 8px; }
+  .slider-label { min-width: unset; width: 100%; font-size: 13px; }
+  input[type="range"] { width: 100%; }
+  .slider-val { min-width: unset; text-align: left; }
+
+  .metrics { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .metric { padding: .75rem; }
+  .metric-value { font-size: 18px; }
+  .metric-label { font-size: 10px; }
+
+  .verdict { padding: 1rem; gap: 10px; }
+  .verdict-title { font-size: 14px; }
+  .verdict-sub { font-size: 12px; }
+
+  .info-chips { gap: 4px; }
+  .chip { font-size: 11px; padding: 3px 8px; }
+
+  .tk-input-row { flex-direction: column; gap: 8px; }
+  .tk-input-row input { font-size: 16px; }
+  .tk-input-row button { width: 100%; padding: 12px; font-size: 15px; }
+
+  .tk-station { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px; }
+  .tk-prices { gap: 12px; }
+  .tk-price { font-size: 14px; }
+  .tk-station-dist { font-size: 12px; }
+
+  .tk-selected-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .tk-change-btn { width: 100%; text-align: center; padding: 8px; }
+
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid [style*="grid-column:1/-1"] { grid-column: 1; }
+
+  #mindest-box { padding: 1rem; }
+  #mindest-box div[style*="font-size:14px"] { font-size: 13px; }
+
+  .btn { width: 100%; padding: 12px; font-size: 15px; }
+  .btn.secondary { margin-top: 8px; }
+}
+
+@media (max-width: 380px) {
+  .nav-btn { font-size: 11px; padding: 5px 8px; }
+  .metrics { grid-template-columns: 1fr 1fr; }
+  .metric-value { font-size: 16px; }
+}
 </style>
 </head>
 <body>

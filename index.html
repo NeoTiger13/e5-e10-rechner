@@ -159,13 +159,14 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
         <span class="chip green">E10: freigegeben ✓</span>
         <span class="chip" id="chip-t"></span>
         <span class="chip" id="chip-m"></span>
+        <span class="chip" style="background:var(--blue-bg);color:var(--blue);">💾 gespeichert</span>
       </div>
     </div>
 
     <div class="card">
       <h2>Tankstelle suchen</h2>
       <div class="tk-input-row">
-        <input type="text" id="plz-input" placeholder="PLZ oder Ort eingeben — z.B. 80331"  onkeydown="if(event.key==='Enter') sucheTankstellen()">
+        <input type="text" id="plz-input" placeholder="PLZ oder Ort eingeben — z.B. 80331"  onkeydown="if(event.key==='Enter') sucheTankstellen()" oninput="speichereZustand()">
         <button id="such-btn" onclick="sucheTankstellen()">Suchen</button>
       </div>
       <div id="tk-status" class="tk-loading" style="display:none;"></div>
@@ -193,7 +194,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
       <h2>Fahrprofil</h2>
       <div class="slider-row">
         <span class="slider-label">Verbrauch (L / 100 km)</span>
-        <input type="range" min="4.0" max="16.0" step="0.1" value="7.5" id="verbrauch" oninput="updateSliders();update()">
+        <input type="range" min="4.0" max="16.0" step="0.1" value="7.5" id="verbrauch" oninput="updateSliders();update();speichereZustand()">
         <span class="slider-val" id="verbrauch-out">7,5 L</span>
       </div>
       <div id="verbrauch-hint" style="display:none;font-size:12px;font-family:'DM Mono',monospace;color:var(--amber);background:var(--amber-bg);padding:8px 12px;border-radius:var(--radius);margin-bottom:10px;line-height:1.6;">
@@ -422,12 +423,83 @@ function renderTankstellen(stationen) {
 var DB = [];
 var selected = null;
 
+// localStorage: Speichern
+function speichereZustand() {
+  var marke  = document.getElementById('sel-marke').value;
+  var modell = document.getElementById('sel-modell').value;
+  var motor  = document.getElementById('sel-motor').value;
+  var v      = document.getElementById('verbrauch').value;
+  var plz    = document.getElementById('plz-input').value;
+  localStorage.setItem('e5e10_marke',   marke);
+  localStorage.setItem('e5e10_modell',  modell);
+  localStorage.setItem('e5e10_motor',   motor);
+  localStorage.setItem('e5e10_verbr',   v);
+  localStorage.setItem('e5e10_plz',     plz);
+}
+
+// localStorage: Wiederherstellen nach DB-Laden
+function stelleZustandWiederHer() {
+  var marke  = localStorage.getItem('e5e10_marke');
+  var modell = localStorage.getItem('e5e10_modell');
+  var motor  = localStorage.getItem('e5e10_motor');
+  var v      = localStorage.getItem('e5e10_verbr');
+  var plz    = localStorage.getItem('e5e10_plz');
+
+  if(plz)  document.getElementById('plz-input').value = plz;
+
+  if(!marke) return;
+
+  // Marke setzen
+  var smMarke = document.getElementById('sel-marke');
+  smMarke.value = marke;
+  if(!smMarke.value) return; // Marke nicht in DB
+
+  // Modell-Dropdown befüllen
+  var smModell = document.getElementById('sel-modell');
+  smModell.innerHTML = '<option value="">— Modell wählen —</option>';
+  getModelle(marke).forEach(function(m) {
+    var o = document.createElement('option');
+    o.value = m; o.textContent = m; smModell.appendChild(o);
+  });
+  smModell.disabled = false;
+  smModell.value = modell;
+  if(!smModell.value) return;
+
+  // Motor-Dropdown befüllen
+  var smMotor = document.getElementById('sel-motor');
+  smMotor.innerHTML = '<option value="">— Motor / Baujahr wählen —</option>';
+  getMotoren(marke, modell).forEach(function(d, i) {
+    var o = document.createElement('option');
+    o.value = i; o.textContent = d.motor; smMotor.appendChild(o);
+  });
+  smMotor.disabled = false;
+  smMotor.value = motor;
+  if(smMotor.value === '') return;
+
+  // Fahrzeug laden
+  selected = getMotoren(marke, modell)[parseInt(motor)];
+  if(!selected) return;
+
+  // Verbrauch: gespeicherten Wert nutzen (kann vom NEFZ abweichen)
+  var verbr = parseFloat(v) || selected.verbrauch;
+  document.getElementById('verbrauch').value = verbr;
+  if(selected.tank) document.getElementById('tank').value = selected.tank;
+
+  document.getElementById('chip-v').textContent = 'Verbrauch: ' + verbr.toFixed(1) + ' L/100km';
+  document.getElementById('chip-t').textContent = 'Tank: ' + (selected.tank || 50) + ' L';
+  document.getElementById('chip-m').textContent = 'Mehrverbr.: ~' + selected.mehr + ' %';
+  document.getElementById('fahrzeug-chips').style.display = 'flex';
+  document.getElementById('nefz-val').textContent = selected.verbrauch.toFixed(1).replace('.', ',');
+  document.getElementById('verbrauch-hint').style.display = verbr != selected.verbrauch ? 'block' : 'block';
+}
+
 async function loadDB() {
   try {
     var res = await fetch('fahrzeuge.json');
     DB = await res.json();
   } catch(e) { DB = []; }
   initSelects();
+  stelleZustandWiederHer();
   updateSliders();
   update();
 }
@@ -513,6 +585,7 @@ function onMotor() {
   document.getElementById('verbrauch-hint').style.display = 'block';
   updateSliders();
   update();
+  speichereZustand();
 }
 
 function updateSliders() {

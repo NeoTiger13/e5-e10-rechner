@@ -137,6 +137,12 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
 .tk-price { font-size: 13px; font-family: 'DM Mono', monospace; font-weight: 500; }
 .tk-price.e5 { color: var(--blue); }
 .tk-price.e10 { color: var(--green); }
+.tk-location-btn { white-space: nowrap; padding: 9px 14px; font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; border-radius: var(--radius); border: 1px solid var(--navy); background: transparent; color: var(--navy); cursor: pointer; transition: all .15s; flex-shrink: 0; }
+.tk-location-btn:hover { background: var(--navy); color: #fff; }
+.tk-location-btn:disabled { opacity: .5; cursor: not-allowed; }
+@media (max-width: 600px) {
+  .tk-location-btn { width: 100%; padding: 12px; }
+}
 .tk-loading { font-size: 13px; font-family: 'DM Mono', monospace; color: var(--text3); padding: 10px 0; }
 .tk-collapsed { display: none; }
 .tk-selected-bar { display: none; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; border-radius: var(--radius); border: 1px solid var(--orange); background: var(--orange-bg); margin-top: 10px; }
@@ -251,8 +257,9 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
     <div class="card">
       <h2>Tankstelle suchen</h2>
       <div class="tk-input-row">
-        <input type="text" id="plz-input" placeholder="PLZ oder Ort eingeben — z.B. 80331"  onkeydown="if(event.key==='Enter') sucheTankstellen()" oninput="speichereZustand()">
+        <input type="text" id="plz-input" placeholder="PLZ oder Ort eingeben — z.B. 88045" onkeydown="if(event.key==='Enter') sucheTankstellen()" oninput="speichereZustand()">
         <button id="such-btn" onclick="sucheTankstellen()">Suchen</button>
+        <button class="tk-location-btn" id="loc-btn" onclick="suchePerStandort()" title="Aktuellen Standort nutzen">&#x25CE; Standort</button>
       </div>
       <div id="tk-status" class="tk-loading" style="display:none;"></div>
       <div id="tk-filter-wrap" style="display:none;margin-bottom:8px;">
@@ -408,6 +415,83 @@ var TK_KEY = 'f1555de9-d9ad-446b-8137-094b03d313e1';
 
 var ALLE_STATIONEN = [];
 
+async function suchePerStandort() {
+  if(!navigator.geolocation) {
+    alert('Standortzugriff wird von deinem Browser nicht unterstützt.');
+    return;
+  }
+  var btn = document.getElementById('loc-btn');
+  var suchBtn = document.getElementById('such-btn');
+  var status = document.getElementById('tk-status');
+  var liste = document.getElementById('tk-list');
+  var filterWrap = document.getElementById('tk-filter-wrap');
+
+  btn.disabled = true;
+  btn.textContent = 'Wird ermittelt…';
+  suchBtn.disabled = true;
+  status.style.display = 'block';
+  status.textContent = 'Standort wird ermittelt…';
+  liste.innerHTML = '';
+  filterWrap.style.display = 'none';
+  document.getElementById('tk-filter').value = '';
+  document.getElementById('tk-selected-bar').classList.remove('visible');
+  liste.classList.remove('tk-collapsed');
+  ALLE_STATIONEN = [];
+
+  navigator.geolocation.getCurrentPosition(
+    async function(pos) {
+      var lat = pos.coords.latitude;
+      var lng = pos.coords.longitude;
+      status.textContent = 'Standort gefunden — Tankstellen werden geladen…';
+      document.getElementById('plz-input').value = '';
+      await ladeTankstellen(lat, lng);
+      btn.disabled = false;
+      btn.textContent = '◎ Standort';
+      suchBtn.disabled = false;
+    },
+    function(err) {
+      var msg = 'Standort konnte nicht ermittelt werden.';
+      if(err.code === 1) msg = 'Standortzugriff verweigert — bitte in den Browser-Einstellungen erlauben.';
+      if(err.code === 2) msg = 'Standort nicht verfügbar — bitte PLZ eingeben.';
+      if(err.code === 3) msg = 'Standortermittlung hat zu lange gedauert — bitte PLZ eingeben.';
+      status.textContent = msg;
+      btn.disabled = false;
+      btn.textContent = '◎ Standort';
+      suchBtn.disabled = false;
+    },
+    { timeout: 10000, maximumAge: 60000, enableHighAccuracy: false }
+  );
+}
+
+async function ladeTankstellen(lat, lng) {
+  var status = document.getElementById('tk-status');
+  var filterWrap = document.getElementById('tk-filter-wrap');
+  try {
+    var tkUrl = 'https://creativecommons.tankerkoenig.de/json/list.php?lat=' + lat + '&lng=' + lng + '&rad=10&sort=dist&type=all&apikey=' + TK_KEY;
+    var tkRes = await fetch(tkUrl);
+    var tkData = await tkRes.json();
+    if(!tkData.ok || !tkData.stations || tkData.stations.length === 0) {
+      status.textContent = 'Keine Tankstellen gefunden. Bitte erneut versuchen.';
+      return;
+    }
+    ALLE_STATIONEN = tkData.stations.filter(function(s) {
+      return s.e5 && s.e10;
+    }).sort(function(a, b) {
+      return a.e10 - b.e10;
+    });
+    if(ALLE_STATIONEN.length === 0) {
+      status.textContent = 'Keine Tankstellen mit E5 und E10 gefunden.';
+      return;
+    }
+    status.textContent = ALLE_STATIONEN.length + ' Tankstellen gefunden — wähle deine aus:';
+    if(ALLE_STATIONEN.length > 5) filterWrap.style.display = 'block';
+    renderTankstellen(ALLE_STATIONEN);
+  } catch(err) {
+    status.textContent = 'Suche fehlgeschlagen — bitte kurz warten und erneut versuchen.';
+    status.style.display = 'block';
+  }
+}
+
 async function sucheTankstellen() {
   var plz = document.getElementById('plz-input').value.trim();
   if(!plz) return;
@@ -438,32 +522,7 @@ async function sucheTankstellen() {
     var lng = parseFloat(geoData[0].lon);
     var ortsname = geoData[0].display_name.split(',')[0];
     status.textContent = ortsname + ' gefunden — Tankstellen werden geladen…';
-
-    // Tankerkönig API — 10km Radius, alle Typen, nach Distanz
-    var tkUrl = 'https://creativecommons.tankerkoenig.de/json/list.php?lat=' + lat + '&lng=' + lng + '&rad=10&sort=dist&type=all&apikey=' + TK_KEY;
-    var tkRes = await fetch(tkUrl);
-    var tkData = await tkRes.json();
-
-    if(!tkData.ok || !tkData.stations || tkData.stations.length === 0) {
-      status.textContent = 'Keine Tankstellen gefunden. Bitte erneut versuchen.';
-      btn.disabled = false; btn.textContent = 'Suchen'; return;
-    }
-
-    // Alle Tankstellen mit E5 UND E10 — keine künstliche Begrenzung
-    ALLE_STATIONEN = tkData.stations.filter(function(s) {
-      return s.e5 && s.e10;
-    }).sort(function(a, b) {
-      return a.e10 - b.e10;
-    });
-
-    if(ALLE_STATIONEN.length === 0) {
-      status.textContent = 'Keine Tankstellen mit E5 und E10 gefunden.';
-      btn.disabled = false; btn.textContent = 'Suchen'; return;
-    }
-
-    status.textContent = ALLE_STATIONEN.length + ' Tankstellen gefunden — wähle deine aus:';
-    if(ALLE_STATIONEN.length > 5) filterWrap.style.display = 'block';
-    renderTankstellen(ALLE_STATIONEN);
+    await ladeTankstellen(lat, lng);
 
   } catch(err) {
     status.textContent = 'Suche fehlgeschlagen — bitte kurz warten und erneut versuchen.';

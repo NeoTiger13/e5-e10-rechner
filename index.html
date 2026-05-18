@@ -298,7 +298,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
         <span class="slider-val" id="verbrauch-out">7,5 L</span>
       </div>
       <div id="verbrauch-hint" style="display:none;font-size:12px;font-family:'DM Mono',monospace;color:var(--amber);background:var(--amber-bg);padding:8px 12px;border-radius:var(--radius);margin-bottom:10px;line-height:1.6;">
-        NEFZ-Wert aus Datenbank: <strong id="nefz-val">—</strong> L — das ist der offizielle Herstellerwert. Trag deinen echten Verbrauch ein für genauere Ergebnisse.
+        Herstellerangabe: <strong id="nefz-val">—</strong> L — Realverbrauch oft 10–20% höher. Trag deinen echten Wert ein für genauere Ergebnisse.
       </div>
       <div class="slider-row">
         <span class="slider-label">Tankgröße (Liter)</span>
@@ -336,7 +336,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
         <strong style="color:var(--text2);font-weight:500;">Hinweis:</strong>
         Diese Datenbank enthält ausschließlich E10-freigegebene Fahrzeuge. Ist dein Fahrzeug nicht aufgeführt,
         prüfe die Verträglichkeit unter <a href="https://www.dat.de/e10" target="_blank" style="color:var(--text2);">dat.de/e10</a>.
-        Verbrauchswerte basieren auf Herstellerangaben (NEFZ). Keine Haftung für die Richtigkeit der Angaben.
+        Verbrauchswerte basieren auf Herstellerangaben (NEFZ/WLTP) und können im Realbetrieb abweichen. Keine Haftung für die Richtigkeit der Angaben.
       </p>
     </div>
   </div>
@@ -422,7 +422,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
         Max-Mannheimer-Platz 4<br>
         85221 Dachau<br><br>
         <strong style="color:var(--text);">Kontakt</strong><br>
-        E-Mail: <a href="mailto:tptassek@web.de" style="color:var(--navy);">tptassek@web.de</a><br><br>
+        E-Mail: <a href="mailto:DEINE@EMAIL.DE" style="color:var(--navy);">DEINE@EMAIL.DE</a><br><br>
         <strong style="color:var(--text);">Hinweis</strong><br>
         Diese Webanwendung wird als privates, nicht-kommerzielles Projekt betrieben.
         Sie dient ausschließlich der persönlichen Information und wird unentgeltlich zur Verfügung gestellt.
@@ -746,7 +746,7 @@ function stelleZustandWiederHer() {
   selected = getMotoren(marke, modell)[parseInt(motor)];
   if(!selected) return;
 
-  // Verbrauch: gespeicherten Wert nutzen (kann vom NEFZ abweichen)
+  // Verbrauch: gespeicherten Wert nutzen (kann vom Herstellerwert abweichen)
   var verbr = parseFloat(v) || selected.verbrauch;
   document.getElementById('verbrauch').value = verbr;
   if(selected.tank) document.getElementById('tank').value = selected.tank;

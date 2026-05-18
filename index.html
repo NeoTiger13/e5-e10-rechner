@@ -219,6 +219,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
   <nav>
     <button class="nav-btn active" onclick="showView('rechner')">Rechner</button>
     <button class="nav-btn" onclick="showView('melden')">Fahrzeug melden</button>
+    <button class="nav-btn" onclick="showView('impressum')">Impressum</button>
   </nav>
 </header>
 
@@ -408,6 +409,93 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
     </div>
   </div>
 
+  <!-- IMPRESSUM & DATENSCHUTZ -->
+  <div class="view" id="view-impressum">
+    <p class="page-title">Rechtliches</p>
+    <h1>Impressum & Datenschutz</h1>
+
+    <div class="card">
+      <h2>Impressum</h2>
+      <p style="font-size:14px;color:var(--text2);line-height:1.8;">
+        <strong style="color:var(--text);">Angaben gemäß § 5 TMG</strong><br><br>
+        Till Ptassek<br>
+        Max-Mannheimer-Platz 4<br>
+        85221 Dachau<br><br>
+        <strong style="color:var(--text);">Kontakt</strong><br>
+        E-Mail: <a href="mailto:DEINE@EMAIL.DE" style="color:var(--navy);">DEINE@EMAIL.DE</a><br><br>
+        <strong style="color:var(--text);">Hinweis</strong><br>
+        Diese Webanwendung wird als privates, nicht-kommerzielles Projekt betrieben.
+        Sie dient ausschließlich der persönlichen Information und wird unentgeltlich zur Verfügung gestellt.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Datenschutzerklärung</h2>
+
+      <p style="font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:1rem;">
+        <strong style="color:var(--text);">Verantwortlicher</strong><br>
+        Till Ptassek, Max-Mannheimer-Platz 4, 85221 Dachau
+      </p>
+
+      <p style="font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:1rem;">
+        <strong style="color:var(--text);">Grundsatz</strong><br>
+        Diese App erhebt keine personenbezogenen Daten, legt keine Nutzerkonten an
+        und speichert keine Daten auf einem eigenen Server. Alle Eingaben (Fahrzeug, Verbrauch, PLZ)
+        werden ausschließlich lokal im Browser des Nutzers gespeichert (localStorage)
+        und verlassen das Gerät nicht.
+      </p>
+
+      <p style="font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:1rem;">
+        <strong style="color:var(--text);">Standortdaten</strong><br>
+        Die App kann optional auf den Gerätestandort zugreifen, um nahegelegene Tankstellen zu finden.
+        Die Standortabfrage erfolgt nur nach ausdrücklicher Zustimmung des Nutzers.
+        Der Standort wird ausschließlich für die Tankstellensuche verwendet und nicht gespeichert.
+        Die Koordinaten werden an folgende Drittanbieter übermittelt:
+      </p>
+
+      <p style="font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:1rem;">
+        <strong style="color:var(--text);">Drittanbieter</strong><br><br>
+
+        <em>Tankerkönig (MTS-K)</em><br>
+        Zur Abfrage aktueller Kraftstoffpreise werden GPS-Koordinaten oder PLZ-Daten
+        an die Tankerkönig-API übermittelt. Anbieter: creativecommons.tankerkoenig.de.<br><br>
+
+        <em>OpenStreetMap / Nominatim</em><br>
+        Zur Umwandlung von PLZ/Ortsnamen in GPS-Koordinaten und umgekehrt wird der
+        Nominatim-Dienst von OpenStreetMap genutzt. Anbieter: nominatim.openstreetmap.org.
+        Datenschutzerklärung: <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" style="color:var(--navy);">osmfoundation.org</a><br><br>
+
+        <em>Google Fonts</em><br>
+        Zur Darstellung der Schriftarten werden Fonts von Google Fonts geladen.
+        Dabei wird die IP-Adresse des Nutzers an Google übermittelt.
+        Anbieter: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA.
+        Datenschutzerklärung: <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--navy);">policies.google.com/privacy</a><br><br>
+
+        <em>Formspree</em><br>
+        Das Fahrzeug-Meldeformular nutzt den Dienst Formspree zur Übermittlung von Formulardaten per E-Mail.
+        Anbieter: Formspree Inc. Datenschutzerklärung: <a href="https://formspree.io/legal/privacy-policy" target="_blank" style="color:var(--navy);">formspree.io</a>
+      </p>
+
+      <p style="font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:1rem;">
+        <strong style="color:var(--text);">Cookies & localStorage</strong><br>
+        Diese App verwendet keine Cookies. Zur Verbesserung der Nutzererfahrung werden
+        Einstellungen (gewähltes Fahrzeug, zuletzt eingegebene PLZ) im localStorage des Browsers gespeichert.
+        Diese Daten bleiben lokal auf dem Gerät und werden nicht übertragen.
+        Sie können jederzeit über die Browser-Einstellungen gelöscht werden.
+      </p>
+
+      <p style="font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:1rem;">
+        <strong style="color:var(--text);">Rechte der Nutzer</strong><br>
+        Da keine personenbezogenen Daten auf eigenen Servern gespeichert werden,
+        gibt es keine zu löschenden oder auszukunftgebenden Daten seitens des Betreibers.
+        Für Fragen wende dich an: <a href="mailto:DEINE@EMAIL.DE" style="color:var(--navy);">DEINE@EMAIL.DE</a>
+      </p>
+
+      <p style="font-size:13px;color:var(--text3);line-height:1.8;">
+        Stand: Mai 2026 · Dieser Text wurde nach bestem Wissen erstellt, stellt jedoch keine Rechtsberatung dar.
+      </p>
+    </div>
+  </div>
 </main>
 
 <script>
@@ -903,6 +991,7 @@ function showView(name) {
   document.getElementById('view-' + name).classList.add('active');
   if(name === 'rechner') document.querySelectorAll('.nav-btn')[0].classList.add('active');
   if(name === 'melden') document.querySelectorAll('.nav-btn')[1].classList.add('active');
+  if(name === 'impressum') document.querySelectorAll('.nav-btn')[2].classList.add('active');
 }
 
 loadDB();
@@ -915,5 +1004,9 @@ if('serviceWorker' in navigator) {
   });
 }
 </script>
+<footer style="text-align:center;padding:1.5rem;font-size:12px;font-family:'DM Mono',monospace;color:var(--text3);border-top:1px solid var(--border);margin-top:2rem;">
+  <a href="#" onclick="showView('impressum');return false;" style="color:var(--text3);text-decoration:none;">Impressum & Datenschutz</a>
+  &nbsp;·&nbsp; E5vsE10 — ein privates Projekt von Till Ptassek
+</footer>
 </body>
 </html>

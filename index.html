@@ -225,6 +225,11 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
       </div>
     </div>
 
+    <div id="mindest-box" style="display:none;margin-top:1rem;padding:1rem 1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);">
+      <div style="font-size:11px;font-family:'DM Mono',monospace;color:var(--text3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;">Break-Even Preisdifferenz</div>
+      <div id="mindest-text" style="font-size:14px;color:var(--text);line-height:1.7;"></div>
+    </div>
+
     <div style="margin-top:1rem;padding:1rem 1.25rem;background:var(--surface2);border-radius:var(--radius);border-left:3px solid var(--border-strong);">
       <p style="font-size:12px;font-family:'DM Mono',monospace;color:var(--text3);line-height:1.7;">
         <strong style="color:var(--text2);font-weight:500;">Hinweis:</strong>
@@ -561,6 +566,7 @@ function update() {
     vi.textContent = '→';
     vt.textContent = 'Fahrzeug wählen für eine Empfehlung';
     vs.textContent = 'Marke, Modell und Motor oben auswählen';
+    document.getElementById('mindest-box').style.display = 'none';
   } else if(ersparnis100 > 0.01) {
     vi.textContent = '✓'; vd.classList.add('green');
     vt.textContent = 'Jetzt E10 tanken — ' + ersparnis100.toFixed(2).replace('.', ',') + ' € günstiger pro 100 km';
@@ -573,6 +579,32 @@ function update() {
     vi.textContent = '≈';
     vt.textContent = 'Kein Unterschied (' + ersparnis100.toFixed(2).replace('.', ',') + ' € / 100 km)';
     vs.textContent = 'Beide Kraftstoffe sind bei diesen Preisen gleichwertig';
+  }
+
+  // Break-Even Mindestdifferenz
+  if(selected) {
+    var mindest = pe10 * mehr / 100;          // Δp = Preis_E10 × Mehrverbrauch%/100
+    var aktuell = pe5 - pe10;                 // aktuelle Differenz
+    var mindestCt = (mindest * 100).toFixed(1).replace('.', ',');
+    var aktuellCt = (aktuell * 100).toFixed(1).replace('.', ',');
+    var box = document.getElementById('mindest-box');
+    var txt = document.getElementById('mindest-text');
+    box.style.display = 'block';
+
+    if(aktuell >= mindest) {
+      txt.innerHTML =
+        'E10 lohnt sich für diesen Motor ab einem Preisunterschied von ' +
+        '<strong>' + mindestCt + ' ct/L</strong>. ' +
+        'Aktuell beträgt er <strong style="color:var(--green)">' + aktuellCt + ' ct/L</strong> — ' +
+        'E10 lohnt sich also um <strong style="color:var(--green)">' +
+        ((aktuell - mindest) * 100).toFixed(1).replace('.', ',') + ' ct/L</strong> mehr als nötig.';
+    } else {
+      txt.innerHTML =
+        'E10 lohnt sich für diesen Motor erst ab einem Preisunterschied von ' +
+        '<strong>' + mindestCt + ' ct/L</strong>. ' +
+        'Aktuell beträgt er nur <strong style="color:var(--red)">' + aktuellCt + ' ct/L</strong> — ' +
+        'E5 ist bei diesen Preisen die bessere Wahl.';
+    }
   }
 }
 

@@ -1,0 +1,32 @@
+{
+  "name": "E5vsE10 — Tankentscheidung",
+  "short_name": "E5vsE10",
+  "description": "Schnell entscheiden ob sich E10 oder E5 lohnt — mit Fahrzeugdatenbank und Live-Tankstellenpreisen.",
+  "start_url": "/e5-e10-rechner/",
+  "scope": "/e5-e10-rechner/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#143556",
+  "theme_color": "#143556",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "utilities",
+    "finance",
+    "auto"
+  ],
+  "screenshots": []
+}

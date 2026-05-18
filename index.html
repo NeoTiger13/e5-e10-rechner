@@ -385,12 +385,8 @@ async function sucheTankstellen() {
     var tkRes = await fetch(tkUrl);
     var tkData = await tkRes.json();
 
-    if(!tkData.ok) {
-      status.textContent = 'API Fehler: ' + (tkData.message || JSON.stringify(tkData));
-      btn.disabled = false; btn.textContent = 'Suchen'; return;
-    }
-    if(!tkData.stations || tkData.stations.length === 0) {
-      status.textContent = 'Keine Tankstellen im Umkreis gefunden. (Koordinaten: ' + lat.toFixed(4) + ', ' + lng.toFixed(4) + ')';
+    if(!tkData.ok || !tkData.stations || tkData.stations.length === 0) {
+      status.textContent = 'Keine Tankstellen gefunden. Bitte erneut versuchen.';
       btn.disabled = false; btn.textContent = 'Suchen'; return;
     }
 
@@ -411,9 +407,8 @@ async function sucheTankstellen() {
     renderTankstellen(ALLE_STATIONEN);
 
   } catch(err) {
-    status.textContent = 'Fehler: ' + err.message;
+    status.textContent = 'Suche fehlgeschlagen — bitte kurz warten und erneut versuchen.';
     status.style.display = 'block';
-    console.error('Suchfehler:', err);
   }
   btn.disabled = false;
   btn.textContent = 'Suchen';

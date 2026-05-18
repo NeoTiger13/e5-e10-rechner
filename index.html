@@ -165,10 +165,13 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
     <div class="card">
       <h2>Tankstelle suchen</h2>
       <div class="tk-input-row">
-        <input type="text" id="plz-input" placeholder="PLZ oder Ort eingeben — z.B. 80331" maxlength="10" onkeydown="if(event.key==='Enter') sucheTankstellen()">
+        <input type="text" id="plz-input" placeholder="PLZ oder Ort eingeben — z.B. 80331"  onkeydown="if(event.key==='Enter') sucheTankstellen()">
         <button id="such-btn" onclick="sucheTankstellen()">Suchen</button>
       </div>
       <div id="tk-status" class="tk-loading" style="display:none;"></div>
+      <div id="tk-filter-wrap" style="display:none;margin-bottom:8px;">
+        <input type="text" id="tk-filter" placeholder="Tankstellen filtern — z.B. Shell, Aral, Hauptstraße …" oninput="filterTankstellen()">
+      </div>
       <div class="tk-list" id="tk-list"></div>
 
       <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);">
@@ -305,20 +308,26 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
 <script>
 var TK_KEY = 'f1555de9-d9ad-446b-8137-094b03d313e1';
 
+var ALLE_STATIONEN = [];
+
 async function sucheTankstellen() {
   var plz = document.getElementById('plz-input').value.trim();
   if(!plz) return;
   var btn = document.getElementById('such-btn');
   var status = document.getElementById('tk-status');
   var liste = document.getElementById('tk-list');
+  var filterWrap = document.getElementById('tk-filter-wrap');
   btn.disabled = true;
   btn.textContent = 'Suche…';
   status.style.display = 'block';
   status.textContent = 'Standort wird ermittelt…';
   liste.innerHTML = '';
+  filterWrap.style.display = 'none';
+  document.getElementById('tk-filter').value = '';
+  ALLE_STATIONEN = [];
 
   try {
-    // PLZ → Koordinaten via OpenStreetMap
+    // PLZ / Ort → Koordinaten via OpenStreetMap
     var geoRes = await fetch('https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(plz + ', Deutschland') + '&format=json&limit=1', {
       headers: { 'Accept-Language': 'de' }
     });
@@ -332,8 +341,8 @@ async function sucheTankstellen() {
     var ortsname = geoData[0].display_name.split(',')[0];
     status.textContent = ortsname + ' gefunden — Tankstellen werden geladen…';
 
-    // Tankerkönig API
-    var tkUrl = 'https://creativecommons.tankerkoenig.de/json/list.php?lat=' + lat + '&lng=' + lng + '&rad=5&sort=dist&type=all&apikey=' + TK_KEY;
+    // Tankerkönig API — 10km Radius, alle Typen, nach Distanz
+    var tkUrl = 'https://creativecommons.tankerkoenig.de/json/list.php?lat=' + lat + '&lng=' + lng + '&rad=10&sort=dist&type=all&apikey=' + TK_KEY;
     var tkRes = await fetch(tkUrl);
     var tkData = await tkRes.json();
 
@@ -342,41 +351,19 @@ async function sucheTankstellen() {
       btn.disabled = false; btn.textContent = 'Suchen'; return;
     }
 
-    // Nur Tankstellen mit E5 UND E10 anzeigen
-    var stationen = tkData.stations.filter(function(s) {
+    // Alle Tankstellen mit E5 UND E10 — keine künstliche Begrenzung
+    ALLE_STATIONEN = tkData.stations.filter(function(s) {
       return s.e5 && s.e10;
-    }).slice(0, 8);
+    });
 
-    if(stationen.length === 0) {
+    if(ALLE_STATIONEN.length === 0) {
       status.textContent = 'Keine Tankstellen mit E5 und E10 gefunden.';
       btn.disabled = false; btn.textContent = 'Suchen'; return;
     }
 
-    status.style.display = 'none';
-    stationen.forEach(function(s) {
-      var div = document.createElement('div');
-      div.className = 'tk-station';
-      div.innerHTML =
-        '<div>' +
-          '<div class="tk-station-name">' + s.brand + ' — ' + s.name + '</div>' +
-          '<div class="tk-station-addr">' + s.street + ' ' + (s.houseNumber||'') + ', ' + s.place + '</div>' +
-        '</div>' +
-        '<div style="display:flex;align-items:center;gap:14px;">' +
-          '<div class="tk-prices">' +
-            '<span class="tk-price e5">E5: ' + s.e5.toFixed(3).replace('.',',') + ' €</span>' +
-            '<span class="tk-price e10">E10: ' + s.e10.toFixed(3).replace('.',',') + ' €</span>' +
-          '</div>' +
-          '<div class="tk-station-dist">' + s.dist.toFixed(1).replace('.',',') + ' km</div>' +
-        '</div>';
-      div.onclick = function() {
-        document.querySelectorAll('.tk-station').forEach(function(el) { el.classList.remove('active'); });
-        div.classList.add('active');
-        document.getElementById('preis-e5').value = s.e5.toFixed(3);
-        document.getElementById('preis-e10').value = s.e10.toFixed(3);
-        update();
-      };
-      liste.appendChild(div);
-    });
+    status.textContent = ALLE_STATIONEN.length + ' Tankstellen gefunden — wähle deine aus:';
+    if(ALLE_STATIONEN.length > 5) filterWrap.style.display = 'block';
+    renderTankstellen(ALLE_STATIONEN);
 
   } catch(err) {
     status.textContent = 'Fehler bei der Suche. Bitte versuche es erneut.';
@@ -384,6 +371,47 @@ async function sucheTankstellen() {
   }
   btn.disabled = false;
   btn.textContent = 'Suchen';
+}
+
+function filterTankstellen() {
+  var q = document.getElementById('tk-filter').value.toLowerCase();
+  var gefiltert = ALLE_STATIONEN.filter(function(s) {
+    return (s.brand + ' ' + s.name + ' ' + s.street + ' ' + s.place).toLowerCase().includes(q);
+  });
+  renderTankstellen(gefiltert);
+}
+
+function renderTankstellen(stationen) {
+  var liste = document.getElementById('tk-list');
+  liste.innerHTML = '';
+  if(stationen.length === 0) {
+    liste.innerHTML = '<div class="tk-loading">Keine Tankstellen gefunden.</div>';
+    return;
+  }
+  stationen.forEach(function(s) {
+    var div = document.createElement('div');
+    div.className = 'tk-station';
+    div.innerHTML =
+      '<div>' +
+        '<div class="tk-station-name">' + (s.brand || s.name) + '</div>' +
+        '<div class="tk-station-addr">' + s.street + ' ' + (s.houseNumber||'') + ', ' + s.place + '</div>' +
+      '</div>' +
+      '<div style="display:flex;align-items:center;gap:14px;">' +
+        '<div class="tk-prices">' +
+          '<span class="tk-price e5">E5&nbsp;' + s.e5.toFixed(3).replace('.',',') + '</span>' +
+          '<span class="tk-price e10">E10&nbsp;' + s.e10.toFixed(3).replace('.',',') + '</span>' +
+        '</div>' +
+        '<div class="tk-station-dist">' + s.dist.toFixed(1).replace('.',',') + ' km</div>' +
+      '</div>';
+    div.onclick = function() {
+      document.querySelectorAll('.tk-station').forEach(function(el) { el.classList.remove('active'); });
+      div.classList.add('active');
+      document.getElementById('preis-e5').value = s.e5.toFixed(3);
+      document.getElementById('preis-e10').value = s.e10.toFixed(3);
+      update();
+    };
+    liste.appendChild(div);
+  });
 }
 
 var DB = [];

@@ -101,6 +101,24 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
 .notice { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--text3); padding: 8px 12px; background: var(--surface2); border-radius: var(--radius); margin-top: 6px; line-height: 1.6; }
 .hint { font-size: 12px; color: var(--text3); font-family: 'DM Mono', monospace; text-align: right; margin-bottom: .5rem; min-height: 1.4em; }
 .err-msg { font-size: 13px; padding: 10px 14px; border-radius: var(--radius); margin-top: 12px; display: none; background: var(--red-bg); color: var(--red); }
+
+.tk-input-row { display: flex; gap: 10px; margin-bottom: 10px; }
+.tk-input-row input { flex: 1; }
+.tk-input-row button { white-space: nowrap; padding: 9px 16px; font-family: 'DM Sans', sans-serif; font-size: 14px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--text); color: #fff; cursor: pointer; transition: opacity .15s; }
+.tk-input-row button:hover { opacity: .85; }
+.tk-input-row button:disabled { opacity: .5; cursor: not-allowed; }
+.tk-list { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+.tk-station { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg); cursor: pointer; transition: border-color .15s; }
+.tk-station:hover { border-color: var(--text); }
+.tk-station.active { border-color: var(--text); background: var(--surface2); }
+.tk-station-name { font-size: 13px; font-weight: 500; color: var(--text); }
+.tk-station-addr { font-size: 12px; color: var(--text3); margin-top: 2px; }
+.tk-station-dist { font-size: 12px; font-family: 'DM Mono', monospace; color: var(--text3); white-space: nowrap; }
+.tk-prices { display: flex; gap: 10px; align-items: center; }
+.tk-price { font-size: 13px; font-family: 'DM Mono', monospace; font-weight: 500; }
+.tk-price.e5 { color: var(--blue); }
+.tk-price.e10 { color: var(--green); }
+.tk-loading { font-size: 13px; font-family: 'DM Mono', monospace; color: var(--text3); padding: 10px 0; }
 </style>
 </head>
 <body>
@@ -145,15 +163,25 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
     </div>
 
     <div class="card">
-      <h2>Preise heute an deiner Tankstelle</h2>
-      <div class="price-row">
-        <div>
-          <div class="sel-label">Super E5 (€ / Liter)</div>
-          <input type="number" id="preis-e5" min="1.2" max="2.5" step="0.001" value="1.850" oninput="update()">
-        </div>
-        <div>
-          <div class="sel-label">Super E10 (€ / Liter)</div>
-          <input type="number" id="preis-e10" min="1.2" max="2.5" step="0.001" value="1.790" oninput="update()">
+      <h2>Tankstelle suchen</h2>
+      <div class="tk-input-row">
+        <input type="text" id="plz-input" placeholder="PLZ oder Ort eingeben — z.B. 80331" maxlength="10" onkeydown="if(event.key==='Enter') sucheTankstellen()">
+        <button id="such-btn" onclick="sucheTankstellen()">Suchen</button>
+      </div>
+      <div id="tk-status" class="tk-loading" style="display:none;"></div>
+      <div class="tk-list" id="tk-list"></div>
+
+      <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border);">
+        <h2 style="margin-top:0;">Oder Preise manuell eingeben</h2>
+        <div class="price-row">
+          <div>
+            <div class="sel-label">Super E5 (€ / Liter)</div>
+            <input type="number" id="preis-e5" min="1.2" max="2.5" step="0.001" value="1.850" oninput="update()">
+          </div>
+          <div>
+            <div class="sel-label">Super E10 (€ / Liter)</div>
+            <input type="number" id="preis-e10" min="1.2" max="2.5" step="0.001" value="1.790" oninput="update()">
+          </div>
         </div>
       </div>
     </div>
@@ -275,6 +303,89 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 16p
 </main>
 
 <script>
+var TK_KEY = 'f1555de9-d9ad-446b-8137-094b03d313e1';
+
+async function sucheTankstellen() {
+  var plz = document.getElementById('plz-input').value.trim();
+  if(!plz) return;
+  var btn = document.getElementById('such-btn');
+  var status = document.getElementById('tk-status');
+  var liste = document.getElementById('tk-list');
+  btn.disabled = true;
+  btn.textContent = 'Suche…';
+  status.style.display = 'block';
+  status.textContent = 'Standort wird ermittelt…';
+  liste.innerHTML = '';
+
+  try {
+    // PLZ → Koordinaten via OpenStreetMap
+    var geoRes = await fetch('https://nominatim.openstreetmap.org/search?q=' + encodeURIComponent(plz + ', Deutschland') + '&format=json&limit=1', {
+      headers: { 'Accept-Language': 'de' }
+    });
+    var geoData = await geoRes.json();
+    if(!geoData || geoData.length === 0) {
+      status.textContent = 'Ort nicht gefunden. Bitte PLZ oder Ort prüfen.';
+      btn.disabled = false; btn.textContent = 'Suchen'; return;
+    }
+    var lat = parseFloat(geoData[0].lat);
+    var lng = parseFloat(geoData[0].lon);
+    var ortsname = geoData[0].display_name.split(',')[0];
+    status.textContent = ortsname + ' gefunden — Tankstellen werden geladen…';
+
+    // Tankerkönig API
+    var tkUrl = 'https://creativecommons.tankerkoenig.de/json/list.php?lat=' + lat + '&lng=' + lng + '&rad=5&sort=dist&type=all&apikey=' + TK_KEY;
+    var tkRes = await fetch(tkUrl);
+    var tkData = await tkRes.json();
+
+    if(!tkData.ok || !tkData.stations || tkData.stations.length === 0) {
+      status.textContent = 'Keine Tankstellen im Umkreis gefunden.';
+      btn.disabled = false; btn.textContent = 'Suchen'; return;
+    }
+
+    // Nur Tankstellen mit E5 UND E10 anzeigen
+    var stationen = tkData.stations.filter(function(s) {
+      return s.e5 && s.e10;
+    }).slice(0, 8);
+
+    if(stationen.length === 0) {
+      status.textContent = 'Keine Tankstellen mit E5 und E10 gefunden.';
+      btn.disabled = false; btn.textContent = 'Suchen'; return;
+    }
+
+    status.style.display = 'none';
+    stationen.forEach(function(s) {
+      var div = document.createElement('div');
+      div.className = 'tk-station';
+      div.innerHTML =
+        '<div>' +
+          '<div class="tk-station-name">' + s.brand + ' — ' + s.name + '</div>' +
+          '<div class="tk-station-addr">' + s.street + ' ' + (s.houseNumber||'') + ', ' + s.place + '</div>' +
+        '</div>' +
+        '<div style="display:flex;align-items:center;gap:14px;">' +
+          '<div class="tk-prices">' +
+            '<span class="tk-price e5">E5: ' + s.e5.toFixed(3).replace('.',',') + ' €</span>' +
+            '<span class="tk-price e10">E10: ' + s.e10.toFixed(3).replace('.',',') + ' €</span>' +
+          '</div>' +
+          '<div class="tk-station-dist">' + s.dist.toFixed(1).replace('.',',') + ' km</div>' +
+        '</div>';
+      div.onclick = function() {
+        document.querySelectorAll('.tk-station').forEach(function(el) { el.classList.remove('active'); });
+        div.classList.add('active');
+        document.getElementById('preis-e5').value = s.e5.toFixed(3);
+        document.getElementById('preis-e10').value = s.e10.toFixed(3);
+        update();
+      };
+      liste.appendChild(div);
+    });
+
+  } catch(err) {
+    status.textContent = 'Fehler bei der Suche. Bitte versuche es erneut.';
+    status.style.display = 'block';
+  }
+  btn.disabled = false;
+  btn.textContent = 'Suchen';
+}
+
 var DB = [];
 var selected = null;
 

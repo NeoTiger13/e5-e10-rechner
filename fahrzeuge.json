@@ -25,6 +25,24 @@
   },
   {
     "marke": "Audi",
+    "modell": "A1 GB",
+    "motor": "1.0 TFSI 95 PS (2018–)",
+    "verbrauch": 5.0,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Audi",
+    "modell": "A1 GB",
+    "motor": "1.5 TFSI 150 PS (2018–)",
+    "verbrauch": 5.8,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Audi",
     "modell": "A3 8L",
     "motor": "1.6 MPI 102 PS (1996–2003)",
     "verbrauch": 7.5,
@@ -89,6 +107,24 @@
   },
   {
     "marke": "Audi",
+    "modell": "A3 8Y",
+    "motor": "1.0 TFSI 110 PS (2020–)",
+    "verbrauch": 5.5,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Audi",
+    "modell": "A3 8Y",
+    "motor": "1.5 TFSI 150 PS (2020–)",
+    "verbrauch": 6.2,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Audi",
     "modell": "A4 B6",
     "motor": "1.8T 163 PS (2000–2004)",
     "verbrauch": 8.9,
@@ -129,6 +165,24 @@
   },
   {
     "marke": "Audi",
+    "modell": "A4 B9",
+    "motor": "1.4 TFSI 150 PS (2015–2019)",
+    "verbrauch": 6.8,
+    "tank": 58,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Audi",
+    "modell": "A4 B9",
+    "motor": "2.0 TFSI 190 PS (2015–)",
+    "verbrauch": 7.5,
+    "tank": 58,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Audi",
     "modell": "A6 C6",
     "motor": "2.4 V6 177 PS (2004–2011)",
     "verbrauch": 10.5,
@@ -142,6 +196,33 @@
     "verbrauch": 9.8,
     "mehr": 1.2,
     "tank": 70
+  },
+  {
+    "marke": "Audi",
+    "modell": "Q2",
+    "motor": "1.0 TFSI 116 PS (2016–)",
+    "verbrauch": 6.0,
+    "tank": 45,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Audi",
+    "modell": "Q2",
+    "motor": "1.5 TFSI 150 PS (2020–)",
+    "verbrauch": 6.5,
+    "tank": 45,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Audi",
+    "modell": "Q3 F3",
+    "motor": "1.5 TFSI 150 PS (2018–)",
+    "verbrauch": 7.2,
+    "tank": 60,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Audi",
@@ -206,6 +287,33 @@
     "verbrauch": 6.9,
     "mehr": 1.2,
     "tank": 52
+  },
+  {
+    "marke": "BMW",
+    "modell": "1er F40",
+    "motor": "116i 109 PS (2019–)",
+    "verbrauch": 6.2,
+    "tank": 51,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "BMW",
+    "modell": "1er F40",
+    "motor": "118i 136 PS (2019–)",
+    "verbrauch": 6.5,
+    "tank": 51,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "BMW",
+    "modell": "2er F22",
+    "motor": "218i 136 PS (2014–2021)",
+    "verbrauch": 7.0,
+    "tank": 52,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "BMW",
@@ -297,6 +405,24 @@
   },
   {
     "marke": "BMW",
+    "modell": "3er G20",
+    "motor": "318i 156 PS (2018–)",
+    "verbrauch": 6.5,
+    "tank": 59,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "BMW",
+    "modell": "3er G20",
+    "motor": "320i 184 PS (2018–)",
+    "verbrauch": 7.0,
+    "tank": 59,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "BMW",
     "modell": "5er E60",
     "motor": "520i 170 PS (2003–2010)",
     "verbrauch": 9.5,
@@ -328,6 +454,42 @@
     "tank": 70
   },
   {
+    "marke": "BMW",
+    "modell": "5er G30",
+    "motor": "520i 184 PS (2016–)",
+    "verbrauch": 7.2,
+    "tank": 68,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "BMW",
+    "modell": "X1 F48",
+    "motor": "sDrive18i 140 PS (2015–2022)",
+    "verbrauch": 7.5,
+    "tank": 61,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "BMW",
+    "modell": "X1 U11",
+    "motor": "sDrive18i 136 PS (2022–)",
+    "verbrauch": 7.0,
+    "tank": 54,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Citroën",
+    "modell": "Berlingo III",
+    "motor": "1.2 PureTech 110 PS (2018–)",
+    "verbrauch": 7.2,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
     "marke": "Citroën",
     "modell": "C1 I",
     "motor": "1.0i 68 PS (2005–2014)",
@@ -350,6 +512,15 @@
     "verbrauch": 6.6,
     "mehr": 1.5,
     "tank": 42
+  },
+  {
+    "marke": "Citroën",
+    "modell": "C3 Aircross",
+    "motor": "1.2 PureTech 110 PS (2017–)",
+    "verbrauch": 6.5,
+    "tank": 44,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Citroën",
@@ -385,6 +556,24 @@
   },
   {
     "marke": "Citroën",
+    "modell": "C3 III",
+    "motor": "1.2 PureTech 110 PS (2016–)",
+    "verbrauch": 6.2,
+    "tank": 44,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Citroën",
+    "modell": "C3 III",
+    "motor": "1.2 PureTech 83 PS (2016–)",
+    "verbrauch": 5.8,
+    "tank": 44,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Citroën",
     "modell": "C4 I",
     "motor": "1.6 16V 110 PS (2004–2010)",
     "verbrauch": 7.5,
@@ -409,6 +598,15 @@
   },
   {
     "marke": "Citroën",
+    "modell": "C5 Aircross",
+    "motor": "1.2 PureTech 130 PS (2018–)",
+    "verbrauch": 7.5,
+    "tank": 52,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Citroën",
     "modell": "C5 II",
     "motor": "1.8 16V 127 PS (2004–2008)",
     "verbrauch": 8.8,
@@ -425,6 +623,33 @@
   },
   {
     "marke": "Dacia",
+    "modell": "Duster II",
+    "motor": "1.0 TCe 90 PS (2018–)",
+    "verbrauch": 7.2,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Dacia",
+    "modell": "Duster II",
+    "motor": "1.3 TCe 130 PS (2018–)",
+    "verbrauch": 8.0,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Dacia",
+    "modell": "Jogger",
+    "motor": "1.0 TCe 110 PS (2021–)",
+    "verbrauch": 7.2,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Dacia",
     "modell": "Logan I",
     "motor": "1.4 MPI 75 PS (2004–2012)",
     "verbrauch": 7.4,
@@ -438,6 +663,15 @@
     "verbrauch": 8.2,
     "mehr": 1.5,
     "tank": 50
+  },
+  {
+    "marke": "Dacia",
+    "modell": "Logan III",
+    "motor": "1.0 SCe 65 PS (2020–)",
+    "verbrauch": 6.0,
+    "tank": 50,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Dacia",
@@ -464,6 +698,24 @@
     "tank": 50
   },
   {
+    "marke": "Dacia",
+    "modell": "Sandero III",
+    "motor": "1.0 SCe 65 PS (2020–)",
+    "verbrauch": 6.2,
+    "tank": 50,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Dacia",
+    "modell": "Sandero III",
+    "motor": "1.0 TCe 90 PS (2020–)",
+    "verbrauch": 6.0,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
     "marke": "Fiat",
     "modell": "500",
     "motor": "1.2 8V 69 PS (2007–2015)",
@@ -478,6 +730,15 @@
     "verbrauch": 6.8,
     "mehr": 1.5,
     "tank": 35
+  },
+  {
+    "marke": "Fiat",
+    "modell": "500 II",
+    "motor": "1.0 Hybrid 70 PS (2020–)",
+    "verbrauch": 5.8,
+    "tank": 35,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Fiat",
@@ -529,11 +790,29 @@
   },
   {
     "marke": "Fiat",
+    "modell": "Panda III",
+    "motor": "1.0 Hybrid 70 PS (2020–)",
+    "verbrauch": 6.0,
+    "tank": 37,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Fiat",
     "modell": "Stilo",
     "motor": "1.6 16V 103 PS (2001–2007)",
     "verbrauch": 8.0,
     "mehr": 1.5,
     "tank": 60
+  },
+  {
+    "marke": "Fiat",
+    "modell": "Tipo",
+    "motor": "1.4 16V 95 PS (2015–)",
+    "verbrauch": 7.2,
+    "tank": 52,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Ford",
@@ -574,6 +853,24 @@
     "verbrauch": 7.2,
     "mehr": 1.5,
     "tank": 42
+  },
+  {
+    "marke": "Ford",
+    "modell": "Fiesta VII",
+    "motor": "1.0 EcoBoost 100 PS (2017–2023)",
+    "verbrauch": 5.6,
+    "tank": 42,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Ford",
+    "modell": "Fiesta VII",
+    "motor": "1.0 EcoBoost 85 PS (2017–2023)",
+    "verbrauch": 5.4,
+    "tank": 42,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Ford",
@@ -641,11 +938,38 @@
   },
   {
     "marke": "Ford",
+    "modell": "Focus IV",
+    "motor": "1.0 EcoBoost 125 PS (2018–)",
+    "verbrauch": 6.0,
+    "tank": 52,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Ford",
+    "modell": "Focus IV",
+    "motor": "1.5 EcoBoost 150 PS (2018–)",
+    "verbrauch": 6.8,
+    "tank": 52,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Ford",
     "modell": "Galaxy I",
     "motor": "2.0 16V 116 PS (1995–2006)",
     "verbrauch": 10.5,
     "mehr": 1.5,
     "tank": 70
+  },
+  {
+    "marke": "Ford",
+    "modell": "Kuga III",
+    "motor": "1.5 EcoBoost 150 PS (2019–)",
+    "verbrauch": 7.8,
+    "tank": 52,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Ford",
@@ -670,6 +994,24 @@
     "verbrauch": 9.0,
     "mehr": 1.4,
     "tank": 70
+  },
+  {
+    "marke": "Ford",
+    "modell": "Puma",
+    "motor": "1.0 EcoBoost 125 PS (2019–)",
+    "verbrauch": 6.2,
+    "tank": 45,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Ford",
+    "modell": "Puma",
+    "motor": "1.0 EcoBoost mHEV 155 PS (2019–)",
+    "verbrauch": 6.0,
+    "tank": 45,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Ford",
@@ -713,6 +1055,24 @@
   },
   {
     "marke": "Honda",
+    "modell": "Civic X",
+    "motor": "1.0 VTEC Turbo 126 PS (2017–2021)",
+    "verbrauch": 6.5,
+    "tank": 46,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Honda",
+    "modell": "Civic X",
+    "motor": "1.5 VTEC Turbo 182 PS (2017–2021)",
+    "verbrauch": 7.5,
+    "tank": 46,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Honda",
     "modell": "Jazz II",
     "motor": "1.2 i-VTEC 78 PS (2002–2008)",
     "verbrauch": 6.5,
@@ -726,6 +1086,33 @@
     "verbrauch": 6.2,
     "mehr": 1.5,
     "tank": 40
+  },
+  {
+    "marke": "Honda",
+    "modell": "Jazz IV",
+    "motor": "1.5 i-VTEC 102 PS (2015–2020)",
+    "verbrauch": 6.5,
+    "tank": 40,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Hyundai",
+    "modell": "Tucson III",
+    "motor": "1.6 T-GDI 150 PS (2015–2020)",
+    "verbrauch": 8.2,
+    "tank": 62,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Hyundai",
+    "modell": "Tucson IV",
+    "motor": "1.6 T-GDI 150 PS (2020–)",
+    "verbrauch": 8.0,
+    "tank": 54,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Hyundai",
@@ -745,6 +1132,33 @@
   },
   {
     "marke": "Hyundai",
+    "modell": "i10 II",
+    "motor": "1.0 MPI 67 PS (2013–2019)",
+    "verbrauch": 5.8,
+    "tank": 35,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Hyundai",
+    "modell": "i10 III",
+    "motor": "1.0 MPI 67 PS (2019–)",
+    "verbrauch": 5.5,
+    "tank": 36,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Hyundai",
+    "modell": "i10 III",
+    "motor": "1.2 MPI 84 PS (2019–)",
+    "verbrauch": 5.8,
+    "tank": 36,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Hyundai",
     "modell": "i20 I",
     "motor": "1.2 MPI 78 PS (2008–2014)",
     "verbrauch": 6.2,
@@ -761,6 +1175,24 @@
   },
   {
     "marke": "Hyundai",
+    "modell": "i20 II",
+    "motor": "1.0 T-GDI 100 PS (2014–2020)",
+    "verbrauch": 6.2,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Hyundai",
+    "modell": "i20 III",
+    "motor": "1.0 T-GDI 100 PS (2020–)",
+    "verbrauch": 5.8,
+    "tank": 45,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Hyundai",
     "modell": "i30 I",
     "motor": "1.4 MPI 109 PS (2007–2012)",
     "verbrauch": 7.0,
@@ -774,6 +1206,24 @@
     "verbrauch": 7.6,
     "mehr": 1.5,
     "tank": 53
+  },
+  {
+    "marke": "Hyundai",
+    "modell": "i30 II",
+    "motor": "1.0 T-GDI 120 PS (2016–2020)",
+    "verbrauch": 6.5,
+    "tank": 53,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Hyundai",
+    "modell": "i30 III",
+    "motor": "1.0 T-GDI 120 PS (2017–)",
+    "verbrauch": 6.2,
+    "tank": 53,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Hyundai",
@@ -801,6 +1251,24 @@
   },
   {
     "marke": "Kia",
+    "modell": "Ceed II",
+    "motor": "1.0 T-GDI 120 PS (2018–)",
+    "verbrauch": 6.2,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Kia",
+    "modell": "Ceed II",
+    "motor": "1.4 T-GDI 140 PS (2018–)",
+    "verbrauch": 7.0,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Kia",
     "modell": "Picanto I",
     "motor": "1.0 MPI 61 PS (2004–2011)",
     "verbrauch": 5.8,
@@ -817,6 +1285,24 @@
   },
   {
     "marke": "Kia",
+    "modell": "Picanto III",
+    "motor": "1.0 MPI 67 PS (2017–)",
+    "verbrauch": 5.5,
+    "tank": 35,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Kia",
+    "modell": "Picanto III",
+    "motor": "1.2 MPI 84 PS (2017–)",
+    "verbrauch": 5.8,
+    "tank": 35,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Kia",
     "modell": "Rio II",
     "motor": "1.4 MPI 97 PS (2005–2011)",
     "verbrauch": 7.2,
@@ -825,11 +1311,65 @@
   },
   {
     "marke": "Kia",
+    "modell": "Rio IV",
+    "motor": "1.0 T-GDI 100 PS (2017–)",
+    "verbrauch": 5.8,
+    "tank": 45,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Kia",
     "modell": "Sportage II",
     "motor": "2.0 MPI 140 PS (2004–2010)",
     "verbrauch": 10.2,
     "mehr": 1.5,
     "tank": 58
+  },
+  {
+    "marke": "Kia",
+    "modell": "Sportage IV",
+    "motor": "1.6 T-GDI 177 PS (2015–2021)",
+    "verbrauch": 8.5,
+    "tank": 52,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Kia",
+    "modell": "Sportage V",
+    "motor": "1.6 T-GDI 150 PS (2021–)",
+    "verbrauch": 8.0,
+    "tank": 52,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Kia",
+    "modell": "Stonic",
+    "motor": "1.0 T-GDI 100 PS (2017–)",
+    "verbrauch": 6.5,
+    "tank": 45,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mazda",
+    "modell": "2 DJ",
+    "motor": "1.5 Skyactiv-G 75 PS (2014–)",
+    "verbrauch": 5.8,
+    "tank": 44,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mazda",
+    "modell": "2 DJ",
+    "motor": "1.5 Skyactiv-G 90 PS (2014–)",
+    "verbrauch": 6.0,
+    "tank": 44,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Mazda",
@@ -857,6 +1397,15 @@
   },
   {
     "marke": "Mazda",
+    "modell": "3 BP",
+    "motor": "2.0 Skyactiv-G 122 PS (2019–)",
+    "verbrauch": 7.2,
+    "tank": 51,
+    "mehr": 1.4,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mazda",
     "modell": "6 GG",
     "motor": "1.8 MZR 120 PS (2002–2007)",
     "verbrauch": 8.5,
@@ -870,6 +1419,24 @@
     "verbrauch": 9.5,
     "mehr": 1.4,
     "tank": 60
+  },
+  {
+    "marke": "Mazda",
+    "modell": "CX-3",
+    "motor": "2.0 Skyactiv-G 121 PS (2015–)",
+    "verbrauch": 7.8,
+    "tank": 44,
+    "mehr": 1.4,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mazda",
+    "modell": "CX-5 II",
+    "motor": "2.0 Skyactiv-G 165 PS (2017–)",
+    "verbrauch": 8.5,
+    "tank": 58,
+    "mehr": 1.4,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Mercedes",
@@ -913,6 +1480,24 @@
   },
   {
     "marke": "Mercedes",
+    "modell": "A-Klasse W177",
+    "motor": "A180 136 PS (2018–)",
+    "verbrauch": 6.5,
+    "tank": 43,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mercedes",
+    "modell": "A-Klasse W177",
+    "motor": "A200 163 PS (2018–)",
+    "verbrauch": 7.0,
+    "tank": 43,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mercedes",
     "modell": "B-Klasse W245",
     "motor": "B150 95 PS (2005–2011)",
     "verbrauch": 7.5,
@@ -934,6 +1519,15 @@
     "verbrauch": 6.8,
     "mehr": 1.3,
     "tank": 50
+  },
+  {
+    "marke": "Mercedes",
+    "modell": "B-Klasse W247",
+    "motor": "B180 136 PS (2018–)",
+    "verbrauch": 6.8,
+    "tank": 45,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Mercedes",
@@ -985,6 +1579,33 @@
   },
   {
     "marke": "Mercedes",
+    "modell": "C-Klasse W205",
+    "motor": "C180 156 PS (2014–2021)",
+    "verbrauch": 7.5,
+    "tank": 66,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mercedes",
+    "modell": "C-Klasse W205",
+    "motor": "C200 184 PS (2014–2021)",
+    "verbrauch": 7.8,
+    "tank": 66,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mercedes",
+    "modell": "C-Klasse W206",
+    "motor": "C180 170 PS (2021–)",
+    "verbrauch": 7.2,
+    "tank": 66,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mercedes",
     "modell": "E-Klasse W211",
     "motor": "E200 Kompressor 163 PS (2002–2009)",
     "verbrauch": 9.8,
@@ -1000,12 +1621,49 @@
     "tank": 70
   },
   {
-    "marke": "Mini",
-    "modell": "R50",
-    "motor": "One 90 PS (2001–2006)",
+    "marke": "Mercedes",
+    "modell": "GLA H247",
+    "motor": "GLA180 136 PS (2020–)",
     "verbrauch": 7.5,
-    "mehr": 1.4,
-    "tank": 50
+    "tank": 51,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mini",
+    "modell": "F55",
+    "motor": "One 102 PS (2014–)",
+    "verbrauch": 6.8,
+    "tank": 44,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mini",
+    "modell": "F56",
+    "motor": "Cooper 136 PS (2014–)",
+    "verbrauch": 7.0,
+    "tank": 44,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mini",
+    "modell": "F56",
+    "motor": "One 102 PS (2014–)",
+    "verbrauch": 6.5,
+    "tank": 44,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mini",
+    "modell": "F60 Countryman",
+    "motor": "One 102 PS (2017–)",
+    "verbrauch": 7.5,
+    "tank": 51,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Mini",
@@ -1017,10 +1675,10 @@
   },
   {
     "marke": "Mini",
-    "modell": "R56",
-    "motor": "One 98 PS (2006–2013)",
-    "verbrauch": 7.2,
-    "mehr": 1.3,
+    "modell": "R50",
+    "motor": "One 90 PS (2001–2006)",
+    "verbrauch": 7.5,
+    "mehr": 1.4,
     "tank": 50
   },
   {
@@ -1030,6 +1688,23 @@
     "verbrauch": 7.5,
     "mehr": 1.3,
     "tank": 50
+  },
+  {
+    "marke": "Mini",
+    "modell": "R56",
+    "motor": "One 98 PS (2006–2013)",
+    "verbrauch": 7.2,
+    "mehr": 1.3,
+    "tank": 50
+  },
+  {
+    "marke": "Mitsubishi",
+    "modell": "ASX",
+    "motor": "1.6 MIVEC 117 PS (2010–2022)",
+    "verbrauch": 8.0,
+    "tank": 60,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Mitsubishi",
@@ -1046,6 +1721,33 @@
     "verbrauch": 7.0,
     "mehr": 1.5,
     "tank": 43
+  },
+  {
+    "marke": "Mitsubishi",
+    "modell": "Space Star II",
+    "motor": "1.0 MIVEC 71 PS (2012–)",
+    "verbrauch": 5.8,
+    "tank": 35,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Mitsubishi",
+    "modell": "Space Star II",
+    "motor": "1.2 MIVEC 80 PS (2012–)",
+    "verbrauch": 6.2,
+    "tank": 35,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Nissan",
+    "modell": "Juke II",
+    "motor": "1.0 DIG-T 114 PS (2019–)",
+    "verbrauch": 7.0,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Nissan",
@@ -1065,11 +1767,29 @@
   },
   {
     "marke": "Nissan",
+    "modell": "Micra K14",
+    "motor": "1.0 IG-T 92 PS (2017–)",
+    "verbrauch": 5.8,
+    "tank": 41,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Nissan",
     "modell": "Note E11",
     "motor": "1.4 16V 88 PS (2006–2013)",
     "verbrauch": 7.0,
     "mehr": 1.5,
     "tank": 41
+  },
+  {
+    "marke": "Nissan",
+    "modell": "Qashqai III",
+    "motor": "1.3 DIG-T 140 PS (2021–)",
+    "verbrauch": 7.5,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Nissan",
@@ -1169,6 +1889,33 @@
   },
   {
     "marke": "Opel",
+    "modell": "Astra K",
+    "motor": "1.0 Turbo 105 PS (2015–2021)",
+    "verbrauch": 6.2,
+    "tank": 52,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Opel",
+    "modell": "Astra K",
+    "motor": "1.4 Turbo 125 PS (2015–2021)",
+    "verbrauch": 6.8,
+    "tank": 52,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Opel",
+    "modell": "Astra L",
+    "motor": "1.2 Turbo 110 PS (2021–)",
+    "verbrauch": 6.2,
+    "tank": 52,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Opel",
     "modell": "Corsa B",
     "motor": "1.2i 45 PS (1993–2000)",
     "verbrauch": 7.0,
@@ -1222,6 +1969,60 @@
     "verbrauch": 6.8,
     "mehr": 1.5,
     "tank": 45
+  },
+  {
+    "marke": "Opel",
+    "modell": "Corsa E",
+    "motor": "1.0 Turbo 90 PS (2014–2019)",
+    "verbrauch": 5.8,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Opel",
+    "modell": "Corsa F",
+    "motor": "1.2 75 PS (2019–)",
+    "verbrauch": 5.6,
+    "tank": 44,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Opel",
+    "modell": "Corsa F",
+    "motor": "1.2 Turbo 100 PS (2019–)",
+    "verbrauch": 5.8,
+    "tank": 44,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Opel",
+    "modell": "Crossland",
+    "motor": "1.2 83 PS (2017–)",
+    "verbrauch": 6.2,
+    "tank": 44,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Opel",
+    "modell": "Crossland",
+    "motor": "1.2 Turbo 110 PS (2017–)",
+    "verbrauch": 6.5,
+    "tank": 44,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Opel",
+    "modell": "Grandland",
+    "motor": "1.2 Turbo 130 PS (2017–)",
+    "verbrauch": 7.0,
+    "tank": 53,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Opel",
@@ -1297,6 +2098,24 @@
   },
   {
     "marke": "Peugeot",
+    "modell": "2008 II",
+    "motor": "1.2 PureTech 100 PS (2019–)",
+    "verbrauch": 6.5,
+    "tank": 48,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Peugeot",
+    "modell": "2008 II",
+    "motor": "1.2 PureTech 130 PS (2019–)",
+    "verbrauch": 7.0,
+    "tank": 48,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Peugeot",
     "modell": "206",
     "motor": "1.1i 60 PS (1998–2009)",
     "verbrauch": 6.8,
@@ -1330,17 +2149,17 @@
   {
     "marke": "Peugeot",
     "modell": "207",
-    "motor": "1.6 VTi 120 PS (2006–2012)",
-    "verbrauch": 7.4,
-    "mehr": 1.5,
+    "motor": "1.6 THP 150 PS (2006–2012)",
+    "verbrauch": 7.8,
+    "mehr": 1.3,
     "tank": 50
   },
   {
     "marke": "Peugeot",
     "modell": "207",
-    "motor": "1.6 THP 150 PS (2006–2012)",
-    "verbrauch": 7.8,
-    "mehr": 1.3,
+    "motor": "1.6 VTi 120 PS (2006–2012)",
+    "verbrauch": 7.4,
+    "mehr": 1.5,
     "tank": 50
   },
   {
@@ -1369,11 +2188,46 @@
   },
   {
     "marke": "Peugeot",
+    "modell": "208 II",
+    "motor": "1.2 PureTech 100 PS (2019–)",
+    "verbrauch": 5.8,
+    "tank": 44,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Peugeot",
+    "modell": "208 II",
+    "motor": "1.2 PureTech 130 PS (2019–)",
+    "verbrauch": 6.2,
+    "tank": 44,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Peugeot",
+    "modell": "208 II",
+    "motor": "1.2 PureTech 75 PS (2019–)",
+    "verbrauch": 5.5,
+    "tank": 44,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Peugeot",
     "modell": "301",
     "motor": "1.2 VTi 72 PS (2012–2017)",
     "verbrauch": 6.0,
     "mehr": 1.5,
     "tank": 50
+  },
+  {
+    "marke": "Peugeot",
+    "modell": "308 I",
+    "motor": "1.6 THP 150 PS (2007–2013)",
+    "verbrauch": 8.0,
+    "mehr": 1.3,
+    "tank": 60
   },
   {
     "marke": "Peugeot",
@@ -1385,11 +2239,21 @@
   },
   {
     "marke": "Peugeot",
-    "modell": "308 I",
-    "motor": "1.6 THP 150 PS (2007–2013)",
-    "verbrauch": 8.0,
-    "mehr": 1.3,
-    "tank": 60
+    "modell": "308 II",
+    "motor": "1.2 PureTech 130 PS (2013–2021)",
+    "verbrauch": 6.5,
+    "tank": 53,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Peugeot",
+    "modell": "308 III",
+    "motor": "1.2 PureTech 130 PS (2021–)",
+    "verbrauch": 6.2,
+    "tank": 54,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Peugeot",
@@ -1406,6 +2270,24 @@
     "verbrauch": 9.8,
     "mehr": 1.4,
     "tank": 65
+  },
+  {
+    "marke": "Renault",
+    "modell": "Captur II",
+    "motor": "1.0 TCe 90 PS (2019–)",
+    "verbrauch": 6.2,
+    "tank": 48,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Renault",
+    "modell": "Captur II",
+    "motor": "1.3 TCe 130 PS (2019–)",
+    "verbrauch": 7.0,
+    "tank": 48,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Renault",
@@ -1457,6 +2339,42 @@
   },
   {
     "marke": "Renault",
+    "modell": "Clio V",
+    "motor": "1.0 SCe 65 PS (2019–)",
+    "verbrauch": 6.0,
+    "tank": 42,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Renault",
+    "modell": "Clio V",
+    "motor": "1.0 TCe 90 PS (2019–)",
+    "verbrauch": 5.8,
+    "tank": 42,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Renault",
+    "modell": "Clio V",
+    "motor": "1.3 TCe 130 PS (2019–)",
+    "verbrauch": 6.5,
+    "tank": 42,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Renault",
+    "modell": "Kadjar",
+    "motor": "1.2 TCe 130 PS (2015–2022)",
+    "verbrauch": 7.5,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Renault",
     "modell": "Kangoo I",
     "motor": "1.4i 75 PS (1997–2007)",
     "verbrauch": 7.8,
@@ -1486,6 +2404,30 @@
     "verbrauch": 9.8,
     "mehr": 1.4,
     "tank": 60
+  },
+  {
+    "marke": "Renault",
+    "modell": "Modus",
+    "motor": "1.2 16V 75 PS (2004–2008)",
+    "verbrauch": 7.2,
+    "mehr": 1.5,
+    "tank": 50
+  },
+  {
+    "marke": "Renault",
+    "modell": "Modus",
+    "motor": "1.4 16V 98 PS (2004–2012)",
+    "verbrauch": 7.8,
+    "mehr": 1.5,
+    "tank": 50
+  },
+  {
+    "marke": "Renault",
+    "modell": "Modus",
+    "motor": "1.6 16V 112 PS (2004–2013)",
+    "verbrauch": 8.8,
+    "mehr": 1.5,
+    "tank": 50
   },
   {
     "marke": "Renault",
@@ -1529,27 +2471,21 @@
   },
   {
     "marke": "Renault",
-    "modell": "Modus",
-    "motor": "1.2 16V 75 PS (2004–2008)",
-    "verbrauch": 7.2,
-    "mehr": 1.5,
-    "tank": 50
+    "modell": "Mégane IV",
+    "motor": "1.2 TCe 130 PS (2015–2022)",
+    "verbrauch": 6.8,
+    "tank": 47,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Renault",
-    "modell": "Modus",
-    "motor": "1.4 16V 98 PS (2004–2012)",
-    "verbrauch": 7.8,
-    "mehr": 1.5,
-    "tank": 50
-  },
-  {
-    "marke": "Renault",
-    "modell": "Modus",
-    "motor": "1.6 16V 112 PS (2004–2013)",
-    "verbrauch": 8.8,
-    "mehr": 1.5,
-    "tank": 50
+    "modell": "Mégane IV",
+    "motor": "1.3 TCe 140 PS (2018–2022)",
+    "verbrauch": 6.5,
+    "tank": 47,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Renault",
@@ -1601,6 +2537,42 @@
   },
   {
     "marke": "Seat",
+    "modell": "Arona",
+    "motor": "1.0 TSI 115 PS (2017–)",
+    "verbrauch": 6.2,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Seat",
+    "modell": "Arona",
+    "motor": "1.0 TSI 95 PS (2017–)",
+    "verbrauch": 6.0,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Seat",
+    "modell": "Ateca",
+    "motor": "1.0 TSI 115 PS (2016–)",
+    "verbrauch": 7.2,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Seat",
+    "modell": "Ateca",
+    "motor": "1.5 TSI 150 PS (2016–)",
+    "verbrauch": 7.5,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Seat",
     "modell": "Ibiza III",
     "motor": "1.4 16V 85 PS (2002–2008)",
     "verbrauch": 6.9,
@@ -1641,6 +2613,33 @@
   },
   {
     "marke": "Seat",
+    "modell": "Ibiza V",
+    "motor": "1.0 MPI 75 PS (2017–)",
+    "verbrauch": 5.6,
+    "tank": 40,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Seat",
+    "modell": "Ibiza V",
+    "motor": "1.0 TSI 115 PS (2017–)",
+    "verbrauch": 5.4,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Seat",
+    "modell": "Ibiza V",
+    "motor": "1.0 TSI 95 PS (2017–)",
+    "verbrauch": 5.2,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Seat",
     "modell": "León I",
     "motor": "1.4 16V 75 PS (1999–2006)",
     "verbrauch": 7.5,
@@ -1670,6 +2669,42 @@
     "verbrauch": 7.6,
     "mehr": 1.5,
     "tank": 55
+  },
+  {
+    "marke": "Seat",
+    "modell": "León III",
+    "motor": "1.0 TSI 115 PS (2012–2020)",
+    "verbrauch": 6.0,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Seat",
+    "modell": "León III",
+    "motor": "1.5 TSI 130 PS (2016–2020)",
+    "verbrauch": 6.5,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Seat",
+    "modell": "León IV",
+    "motor": "1.0 TSI 110 PS (2020–)",
+    "verbrauch": 5.8,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Seat",
+    "modell": "León IV",
+    "motor": "1.5 TSI 150 PS (2020–)",
+    "verbrauch": 6.5,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Seat",
@@ -1721,6 +2756,60 @@
   },
   {
     "marke": "Skoda",
+    "modell": "Fabia IV",
+    "motor": "1.0 MPI 65 PS (2021–)",
+    "verbrauch": 5.4,
+    "tank": 40,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
+    "modell": "Fabia IV",
+    "motor": "1.0 TSI 110 PS (2021–)",
+    "verbrauch": 5.5,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
+    "modell": "Fabia IV",
+    "motor": "1.0 TSI 95 PS (2021–)",
+    "verbrauch": 5.2,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
+    "modell": "Kamiq",
+    "motor": "1.0 TSI 95 PS (2019–)",
+    "verbrauch": 6.0,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
+    "modell": "Karoq",
+    "motor": "1.0 TSI 115 PS (2017–)",
+    "verbrauch": 7.0,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
+    "modell": "Kodiaq",
+    "motor": "1.5 TSI 150 PS (2016–)",
+    "verbrauch": 8.5,
+    "tank": 65,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
     "modell": "Octavia I",
     "motor": "1.4 MPI 60 PS (1996–2010)",
     "verbrauch": 7.5,
@@ -1761,6 +2850,42 @@
   },
   {
     "marke": "Skoda",
+    "modell": "Octavia III",
+    "motor": "1.0 TSI 115 PS (2013–2020)",
+    "verbrauch": 6.2,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
+    "modell": "Octavia III",
+    "motor": "1.4 TSI 150 PS (2013–2020)",
+    "verbrauch": 6.8,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
+    "modell": "Octavia IV",
+    "motor": "1.0 TSI 110 PS (2020–)",
+    "verbrauch": 6.0,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
+    "modell": "Octavia IV",
+    "motor": "1.5 TSI 150 PS (2020–)",
+    "verbrauch": 6.5,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
     "modell": "Roomster",
     "motor": "1.2 12V 70 PS (2006–2015)",
     "verbrauch": 6.8,
@@ -1777,6 +2902,24 @@
   },
   {
     "marke": "Skoda",
+    "modell": "Scala",
+    "motor": "1.0 TSI 95 PS (2018–)",
+    "verbrauch": 5.8,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
+    "modell": "Scala",
+    "motor": "1.5 TSI 150 PS (2018–)",
+    "verbrauch": 6.5,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Skoda",
     "modell": "Superb I",
     "motor": "1.8T 150 PS (2001–2008)",
     "verbrauch": 9.2,
@@ -1790,6 +2933,60 @@
     "verbrauch": 8.5,
     "mehr": 1.2,
     "tank": 62
+  },
+  {
+    "marke": "Smart",
+    "modell": "forfour W453",
+    "motor": "0.9 Turbo 90 PS (2014–2019)",
+    "verbrauch": 5.8,
+    "tank": 35,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Smart",
+    "modell": "fortwo W453",
+    "motor": "0.9 Turbo 90 PS (2014–2019)",
+    "verbrauch": 5.5,
+    "tank": 28,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Suzuki",
+    "modell": "Ignis",
+    "motor": "1.2 DualJet 90 PS (2016–)",
+    "verbrauch": 5.5,
+    "tank": 32,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Suzuki",
+    "modell": "Swift IV",
+    "motor": "1.0 Boosterjet 111 PS (2017–)",
+    "verbrauch": 5.8,
+    "tank": 37,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Suzuki",
+    "modell": "Swift IV",
+    "motor": "1.2 DualJet 90 PS (2017–)",
+    "verbrauch": 5.5,
+    "tank": 37,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Suzuki",
+    "modell": "Vitara II",
+    "motor": "1.4 Boosterjet 129 PS (2015–)",
+    "verbrauch": 7.5,
+    "tank": 47,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Toyota",
@@ -1825,6 +3022,15 @@
   },
   {
     "marke": "Toyota",
+    "modell": "C-HR",
+    "motor": "1.2T 116 PS (2016–2023)",
+    "verbrauch": 7.2,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Toyota",
     "modell": "Corolla E12",
     "motor": "1.4 VVT-i 97 PS (2001–2007)",
     "verbrauch": 7.5,
@@ -1838,6 +3044,24 @@
     "verbrauch": 8.2,
     "mehr": 1.5,
     "tank": 55
+  },
+  {
+    "marke": "Toyota",
+    "modell": "Corolla E210",
+    "motor": "1.2T 116 PS (2018–)",
+    "verbrauch": 6.8,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Toyota",
+    "modell": "RAV4 V",
+    "motor": "2.0 VVT-i 175 PS (2018–)",
+    "verbrauch": 9.5,
+    "tank": 55,
+    "mehr": 1.4,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Toyota",
@@ -1862,6 +3086,33 @@
     "verbrauch": 6.3,
     "mehr": 1.5,
     "tank": 40
+  },
+  {
+    "marke": "Toyota",
+    "modell": "Yaris III",
+    "motor": "1.0 VVT-i 69 PS (2011–2020)",
+    "verbrauch": 5.6,
+    "tank": 42,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Toyota",
+    "modell": "Yaris III",
+    "motor": "1.33 Dual VVT-i 99 PS (2011–2020)",
+    "verbrauch": 6.5,
+    "tank": 42,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Toyota",
+    "modell": "Yaris IV",
+    "motor": "1.5 VVT-i 125 PS (2020–)",
+    "verbrauch": 6.2,
+    "tank": 36,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Volkswagen",
@@ -1978,6 +3229,15 @@
   {
     "marke": "Volkswagen",
     "modell": "Golf VII",
+    "motor": "1.0 TSI 110 PS (2016–2020)",
+    "verbrauch": 5.2,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Golf VII",
     "motor": "1.2 TSI 85 PS (2012–2020)",
     "verbrauch": 5.8,
     "mehr": 1.2,
@@ -1994,10 +3254,46 @@
   {
     "marke": "Volkswagen",
     "modell": "Golf VII",
+    "motor": "1.5 TSI 130 PS (2017–2020)",
+    "verbrauch": 5.8,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Golf VII",
     "motor": "1.6 MPI 110 PS (2012–2020)",
     "verbrauch": 6.8,
     "mehr": 1.5,
     "tank": 50
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Golf VIII",
+    "motor": "1.0 TSI 110 PS (2019–)",
+    "verbrauch": 5.5,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Golf VIII",
+    "motor": "1.0 TSI 90 PS (2019–)",
+    "verbrauch": 5.4,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Golf VIII",
+    "motor": "1.5 TSI 130 PS (2019–)",
+    "verbrauch": 6.0,
+    "tank": 50,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Volkswagen",
@@ -2038,6 +3334,24 @@
     "verbrauch": 8.0,
     "mehr": 1.2,
     "tank": 70
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Passat B8",
+    "motor": "1.4 TSI 125 PS (2014–2019)",
+    "verbrauch": 6.5,
+    "tank": 66,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Passat B8",
+    "motor": "1.5 TSI 150 PS (2019–)",
+    "verbrauch": 6.2,
+    "tank": 66,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Volkswagen",
@@ -2089,6 +3403,69 @@
   },
   {
     "marke": "Volkswagen",
+    "modell": "Polo VI",
+    "motor": "1.0 MPI 65 PS (2017–)",
+    "verbrauch": 5.6,
+    "tank": 40,
+    "mehr": 1.5,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Polo VI",
+    "motor": "1.0 TSI 115 PS (2017–)",
+    "verbrauch": 5.4,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Polo VI",
+    "motor": "1.0 TSI 95 PS (2017–)",
+    "verbrauch": 5.2,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "T-Cross",
+    "motor": "1.0 TSI 115 PS (2018–)",
+    "verbrauch": 6.0,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "T-Cross",
+    "motor": "1.0 TSI 95 PS (2018–)",
+    "verbrauch": 5.8,
+    "tank": 40,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "T-Roc",
+    "motor": "1.0 TSI 115 PS (2017–)",
+    "verbrauch": 6.2,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "T-Roc",
+    "motor": "1.5 TSI 150 PS (2017–)",
+    "verbrauch": 6.8,
+    "tank": 55,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
     "modell": "Tiguan I",
     "motor": "1.4 TSI 150 PS (2007–2016)",
     "verbrauch": 8.5,
@@ -2105,6 +3482,24 @@
   },
   {
     "marke": "Volkswagen",
+    "modell": "Tiguan II",
+    "motor": "1.4 TSI 125 PS (2016–2021)",
+    "verbrauch": 7.2,
+    "tank": 60,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Tiguan II",
+    "motor": "1.5 TSI 150 PS (2020–)",
+    "verbrauch": 7.0,
+    "tank": 60,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volkswagen",
     "modell": "Touran I",
     "motor": "1.4 TSI 140 PS (2006–2010)",
     "verbrauch": 8.0,
@@ -2118,6 +3513,15 @@
     "verbrauch": 7.5,
     "mehr": 1.2,
     "tank": 65
+  },
+  {
+    "marke": "Volkswagen",
+    "modell": "Touran II",
+    "motor": "1.5 TSI 150 PS (2015–)",
+    "verbrauch": 7.2,
+    "tank": 60,
+    "mehr": 1.2,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Volvo",
@@ -2137,11 +3541,29 @@
   },
   {
     "marke": "Volvo",
+    "modell": "V40",
+    "motor": "T2 122 PS (2012–2019)",
+    "verbrauch": 7.0,
+    "tank": 62,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
+  },
+  {
+    "marke": "Volvo",
     "modell": "V50",
     "motor": "1.8i 125 PS (2004–2012)",
     "verbrauch": 8.8,
     "mehr": 1.4,
     "tank": 62
+  },
+  {
+    "marke": "Volvo",
+    "modell": "V60 II",
+    "motor": "T3 156 PS (2018–)",
+    "verbrauch": 7.5,
+    "tank": 60,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
   },
   {
     "marke": "Volvo",
@@ -2158,5 +3580,14 @@
     "verbrauch": 9.8,
     "mehr": 1.3,
     "tank": 70
+  },
+  {
+    "marke": "Volvo",
+    "modell": "XC40",
+    "motor": "T3 163 PS (2017–)",
+    "verbrauch": 8.0,
+    "tank": 54,
+    "mehr": 1.3,
+    "quelle": "geschaetzt"
   }
 ]
